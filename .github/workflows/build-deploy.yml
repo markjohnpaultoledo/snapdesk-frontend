@@ -1,0 +1,87 @@
+name: Build, Push Docker Image, and Deploy Serverless Frontend
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set AWS Region
+        id: set_region
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "AWS_REGION=${{ secrets.AWS_REGION_PROD }}" >> $GITHUB_ENV
+          else
+            echo "AWS_REGION=${{ secrets.AWS_REGION_STG }}" >> $GITHUB_ENV
+          fi
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
+
+      - name: Retrieve the previous image tag
+        id: get_previous_tag
+        run: |
+          tags=$(aws ecr list-images --repository-name snapdesk-tech --query 'imageIds[*].imageTag' --output text)
+          rollback_tag=$(echo "$tags" | grep '^rollback-v[0-9]*$' | sort -V | tail -n 1)
+          if [ -z "$rollback_tag" ]; then
+            new_rollback_tag="rollback-v1"
+          else
+            rollback_number=$(echo "$rollback_tag" | sed 's/rollback-v//')
+            new_rollback_number=$((rollback_number + 1))
+            new_rollback_tag="rollback-v${new_rollback_number}"
+          fi
+          echo "ROLLBACK_TAG=${new_rollback_tag}" >> $GITHUB_ENV
+
+      - name: Build Docker image
+        run: |
+          ssh -i private.key -o StrictHostKeyChecking=no -N -L ${{ env.SSH_TUNNEL}} ${{env.BASTION_HOST}} &
+          sleep 10
+          docker buildx build --network host -t ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/snapdesk-tech:sls-latest \
+            --no-cache .
+
+      - name: Tag Docker image
+        run: |
+          docker tag ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/snapdesk-tech:sls-latest ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/snapdesk-tech:${{ env.ROLLBACK_TAG }}
+
+      - name: Push Docker images to ECR
+        run: |
+          docker push ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/snapdesk-tech:sls-latest
+          docker push ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/snapdesk-tech:${{ env.ROLLBACK_TAG }}
+
+      - name: Install Serverless Framework
+        run: npm install -g serverless@3.38.0
+
+      - name: Set Deployment Stage
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "STAGE=prod" >> $GITHUB_ENV
+          else
+            echo "STAGE=dev" >> $GITHUB_ENV
+          fi
+
+      - name: Serverless Deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+        run: |
+          serverless deploy --stage $STAGE --region ${{ env.AWS_REGION }}

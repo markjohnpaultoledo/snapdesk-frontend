@@ -1,0 +1,73 @@
+service: snapdesk-tech
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  httpApi:
+    cors:
+      allowedOrigins: "*"
+      allowedHeaders:
+        - Accept
+        - Content-Type
+        - X-Amz-Date
+        - Authorization
+        - X-Api-Key
+        - X-Amz-Security-Token
+        - X-Amzn-Trace-Id
+  lambdaHashingVersion: 20201221
+  architecture: x86_64
+  memorySize: 128
+  stage: ${opt:stage, 'dev'}
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - ssm:GetParametersByPath
+            - ssm:PutParameter
+          Resource: "*"
+        - Effect: "Allow"
+          Action:
+            - ecr:GetDownloadUrlForLayer
+            - ecr:BatchGetImage
+            - ecr:CompleteLayerUpload
+            - ecr:DescribeImages
+            - ecr:DescribeRepositories
+            - ecr:UploadLayerPart
+            - ecr:ListImages
+            - ecr:InitiateLayerUpload
+            - ecr:BatchCheckLayerAvailability
+            - ecr:GetRepositoryPolicy
+            - ecr:PutImage
+            - ecr:GetAuthorizationToken
+          Resource: arn:aws:ecr:${opt:region, self:provider.region}:${env:AWS_ACCOUNT_ID}:repository/*
+        - Effect: "Allow"
+          Action:
+            - secretsmanager:GetSecretValue
+          Resource:
+            - arn:aws:secretsmanager:${opt:region, self:provider.region}:${env:AWS_ACCOUNT_ID}:secret:*/*
+        - Effect: "Allow"
+          Action:
+            - ec2:CreateNetworkInterface
+            - ec2:DeleteNetworkInterface
+            - ec2:DescribeNetworkInterfaces
+            - ec2:DescribeNetworkInterfaceAttribute
+            - ec2:DescribeNetworkInterfacePermissions
+            - ec2:ModifyNetworkInterfaceAttribute
+            - ec2:AttachNetworkInterface
+          Resource: "*"
+        - Effect: "Allow"
+          Action:
+            - s3:*
+          Resource: "*"
+
+functions:
+  frontend:
+    image: ${env:AWS_ACCOUNT_ID}.dkr.ecr.${opt:region, self:provider.region}.amazonaws.com/snapdesk-tech:sls-latest
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: "*"
+    timeout: 30
