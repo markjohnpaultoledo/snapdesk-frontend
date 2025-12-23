@@ -21,7 +21,7 @@ RUN yarn build
 
 
 # ---------- Runtime (Lambda) ----------
-FROM nginx:alpine
+FROM builder AS runner
 
 COPY --from=lambda-adapter /lambda-adapter /opt/extensions/lambda-adapter
 
