@@ -25,13 +25,15 @@ FROM nginx:alpine
 
 COPY --from=lambda-adapter /lambda-adapter /opt/extensions/lambda-adapter
 
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/build /usr/share/nginx/html
+# App files
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/server.js ./server.js
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
+RUN npm install sirv
 
 ENV PORT=8080
 EXPOSE 8080
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
