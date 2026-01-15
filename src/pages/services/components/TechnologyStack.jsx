@@ -152,7 +152,7 @@ const TechnologyStack = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-text-secondary mb-6">
             Want to see how we can leverage these technologies for your project?
           </p>
@@ -166,7 +166,7 @@ const TechnologyStack = () => {
               <span>Download Tech Stack Guide</span>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

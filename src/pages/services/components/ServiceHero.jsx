@@ -17,24 +17,24 @@ const ServiceHero = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
             <Icon name="Sparkles" size={16} />
-            <span>Technology with Soul</span>
+            <span>Technology, Designed to Evolve</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary leading-tight">
-            We Don't Just Build
+            {/* We Don't Just Build Technology */}
             <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Technology
+              Accelerate Growth and Business Opportunity
             </span>
-            <span className="block text-3xl md:text-5xl lg:text-6xl font-normal text-text-secondary mt-2">
-              We Craft Digital Experiences That Matter
-            </span>
+            {/* <span className="block text-3xl md:text-5xl lg:text-6xl font-normal text-text-secondary mt-2">
+              We Accelerate Growth and Business Opportunity
+            </span> */}
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+          {/* <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Where technical excellence meets creative vision. Our services transcend traditional development by creating immersive, emotionally-driven digital journeys that feel like stepping into the future.
-          </p>
+          </p> */}
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -60,21 +60,21 @@ const ServiceHero = () => {
 
           {/* Trust Indicators */}
           <div className="pt-12 border-t border-border/50 mt-16">
-            <p className="text-sm text-text-secondary mb-6">Trusted by Innovation Leaders</p>
+            <p className="text-sm text-text-secondary mb-6">Trusted by Handled Customers</p>
             
             {/* Statistics Box Container */}
             <div className="bg-card/50 backdrop-blur-sm border border-border/20 rounded-2xl p-8 shadow-medium max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Projects Delivered */}
                 <div className="text-center space-y-2">
-                  <div className="text-4xl md:text-5xl font-bold text-primary">50+</div>
-                  <div className="text-sm text-text-secondary font-medium">Projects Delivered</div>
+                  <div className="text-4xl md:text-5xl font-bold text-primary">500+</div>
+                  <div className="text-sm text-text-secondary font-medium">Combined Careers Projects Delivered</div>
                 </div>
                 
                 {/* Client Satisfaction */}
                 <div className="text-center space-y-2">
                   <div className="text-4xl md:text-5xl font-bold text-accent">98%</div>
-                  <div className="text-sm text-text-secondary font-medium">Client Satisfaction</div>
+                  <div className="text-sm text-text-secondary font-medium">Careeers Client Satisfaction</div>
                 </div>
                 
                 {/* Support Available */}

@@ -4,7 +4,7 @@ import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
 import ServicesPreview from './components/ServicesPreview';
 import FeaturedProjects from './components/FeaturedProjects';
-import ClientLogos from './components/ClientLogos';
+// import ClientLogos from './components/ClientLogos';
 import NewsletterSignup from './components/NewsletterSignup';
 import Footer from './components/Footer';
 
@@ -57,11 +57,8 @@ const Homepage = () => {
         {/* Featured Projects */}
         <FeaturedProjects />
 
-        {/* Client Logos */}
-        <ClientLogos />
-
         {/* Newsletter Signup */}
-        <NewsletterSignup />
+        {/* <NewsletterSignup /> */}
       </main>
       {/* Footer */}
       <Footer />

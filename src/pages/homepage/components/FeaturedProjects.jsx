@@ -16,7 +16,7 @@ const FeaturedProjects = () => {
     description: "A comprehensive digital banking platform that revolutionized how users manage their finances with AI-powered insights and seamless user experience.",
     image: "https://images.unsplash.com/photo-1735469157670-1212e570eadc",
     imageAlt: "Modern financial dashboard interface showing charts and analytics on multiple screens",
-    technologies: ["React", "Node.js", "AI/ML", "Blockchain"],
+    // technologies: ["React", "Node.js", "AI/ML", "Blockchain"],
     metrics: {
       users: "500K+",
       growth: "300%",
@@ -26,12 +26,12 @@ const FeaturedProjects = () => {
   },
   {
     id: 2,
-    title: "Healthcare Connect Hub",
-    category: "Healthcare Technology",
-    description: "An integrated telemedicine platform connecting patients with healthcare providers through secure, HIPAA-compliant video consultations and health monitoring.",
-    image: "https://images.unsplash.com/photo-1666886573531-48d2e3c2b684",
+    title: "Enterprise Learning Hub",
+    category: "Learning Technology",
+    description: "An integrated learning platform connecting students with learning providers through secure, platforms.",
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0",
     imageAlt: "Healthcare professional using tablet device in modern medical facility with patient consultation interface",
-    technologies: ["Next.js", "WebRTC", "FHIR", "Cloud Security"],
+    // technologies: ["Next.js", "WebRTC", "FHIR", "Cloud Security"],
     metrics: {
       consultations: "1M+",
       providers: "10K+",
@@ -41,12 +41,12 @@ const FeaturedProjects = () => {
   },
   {
     id: 3,
-    title: "E-Commerce Evolution",
+    title: "E-Commerce Management System Enterprise",
     category: "Retail Technology",
-    description: "A next-generation e-commerce platform with AR product visualization, personalized recommendations, and omnichannel inventory management.",
+    description: "A next-generation e-commerce platform with omnichannel order, warehouse, inventory management.",
     image: "https://images.unsplash.com/photo-1649424221028-8e7d31f2e3c9",
     imageAlt: "Modern e-commerce interface showing product catalog with augmented reality features on mobile and desktop devices",
-    technologies: ["React Native", "AR/VR", "Machine Learning", "Microservices"],
+    // technologies: ["React Native", "AR/VR", "Machine Learning", "Microservices"],
     metrics: {
       revenue: "$50M+",
       conversion: "45%",
@@ -183,16 +183,6 @@ const FeaturedProjects = () => {
                       </div>
                     )}
                   </div>
-                  
-                  <Button
-                    variant="outline"
-                    fullWidth
-                    iconName="ExternalLink"
-                    iconPosition="right"
-                    className="btn-magnetic">
-
-                    View Case Study
-                  </Button>
                 </div>
               </motion.div>
             </AnimatePresence>

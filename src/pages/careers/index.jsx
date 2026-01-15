@@ -19,7 +19,7 @@ const CareersPage = () => {
         <title>Careers - Join Our Creative Technology Team | Snapdesk</title>
         <meta 
           name="description" 
-          content="Join Snapdesk's team of creative technologists. Explore career opportunities where technical excellence meets creative vision. Build technology with soul." 
+          content="Join Snapdesk's team of creative technologists. Explore career opportunities where technical excellence meets creative vision. Build Technology, Designed to Evolve." 
         />
         <meta name="keywords" content="careers, jobs, creative technologist, react developer, designer, remote work, tech startup" />
         <meta property="og:title" content="Careers - Join Our Creative Technology Team | Snapdesk" />

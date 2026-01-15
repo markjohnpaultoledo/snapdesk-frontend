@@ -8,28 +8,53 @@ const ServicesPreview = () => {
   const services = [
     {
       id: 1,
-      icon: "Code",
-      title: "Custom Development",
-      description: "Tailored solutions built with cutting-edge technologies that scale with your business growth and evolving needs.",
-      features: ["React & Next.js", "Node.js Backend", "Cloud Architecture", "API Integration"],
-      color: "from-primary to-primary/80"
-    },
-    {
-      id: 2,
       icon: "Palette",
-      title: "UX/UI Design",
+      title: "Digital Design",
       description: "Human-centered design that creates intuitive, beautiful interfaces your users will love to interact with.",
-      features: ["User Research", "Prototyping", "Design Systems", "Accessibility"],
+      features: ["User Research", "Digital Strategy", "Website & Product Design", "Experience Strategy"],
       color: "from-accent to-accent/80"
     },
     {
+      id: 2,
+      icon: "Code",
+      title: "Product Development",
+      description: "Tailored solutions built with cutting-edge technologies that scale with your business growth and evolving needs.",
+      features: ["Product vision, strategy, and roadmap", "Planning and feature prioritization", "Cloud Architecture", "Product growth and optimization"],
+      color: "from-primary to-primary/80"
+    },
+    {
       id: 3,
-      icon: "Zap",
-      title: "Digital Strategy",
-      description: "Strategic consulting that aligns technology decisions with business objectives for maximum impact.",
-      features: ["Tech Audits", "Roadmap Planning", "Performance Optimization", "Growth Strategy"],
+      icon: "Sparkles",
+      title: "AI",
+      description: "Create connected, seamless experiences — powered by strategy, AI, and modern digital solutions.",
+      features: ["AI Assessment", "AI Strategy", "Agent Design and Development", "Applied AI Engineering"],
+      color: "from-trust to-trust/80"
+    },
+    {
+      id: 4,
+      icon: "Cloud",
+      title: "Cloud, Digital & Data Transformation",
+      description: "Our comprehensive data and cloud modernization services will help you accelerate momentum so you can turn investment into measurable value.",
+      features: ["Modernize your technology platforms", "Design, plan and execute digital experiences", "Optimize technology costs", "Identify and build new business value"],
+      color: "from-trust to-trust/80"
+    },
+    {
+      id: 5,
+      icon: "Users",
+      title: "Managed Service Program",
+      description: "Our global managed service program support team understands talent. We’ve been matching the right people with the right opportunities.",
+      features: ["Service desk", "AI monitoring and alerts", "Development support and break-fix", "Ongoing enhancements"],
+      color: "from-trust to-trust/80"
+    },
+    {
+      id: 6,
+      icon: "GitBranch",
+      title: "DevOps & Agile",
+      description: "Accelerate your release frequency spanning architecture, testing and cloud services—all while testing insights quickly to capitalize opportunities.",
+      features: ["Internal Developer Tools", "AI & MCP Servers", "Improve your speed to market for new, superior products while lowering costs", "Accelerate predictable and secure software delivery on demand"],
       color: "from-trust to-trust/80"
     }
+    
   ];
 
   const containerVariants = {

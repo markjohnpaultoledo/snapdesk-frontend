@@ -205,7 +205,7 @@ const ContactPage = () => {
                 <span className="text-xl font-bold">Snapdesk</span>
               </div>
               <p className="text-gray-200 mb-4 max-w-md">
-                Technology with Soul. We craft digital experiences that matter, 
+                Technology, Designed to Evolve. We architect digital experiences that matter, 
                 combining technical excellence with creative vision.
               </p>
               <div className="text-sm text-gray-300">

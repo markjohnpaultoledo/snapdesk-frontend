@@ -161,7 +161,7 @@ const OriginStory = () => {
               },
               {
                 phase: "Future",
-                title: "Inspire Human Potential",
+                title: "Inspire Businesses Potential",
                 description: "Technology that amplifies creativity and human connection",
                 icon: "Sparkles"
               }]?.

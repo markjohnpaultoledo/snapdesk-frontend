@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
+import { Link } from "react-router-dom";
+
 
 const HeroSection = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   const phrases = [
-    "Technology with Soul",
-    "Digital Experiences that Matter",
-    "Innovation Meets Design",
-    "Your Future Partner"
+    "Where Innovation Meets Intelligent Design",
+    "From Strategy to Experience, We Build the Future",
+    "Your Global Partner in Intelligent Digital Experiences"
   ];
 
   useEffect(() => {
@@ -120,45 +121,34 @@ const HeroSection = () => {
         {/* Description */}
         <motion.div variants={itemVariants} className="mb-12">
           <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Where technical excellence meets creative vision. We craft digital experiences that don't just function—they inspire, engage, and transform the way people interact with technology.
+            Where technical excellence meets creative vision. We architect digital experiences that don't just function—they inspire, engage, and transform the way people interact with technology.
           </p>
         </motion.div>
 
         {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button
-            variant="default"
-            size="lg"
-            className="btn-magnetic animate-breathe min-w-48"
-            iconName="ArrowRight"
-            iconPosition="right"
-          >
-            Start Your Project
+          <Button asChild variant="default" size="lg" className="btn-magnetic animate-breathe min-w-48" iconName="ArrowRight" iconPosition="right">
+            <Link to="/services">Start Your Project</Link>
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="btn-magnetic min-w-48"
-            iconName="Calendar"
-            iconPosition="left"
-          >
-            Schedule Discovery Call
+
+          <Button asChild variant="outline" size="lg" className="btn-magnetic min-w-48" iconName="Calendar" iconPosition="left">
+            <Link to="/contact">Schedule Discovery Call</Link>
           </Button>
         </motion.div>
 
         {/* Trust Indicators */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
           <div className="flex flex-col items-center space-y-2">
-            <div className="text-2xl font-bold text-primary">150+</div>
-            <div className="text-sm text-text-secondary">Projects Delivered</div>
+            <div className="text-2xl font-bold text-primary">500+</div>
+            <div className="text-sm text-text-secondary">Combined Careers Projects Delivered</div>
           </div>
           <div className="flex flex-col items-center space-y-2">
             <div className="text-2xl font-bold text-primary">98%</div>
             <div className="text-sm text-text-secondary">Client Satisfaction</div>
           </div>
           <div className="flex flex-col items-center space-y-2">
-            <div className="text-2xl font-bold text-primary">5+</div>
-            <div className="text-sm text-text-secondary">Years Experience</div>
+            <div className="text-2xl font-bold text-primary">25+</div>
+            <div className="text-sm text-text-secondary">Combined Years Experience</div>
           </div>
           <div className="flex flex-col items-center space-y-2">
             <div className="text-2xl font-bold text-primary">24/7</div>

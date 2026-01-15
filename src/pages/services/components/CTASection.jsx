@@ -116,7 +116,7 @@ const CTASection = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section
         <div className="bg-background rounded-2xl p-8 shadow-medium">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-text-primary mb-2">
@@ -142,10 +142,10 @@ const CTASection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Final CTA */}
-        <div className="text-center mt-16 p-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl">
+        {/* <div className="text-center mt-16 p-8 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl">
           <h3 className="text-2xl font-bold text-text-primary mb-4">
             Ready to Transform Your Digital Presence?
           </h3>
@@ -169,7 +169,7 @@ const CTASection = () => {
               <span className="text-sm">Response within 24 hours</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Contact Information */}
         <div className="mt-12 pt-8 border-t border-border text-center">

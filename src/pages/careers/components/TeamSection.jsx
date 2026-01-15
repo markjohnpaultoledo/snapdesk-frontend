@@ -110,7 +110,7 @@ const TeamSection = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Creative technologists who believe in the power of human-centered innovation. 
-            Each bringing unique perspectives to our shared mission of building technology with soul.
+            Each bringing unique perspectives to our shared mission of building Technology, Designed to Evolve.
           </p>
         </motion.div>
 

@@ -18,18 +18,18 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - Snapdesk | Technology with Soul</title>
+        <title>About Us - Snapdesk | Technology, Designed to Evolve</title>
         <meta 
           name="description" 
           content="Discover Snapdesk's journey from vision to revolution. Meet our leadership collective, explore our culture of human-centered innovation, and see the measurable impact we create for clients worldwide." 
         />
         <meta name="keywords" content="Snapdesk, about us, technology company, human-centered design, innovation, leadership team, company culture, tech startup" />
-        <meta property="og:title" content="About Us - Snapdesk | Technology with Soul" />
+        <meta property="og:title" content="About Us - Snapdesk | Technology, Designed to Evolve" />
         <meta property="og:description" content="The perfect synthesis of technical excellence and human-centered design philosophy. Discover our story, team, and impact." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us - Snapdesk" />
-        <meta name="twitter:description" content="Technology with Soul - Where cutting-edge innovation meets mindful design" />
+        <meta name="twitter:description" content="Technology, Designed to Evolve - Where cutting-edge innovation meets mindful design" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
@@ -42,16 +42,16 @@ const About = () => {
           <OriginStory />
           
           {/* Leadership Collective */}
-          <LeadershipCollective />
+          {/* <LeadershipCollective /> */}
           
           {/* Culture Canvas */}
-          <CultureCanvas />
+          {/* <CultureCanvas /> */}
           
           {/* Impact Metrics */}
-          <ImpactMetrics />
+          {/* <ImpactMetrics /> */}
           
           {/* Social Proof */}
-          <SocialProof />
+          {/* <SocialProof /> */}
           
           {/* Call to Action */}
           <CallToAction />
@@ -73,7 +73,7 @@ const About = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">Snapdesk</h3>
-                    <p className="text-sm text-gray-200">Technology with Soul</p>
+                    <p className="text-sm text-gray-200">Technology, Designed to Evolve</p>
                   </div>
                 </div>
                 <p className="text-gray-200 leading-relaxed mb-6">

@@ -8,7 +8,7 @@ const CultureSection = () => {
   {
     id: 1,
     icon: "Heart",
-    title: "Technology with Soul",
+    title: "Technology, Designed to Evolve",
     description: "We believe technology should enhance human experiences, not replace them. Every line of code we write serves a purpose beyond functionality.",
     color: "text-primary"
   },
@@ -158,11 +158,11 @@ const CultureSection = () => {
 
           <Icon name="Quote" size={48} className="text-primary mx-auto mb-6" />
           <blockquote className="text-2xl md:text-3xl font-medium text-text-primary mb-6 leading-relaxed">
-            "We don't just build technology; we craft digital experiences that matter. 
+            "We don't just build technology; we architect digital experiences that matter. 
             Every team member is both an artist and an engineer."
           </blockquote>
           <cite className="text-lg text-text-secondary font-medium">
-            — Snapdesk Philosophy
+            — Snapdesk Tech
           </cite>
         </motion.div>
       </div>

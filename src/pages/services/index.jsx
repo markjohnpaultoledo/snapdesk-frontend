@@ -17,14 +17,14 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services - Snapdesk | Technology with Soul</title>
+        <title>Services - Snapdesk | Technology, Designed to Evolve</title>
         <meta 
           name="description" 
           content="Discover Snapdesk's comprehensive digital solutions. From React 18+ development to enterprise-grade applications, we craft technology experiences that matter. Get your custom quote today." 
         />
         <meta name="keywords" content="web development, React development, digital solutions, technology consulting, UI/UX design, performance optimization" />
-        <meta property="og:title" content="Services - Snapdesk | Technology with Soul" />
-        <meta property="og:description" content="We don't just build technology; we craft digital experiences that matter. Explore our comprehensive service offerings." />
+        <meta property="og:title" content="Services - Snapdesk | Technology, Designed to Evolve" />
+        <meta property="og:description" content="We don't just build technology; we architect digital experiences that matter. Explore our comprehensive service offerings." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/services" />
       </Helmet>
@@ -42,7 +42,7 @@ const Services = () => {
           <TechnologyStack />
           
           {/* Process Showcase */}
-          <ProcessShowcase />
+          {/* <ProcessShowcase /> */}
           
           {/* Service Comparison */}
           <ServiceComparison />
@@ -68,7 +68,7 @@ const Services = () => {
                   <h3 className="text-xl font-semibold">Snapdesk</h3>
                 </div>
                 <p className="text-gray-200 mb-4 leading-relaxed">
-                  Technology with Soul. We craft digital experiences that transcend traditional development, 
+                  Technology, Designed to Evolve. We architect digital experiences that transcend traditional development, 
                   creating immersive journeys that feel like stepping into the future.
                 </p>
                 <div className="flex space-x-4">

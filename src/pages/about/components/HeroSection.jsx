@@ -27,9 +27,9 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Technology
+              Technology,
               <span className="block text-primary organic-shape inline-block px-4 py-2 bg-primary/10 rounded-2xl ml-4">
-                with Soul
+                Designed to Evolve
               </span>
             </motion.h1>
             
@@ -53,10 +53,10 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             {[
-              { number: "150+", label: "Projects Delivered", icon: "Rocket" },
-              { number: "50+", label: "Happy Clients", icon: "Heart" },
-              { number: "8", label: "Years Experience", icon: "Calendar" },
-              { number: "25+", label: "Team Members", icon: "Users" }
+              { number: "500+", label: "Careers Combined Projects Delivered", icon: "Rocket" },
+              { number: "50+", label: "Careers Combined Happy Clients ", icon: "Heart" },
+              { number: "25", label: "Years Experience", icon: "Calendar" },
+              { number: "20+", label: "Team Members", icon: "Users" }
             ]?.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4 group-hover:bg-primary/20 transition-colors duration-300">
