@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
+import Icon from '../../components/AppIcon';
+import Button from '../../components/ui/Button';
 
 const Footer = () => {
   const currentYear = new Date()?.getFullYear();
@@ -20,8 +20,8 @@ const Footer = () => {
     title: "Company",
     links: [
       { name: "About SnapDesk", href: "/about" },
-      { name: "Privacy Policy", href: "/about" },
-      { name: "Terms & Conditions", href: "/careers" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms & Conditions", href: "/terms-and-conditions" },
       { name: "Careers", href: "/contact" }
     ]
   },
@@ -258,11 +258,11 @@ const Footer = () => {
               © {currentYear} Snapdesk. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">
+              <a href="/privacy-policy" className="text-gray-200 hover:text-white transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">
-                Terms of Service
+              <a href="/terms-and-conditions" className="text-gray-200 hover:text-white transition-colors duration-300">
+                Terms and Conditions
               </a>
               <a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">
                 Cookie Policy

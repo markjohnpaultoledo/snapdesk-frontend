@@ -9,6 +9,8 @@ import ContactPage from './pages/contact';
 import InsightsPage from './pages/insights';
 import About from './pages/about';
 import Homepage from './pages/homepage';
+import PrivacyPage from "pages/privacy";
+import TermsAndConditions from "pages/terms-conditions";
 
 const Routes = () => {
   return (
@@ -24,6 +26,8 @@ const Routes = () => {
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/privacy-policy" element={<PrivacyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

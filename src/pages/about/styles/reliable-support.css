@@ -1,0 +1,67 @@
+.snap {
+    &_brushed {
+        text-align: center;
+        margin-top: 44px;
+        h3 {
+            position: relative;
+            padding: 24px 0;
+            display: inline-block;
+            font-size: 20px;
+            line-height: 28px;
+            span {
+                color: #816042;
+            }
+            &::before {
+                height: 16px;
+                width: 282px;
+                background: url("../../../../public/assets/images/green-brush.png") no-repeat;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+            }
+            &::after {
+                height: 16px;
+                width: 282px;
+                background: url("../../../../public/assets/images/green-brush.png") no-repeat;
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: '';
+                transform: scaleX(-1);
+            }
+        }
+    }
+    &_action {
+        text-align: center;
+        margin-top: 20px;
+        a {
+            text-decoration: none!important;
+        }
+    }
+    &_list {
+        padding: 0px 44px;
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin-bottom: 12px;
+            color: #297877;
+            padding-left: 16px;
+            position: relative;
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #297877;
+                position: absolute;
+                top: 8px;
+                left: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

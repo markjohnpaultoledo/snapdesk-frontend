@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import Image from 'components/AppImage';
 
 const ServicesPreview = () => {
   const services = [
@@ -90,6 +91,35 @@ const ServicesPreview = () => {
     }
   };
 
+    const HomepageWhyChoose = {
+        title: "Why Choose SnapDesk?",
+        ctaText: "Get Started",
+        ctaButtonColor: "sp",
+        ctaLink: "/virtual-assistant",
+        imageData: [
+            {
+                iconPath: "Home_Flexible_Support.png",
+                title: "Flexible Support",
+                text: "Whether you need part-time or full-time help, our plans fit your schedule and goals."
+            },
+            {
+                iconPath: "Home_Trusted_&_Secure.png",
+                title: "Trusted & Secure",
+                text: "We handle your business with discretion and care, ensuring full confidentiality."
+            },
+            {
+                iconPath: "Home_Efficient_&_Reliable.png",
+                title: "Efficient & Reliable",
+                text: "Get consistent, high-quality support that helps you stay on top of things."
+            },
+            {
+                iconPath: "home-why.png",
+                title: "Boost Productivity",
+                text: "Focus on what matters while we handle the rest"
+            }
+        ]
+    }
+
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,12 +132,8 @@ const ServicesPreview = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-            {/* Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Expertise</span> */}
-            Scale Smarter with <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Flexible Packages</span>
+            Why Choose <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SnapDesk?</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            From managing schedules to streamlining admin, our Virtual Assistant packages are designed to fit seamlessly into both business and lifestyle needs.
-          </p>
         </motion.div>
 
         {/* Services Grid */}
@@ -116,44 +142,33 @@ const ServicesPreview = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid md:grid-cols-4 gap-8 mb-16"
         >
-          {services?.map((service) => (
-            <motion.div
-              key={service?.id}
-              variants={cardVariants}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated"
-            >
-              {/* Icon */}
-              {/* <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon name={service?.icon} size={28} className="text-white" />
-              </div> */}
-
-              {/* Content */}
-              <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                {service?.title}
-              </h3>
-              <p className="text-text-secondary mb-6 leading-relaxed">
-                {service?.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service?.features?.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-text-secondary">
-                    <Icon name="Check" size={16} className="text-primary mr-3 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className='text-lg font-semibold text-text-primary'>{feature?.title}</h4>
-                      <p className='text-sm'>{feature?.text}</p>
+            { HomepageWhyChoose?.imageData?.map((data, ind) => (
+                <motion.div
+                    key={ind}
+                    variants={cardVariants}
+                    className=" relative "
+                >
+                <div className="">
+                    <div className="">
+                        <Image
+                            src={`/assets/images/${data?.iconPath}`}
+                            width={140}
+                            height={140}
+                            alt=""
+                            className="h-[140px] mx-auto mb-4"
+                        />
                     </div>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </motion.div>
-          ))}
+                    <div className="text-center">
+                        <h3 className="text-lg font-semibold text-text-primary">{ data?.title }</h3>
+                        <p className="text-sm">{ data?.text }</p>
+                    </div>
+                </div>
+                </motion.div>
+            ))
+                
+            }
         </motion.div>
 
         {/* CTA Section */}
@@ -172,7 +187,7 @@ const ServicesPreview = () => {
               iconName="ArrowRight"
               iconPosition="right"
             >
-              Get Started
+              Ready to Snap in?
             </Button>
           </Link>
         </motion.div>

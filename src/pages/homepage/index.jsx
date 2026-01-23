@@ -4,9 +4,10 @@ import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
 import ServicesPreview from './components/ServicesPreview';
 import FeaturedProjects from './components/FeaturedProjects';
+import OurExpertise from './components/our-expertise';
 // import ClientLogos from './components/ClientLogos';
 import NewsletterSignup from './components/NewsletterSignup';
-import Footer from './components/Footer';
+import Footer from '../../components/ui/Footer';
 
 const Homepage = () => {
   useEffect(() => {
@@ -51,12 +52,16 @@ const Homepage = () => {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Services Preview */}
-        <ServicesPreview />
-
         {/* Featured Projects */}
         <FeaturedProjects />
 
+        {/* Services Preview */}
+        <ServicesPreview />
+
+        {/* Our Expertise */}
+        <OurExpertise />
+        
+        
         {/* Newsletter Signup */}
         {/* <NewsletterSignup /> */}
       </main>

@@ -9,51 +9,37 @@ const FeaturedProjects = () => {
   const [activeProject, setActiveProject] = useState(0);
 
   const projects = [
-  {
-    id: 1,
-    title: "FinTech Revolution Platform",
-    category: "Financial Technology",
-    description: "A comprehensive digital banking platform that revolutionized how users manage their finances with AI-powered insights and seamless user experience.",
-    image: "https://images.unsplash.com/photo-1735469157670-1212e570eadc",
-    imageAlt: "Modern financial dashboard interface showing charts and analytics on multiple screens",
-    // technologies: ["React", "Node.js", "AI/ML", "Blockchain"],
-    metrics: {
-      users: "500K+",
-      growth: "300%",
-      satisfaction: "98%"
+    {
+      id: 1,
+      title: "Time & Communication Management",
+      description: "Seamlessly manage schedules, inboxes, and client communications to keep your day running with clarity and precision."
     },
-    color: "from-blue-500 to-purple-600"
-  },
-  {
-    id: 2,
-    title: "Enterprise Learning Hub",
-    category: "Learning Technology",
-    description: "An integrated learning platform connecting students with learning providers through secure, platforms.",
-    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0",
-    imageAlt: "Healthcare professional using tablet device in modern medical facility with patient consultation interface",
-    // technologies: ["Next.js", "WebRTC", "FHIR", "Cloud Security"],
-    metrics: {
-      consultations: "1M+",
-      providers: "10K+",
-      uptime: "99.9%"
+    {
+      id: 2,
+      title: "Data Management & Research Support",
+      description: "Deliver structured data handling, documentation, and research that ensures accuracy, efficiency, and informed decision-making."
     },
-    color: "from-green-500 to-teal-600"
-  },
-  {
-    id: 3,
-    title: "E-Commerce Management System Enterprise",
-    category: "Retail Technology",
-    description: "A next-generation e-commerce platform with omnichannel order, warehouse, inventory management.",
-    image: "https://images.unsplash.com/photo-1649424221028-8e7d31f2e3c9",
-    imageAlt: "Modern e-commerce interface showing product catalog with augmented reality features on mobile and desktop devices",
-    // technologies: ["React Native", "AR/VR", "Machine Learning", "Microservices"],
-    metrics: {
-      revenue: "$50M+",
-      conversion: "45%",
-      retention: "85%"
+    {
+      id: 3,
+      title: "Operations & Team Support",
+      description: "Strengthen business performance through streamlined processes, project coordination, and reliable operational support."
     },
-    color: "from-orange-500 to-red-600"
-  }];
+    {
+      id: 4,
+      title: "Bookkeeping & Financial Support",
+      description: "Maintain financial accuracy and compliance with reliable bookkeeping, payroll assistance, and clear financial reporting."
+    },
+    {
+      id: 5,
+      title: "Personal Assistance",
+      description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most."
+    },
+    {
+      id: 6,
+      title: "Customer Service Support",
+      description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels."
+    }
+  ];
 
 
   const containerVariants = {
@@ -90,10 +76,10 @@ const FeaturedProjects = () => {
           className="text-center mb-16">
 
           <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-            Featured <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+            Snap Into <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Effortless Support</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Discover how we've transformed ideas into powerful digital solutions that drive real business results.
+            From business admin to personal tasks, our Virtual Assistants help you stay organised, efficient, and stress-free -- every day.
           </p>
         </motion.div>
 
@@ -102,35 +88,28 @@ const FeaturedProjects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-12 items-center">
+          className="grid lg:grid-cols-[30%_70%] gap-12">
 
           {/* Project Navigation */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-3">
             {projects?.map((project, index) =>
             <motion.div
               key={project?.id}
               onClick={() => setActiveProject(index)}
-              className={`p-6 rounded-xl cursor-pointer transition-all duration-300 ${
+              className={`p-3 cursor-pointer transition-all duration-300 ${
               activeProject === index ?
-              'bg-card shadow-medium border-l-4 border-primary' :
-              'bg-background hover:bg-card hover:shadow-subtle'}`
+              'border-l-4 border-[#01d639]' :
+              ''}`
               }
               whileHover={{ x: 5 }}>
 
                 <div className="flex items-start space-x-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${project?.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                    <span className="text-white font-bold text-lg">{index + 1}</span>
-                  </div>
                   <div className="flex-1">
-                    <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
-                  activeProject === index ? 'text-primary' : 'text-text-primary'}`
+                    <h3 className={`text-med font-semibold transition-colors duration-300 ${
+                  activeProject === index ? 'text-text-primary' : 'text-primary'}`
                   }>
                       {project?.title}
                     </h3>
-                    <p className="text-sm text-accent font-medium mb-2">{project?.category}</p>
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                      {project?.description}
-                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -146,44 +125,11 @@ const FeaturedProjects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6 }}
-                className="bg-card rounded-2xl overflow-hidden shadow-strong">
+                className="">
 
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={projects?.[activeProject]?.image}
-                    alt={projects?.[activeProject]?.imageAlt}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-xl font-semibold mb-2">
-                      {projects?.[activeProject]?.title}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {projects?.[activeProject]?.technologies?.map((tech, index) =>
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
-
-                          {tech}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Metrics */}
-                <div className="p-6">
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    {Object.entries(projects?.[activeProject]?.metrics)?.map(([key, value], index) =>
-                    <div key={index} className="text-center">
-                        <div className="text-2xl font-bold text-primary mb-1">{value}</div>
-                        <div className="text-xs text-text-secondary capitalize">{key}</div>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <p>
+                    {projects?.[activeProject]?.description}
+                  </p>
               </motion.div>
             </AnimatePresence>
           </motion.div>

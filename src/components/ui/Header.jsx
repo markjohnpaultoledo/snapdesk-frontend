@@ -22,7 +22,7 @@ const Header = () => {
     { name: 'About', path: '/about', icon: 'Users' },
     { name: 'Services', path: '/services', icon: 'Briefcase' },
     // { name: 'Portfolio', path: '/portfolio', icon: 'FolderOpen' },
-    { name: 'Contact', path: '/contact', icon: 'Mail' }
+    //{ name: 'Contact', path: '/contact', icon: 'Mail' }
   ];
 
   const secondaryItems = [
@@ -155,7 +155,7 @@ const Header = () => {
         fixed top-0 left-0 right-0 z-50 transition-all duration-400 organic
         ${isScrolled 
           ? 'bg-background/95 backdrop-blur-md shadow-medium border-b border-border' 
-          : 'bg-transparent'
+          : 'bg-transparent bg-red-600'
         }
       `}
     >
@@ -165,11 +165,11 @@ const Header = () => {
           <Logo />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex items-center space-x-1">
             {navigationItems?.map((item) => (
               <NavLink key={item?.path} item={item} />
             ))}
-            <MoreDropdown />
+            {/* <MoreDropdown /> */}
           </nav>
 
           {/* CTA Button */}
@@ -181,13 +181,6 @@ const Header = () => {
             >
               <Icon name="Calendar" size={16} className="mr-2" />
               Schedule Call
-            </Button>
-            <Button
-              variant="default"
-              size="sm"
-              className="btn-magnetic animate-breathe"
-            >
-              Start Project
             </Button>
           </div>
 

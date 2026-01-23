@@ -1,0 +1,9 @@
+.genericPage {
+    p, li {
+        @apply mb-2;
+    }
+    h3 {
+        @apply text-2xl font-semibold text-text-primary mt-7 mb-3 group-hover:text-primary transition-colors duration-300;
+    }
+}
+

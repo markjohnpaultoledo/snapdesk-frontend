@@ -181,6 +181,28 @@
 
 @layer components {
   /* Button Variants */
+  .btn {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+    @apply hover:shadow-lg hover:-translate-y-0.5;
+    border-radius: 12px!important;
+    &.btn-black {
+      @apply text-white bg-black;
+    }
+    &.btn-brown {
+      @apply text-white bg-[#816042];
+    }
+  }
+  .btn::before {
+    content: '';
+    @apply absolute inset-0  opacity-0;
+    @apply transition-opacity duration-300;
+  }
+  .btn:hover::before {
+    @apply opacity-10;
+  }
+
+  
+
   .btn-magnetic {
     @apply relative overflow-hidden transition-all duration-300 ease-out;
     @apply hover:shadow-lg hover:-translate-y-0.5;

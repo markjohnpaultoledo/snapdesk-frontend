@@ -1,89 +1,118 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 
-
 const HeroSection = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const phrases = [
+    "Technology with Soul",
+    "Digital Experiences that Matter",
+    "Innovation Meets Design",
+    "Your Future Partner"
+  ];
+
+  useEffect(() => {
+    setIsVisible(true);
+    const interval = setInterval(() => {
+      setCurrentPhrase((prev) => (prev + 1) % phrases?.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    }
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      rotate: [0, 2, -2, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-card to-muted">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-trust/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
-      </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-card to-muted">
+      {/* Ambient Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
-        >
-          {/* Main Heading */}
-          <div className="space-y-4">
-            <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-text-primary leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Technology,
-              <span className="block text-primary organic-shape inline-block px-4 py-2 bg-primary/10 rounded-2xl ml-4">
-                Designed to Evolve
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              We are Snapdesk — where cutting-edge innovation meets mindful design, 
-              creating digital experiences that don't just function, but inspire. 
-              The perfect synthesis of technical excellence and human-centered philosophy.
-            </motion.p>
-          </div>
-
-          {/* Stats Grid */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            {[
-              { number: "500+", label: "Careers Combined Projects Delivered", icon: "Rocket" },
-              { number: "50+", label: "Careers Combined Happy Clients ", icon: "Heart" },
-              { number: "25", label: "Years Experience", icon: "Calendar" },
-              { number: "20+", label: "Team Members", icon: "Users" }
-            ]?.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <Icon name={stat?.icon} size={24} className="text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-text-primary mb-2">{stat?.number}</div>
-                <div className="text-sm text-text-secondary font-medium">{stat?.label}</div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            <div className="flex flex-col items-center space-y-2 text-text-secondary">
-              <span className="text-sm font-medium">Discover Our Story</span>
-              <div className="w-6 h-10 border-2 border-text-secondary rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-text-secondary rounded-full mt-2 animate-bounce"></div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+          variants={floatingVariants}
+          animate="animate"
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"
+        />
+        <motion.div
+          variants={floatingVariants}
+          animate="animate"
+          style={{ animationDelay: '2s' }}
+          className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-accent/10 to-trust/10 rounded-full blur-xl"
+        />
+        <motion.div
+          variants={floatingVariants}
+          animate="animate"
+          style={{ animationDelay: '4s' }}
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-trust/10 to-primary/10 rounded-full blur-xl"
+        />
       </div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        {/* Main Heading */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <h1 className="text-5xl sm:text-5xl lg:text-5xl font-bold text-text-primary mb-6 leading-tight">
+            You're reliable support team, in a {' '}
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                snap.
+              </span>
+              <motion.div
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+              />
+            </span>
+          </h1>
+        </motion.div>
+
+        {/* Description */}
+        <motion.div variants={itemVariants} className="mb-12">
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <b>SnapDesk Virtual Solutions</b> helps professionals, entrepreneurs, and businesses of every size unlock growth with dedicated Virtual Assistant and IT services. We streamline day-to-day operations and technology needs with a strong focus on efficiency, confidentiality, and service quality.
+            <br/><br/>
+            Whether you're an executive, a startup founder, or leading a growing team, SnapDesk works as an extension of your business -- delivering reliable, professional support that scales with you, without the overhead of in-house staff.
+          </p>
+          
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
