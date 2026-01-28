@@ -216,7 +216,7 @@ const Footer = () => {
 
             <div className="text-center">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform your Lifestyle? Snap into smarter work with <a className="underline">SnapDesk</a>
+                Ready to Transform your Lifestyle? Snap into smarter work with <a className="underline bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SnapDesk</a>
               </h3>
               {/* <p className="text-gray-200 mb-6 max-w-2xl mx-auto hover:text-white transition-colors duration-300">
                 Let's discuss how we can help you build technology solutions that drive real business results.

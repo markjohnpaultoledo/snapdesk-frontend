@@ -11,6 +11,8 @@ import About from './pages/about';
 import Homepage from './pages/homepage';
 import PrivacyPage from "pages/privacy";
 import TermsAndConditions from "pages/terms-conditions";
+import VirtualAssistantPage from "pages/virtual-assistant";
+import JobDetailsPage from "pages/job-details";
 
 const Routes = () => {
   return (
@@ -22,12 +24,14 @@ const Routes = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/careers/:jobId" element={<JobDetailsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/virtual-assistant" element={<VirtualAssistantPage />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

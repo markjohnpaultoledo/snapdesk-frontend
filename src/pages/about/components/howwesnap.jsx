@@ -110,8 +110,8 @@ const HowWeSnapIn = () => {
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
                         How we <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Snap In</span>
                     </h2>
-                    <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        SnapDesk bridges the gap between Australia and Philippines by delivering tailored Virtual Assistant and IT solutions. We hand-pick, filter, and align talent to your business and lifestyle for seamless support.
+                    <p className="text-xl text-text-secondary">
+                        SnapDesk bridges the gap between Australia and Philippines by delivering tailored Virtual Assistant and IT solutions. <br/>We hand-pick, filter, and align talent to your business and lifestyle for seamless support.
                     </p>
                 </motion.div>
                 
@@ -148,7 +148,7 @@ const HowWeSnapIn = () => {
                                     {/* Project Metrics */}
                                     <div className="py-6">
                                         <div className="">
-                                            <h4 className="text-text-primary text-xl font-semibold mb-2">
+                                            <h4 className="text-primary text-xl font-semibold mb-2">
                                                 { board?.title }
                                             </h4>
                                             <ul className="space-y-2 mb-6">

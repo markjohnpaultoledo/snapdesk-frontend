@@ -38,6 +38,11 @@ const FeaturedProjects = () => {
       id: 6,
       title: "Customer Service Support",
       description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels."
+    },
+    {
+      id: 7,
+      title: "IT & Services",
+      description: "test paragraph here"
     }
   ];
 
@@ -65,7 +70,7 @@ const FeaturedProjects = () => {
   };
 
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -92,6 +97,7 @@ const FeaturedProjects = () => {
 
           {/* Project Navigation */}
           <motion.div variants={itemVariants} className="space-y-3">
+            <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">Core Services</h3>
             {projects?.map((project, index) =>
             <motion.div
               key={project?.id}
@@ -126,10 +132,10 @@ const FeaturedProjects = () => {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6 }}
                 className="">
-
-                <p>
-                    {projects?.[activeProject]?.description}
-                  </p>
+                <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">{projects?.[activeProject]?.title}</h3>
+                <p className="text-text-primary">
+                  {projects?.[activeProject]?.description}
+                </p>
               </motion.div>
             </AnimatePresence>
           </motion.div>
@@ -147,11 +153,11 @@ const FeaturedProjects = () => {
             <Button
               variant="default"
               size="lg"
-              className="btn-magnetic animate-breathe"
+              className="btn-magnetic"
               iconName="ArrowRight"
               iconPosition="right">
 
-              Explore Full Portfolio
+              Explore All Services
             </Button>
           </Link>
         </motion.div>

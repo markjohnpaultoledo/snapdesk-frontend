@@ -91,37 +91,37 @@ const ServicesPreview = () => {
     }
   };
 
-    const HomepageWhyChoose = {
-        title: "Why Choose SnapDesk?",
-        ctaText: "Get Started",
-        ctaButtonColor: "sp",
-        ctaLink: "/virtual-assistant",
-        imageData: [
-            {
-                iconPath: "Home_Flexible_Support.png",
-                title: "Flexible Support",
-                text: "Whether you need part-time or full-time help, our plans fit your schedule and goals."
-            },
-            {
-                iconPath: "Home_Trusted_&_Secure.png",
-                title: "Trusted & Secure",
-                text: "We handle your business with discretion and care, ensuring full confidentiality."
-            },
-            {
-                iconPath: "Home_Efficient_&_Reliable.png",
-                title: "Efficient & Reliable",
-                text: "Get consistent, high-quality support that helps you stay on top of things."
-            },
-            {
-                iconPath: "home-why.png",
-                title: "Boost Productivity",
-                text: "Focus on what matters while we handle the rest"
-            }
-        ]
-    }
+  const HomepageWhyChoose = {
+      title: "Why Choose SnapDesk?",
+      ctaText: "Get Started",
+      ctaButtonColor: "sp",
+      ctaLink: "/virtual-assistant",
+      imageData: [
+          {
+              iconPath: "Home_Flexible_Support.png",
+              title: "Flexible Support",
+              text: "Whether you need part-time or full-time help, our plans fit your schedule and goals."
+          },
+          {
+              iconPath: "Home_Trusted_&_Secure.png",
+              title: "Trusted & Secure",
+              text: "We handle your business with discretion and care, ensuring full confidentiality."
+          },
+          {
+              iconPath: "Home_Efficient_&_Reliable.png",
+              title: "Efficient & Reliable",
+              text: "Get consistent, high-quality support that helps you stay on top of things."
+          },
+          {
+              iconPath: "home-why.png",
+              title: "Boost Productivity",
+              text: "Focus on what matters while we handle the rest"
+          }
+      ]
+  }
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -181,7 +181,7 @@ const ServicesPreview = () => {
         >
           <Link to="/services">
             <Button
-              variant="outline"
+              variant="default"
               size="lg"
               className="btn-magnetic"
               iconName="ArrowRight"

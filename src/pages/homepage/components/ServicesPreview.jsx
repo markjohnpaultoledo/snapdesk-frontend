@@ -91,7 +91,7 @@ const ServicesPreview = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -122,7 +122,7 @@ const ServicesPreview = () => {
             <motion.div
               key={service?.id}
               variants={cardVariants}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated"
+              className="group relative bg-white border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated"
             >
               {/* Icon */}
               {/* <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -166,7 +166,7 @@ const ServicesPreview = () => {
         >
           <Link to="/services">
             <Button
-              variant="outline"
+              variant="default"
               size="lg"
               className="btn-magnetic"
               iconName="ArrowRight"

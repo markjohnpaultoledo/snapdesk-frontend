@@ -43,8 +43,8 @@ const OurValuesSection = () => {
     };
 
     return (
-        <section className="snap_diff">
-            <div className="container">
+        <section className="snap_diff bg-muted py-20 ">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const OurValuesSection = () => {
                     className="text-center mb-5">
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-                        {snapDiffData.title}
+                        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{snapDiffData.title}</span>
                     </h2>
                     <p className="text-lg text-text-primary text-left">
                         {snapDiffData.text}
@@ -92,16 +92,20 @@ const OurValuesSection = () => {
                                 </ul>
                             </div>
                             <div className="snap_brushed">
-                                <h3 className="font-semibold text-text-primary">Discover how <span className="text-brown">SnapDesk</span> can support your business and lifestyle — <span className="text-brown">start with a consultation.</span></h3>
+                                <h3 className="font-semibold text-text-primary">Discover how <span className="text-primary">SnapDesk</span> can support your business and lifestyle — <span className="text-primary">start with a consultation.</span></h3>
                             </div>
                             <div className="snap_action">
-                                <Button
-                                    className="btn btn-brown"
-                                    asChild 
-                                    variant="link"
-                                >
-                                    <a href="/" className='underline-none'>Let's Talk</a>
-                                </Button>
+                                <Link to="/services">
+                                    <Button
+                                        variant="default"
+                                        size="lg"
+                                        className="btn-magnetic"
+                                        iconName="ArrowRight"
+                                        iconPosition="right"
+                                    >
+                                        Let's Talk
+                                    </Button>
+                                </Link>
                             </div>
                         </AnimatePresence>
                     </motion.div>

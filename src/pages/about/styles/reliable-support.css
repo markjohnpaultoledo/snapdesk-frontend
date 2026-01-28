@@ -4,14 +4,12 @@
         margin-top: 44px;
         h3 {
             position: relative;
-            padding: 24px 0;
+            /* padding: 24px 0; */
             display: inline-block;
             font-size: 20px;
             line-height: 28px;
-            span {
-                color: #816042;
-            }
-            &::before {
+            
+            /* &::before {
                 height: 16px;
                 width: 282px;
                 background: url("../../../../public/assets/images/green-brush.png") no-repeat;
@@ -29,7 +27,7 @@
                 right: 0;
                 content: '';
                 transform: scaleX(-1);
-            }
+            } */
         }
     }
     &_action {

@@ -20,14 +20,14 @@ const Header = () => {
   const navigationItems = [
     { name: 'Home', path: '/homepage', icon: 'Home' },
     { name: 'About', path: '/about', icon: 'Users' },
-    { name: 'Services', path: '/services', icon: 'Briefcase' },
+    //{ name: 'Services', path: '/services', icon: 'Briefcase' },
     // { name: 'Portfolio', path: '/portfolio', icon: 'FolderOpen' },
     //{ name: 'Contact', path: '/contact', icon: 'Mail' }
   ];
 
   const secondaryItems = [
-    { name: 'Insights', path: '/insights', icon: 'BookOpen' },
-    { name: 'Careers', path: '/careers', icon: 'Users' }
+    { name: 'Virtual Assistant', path: '/virtual-assistant', icon: 'BookOpen' },
+    { name: 'IT and Business Services', path: '/careers', icon: 'Users' }
   ];
 
   const isActivePath = (path) => {
@@ -116,8 +116,8 @@ const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center space-x-1 px-3 py-2 text-text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-primary/5"
         >
-          <Icon name="MoreHorizontal" size={16} />
-          <span className="font-medium text-sm">More</span>
+          <Icon name="Briefcase" size={16} />
+          <span className="font-medium text-sm">Services</span>
         </button>
         {isOpen && (
           <>
@@ -155,7 +155,7 @@ const Header = () => {
         fixed top-0 left-0 right-0 z-50 transition-all duration-400 organic
         ${isScrolled 
           ? 'bg-background/95 backdrop-blur-md shadow-medium border-b border-border' 
-          : 'bg-transparent bg-red-600'
+          : 'bg-[#f6f4f1] '
         }
       `}
     >
@@ -169,7 +169,7 @@ const Header = () => {
             {navigationItems?.map((item) => (
               <NavLink key={item?.path} item={item} />
             ))}
-            {/* <MoreDropdown /> */}
+            <MoreDropdown />
           </nav>
 
           {/* CTA Button */}

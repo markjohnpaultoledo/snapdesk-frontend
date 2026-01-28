@@ -91,7 +91,7 @@ const HeroSection = () => {
             You're reliable support team, in a {' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                snap.
+                Snap.
               </span>
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
@@ -105,7 +105,7 @@ const HeroSection = () => {
 
         {/* Description */}
         <motion.div variants={itemVariants} className="mb-12">
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-text-secondary  mx-auto leading-relaxed">
             <b>SnapDesk Virtual Solutions</b> helps professionals, entrepreneurs, and businesses of every size unlock growth with dedicated Virtual Assistant and IT services. We streamline day-to-day operations and technology needs with a strong focus on efficiency, confidentiality, and service quality.
             <br/><br/>
             Whether you're an executive, a startup founder, or leading a growing team, SnapDesk works as an extension of your business -- delivering reliable, professional support that scales with you, without the overhead of in-house staff.

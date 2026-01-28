@@ -17,7 +17,7 @@ const CallToAction = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-14 bg-background relative overflow-hidden">
+    <section className="py-20 lg:py-14 bg-[#fafafa] relative overflow-hidden">
       {/* Background Elements */}
       
       <div className="relative z-10 max-w-[calc(80rem+240px)] mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,8 +32,8 @@ const CallToAction = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className={`bg-[#fbfaf2] p-8 h-full flex flex-col justify-between mt-4 border-2 rounded-2xl border-[#816042] ${index % 2 == 0  ? 'mr-[120px]' : 'ml-[120px]'}`}>
-                <div className="flex-1 mb-8">
+              <div className={`group relative bg-white border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated mb-10`}>
+                <div className="flex-1">
                   <h3 className={`text-2xl font-bold text-text-primary mb-2  transition-colors duration-300`}>
                     {board?.title}
                   </h3>
@@ -42,6 +42,7 @@ const CallToAction = () => {
                   </p>
                 </div>
               </div>
+              
             </motion.div>
           ))}
         </div>

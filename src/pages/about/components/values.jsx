@@ -55,7 +55,7 @@ const OurValuesSection = () => {
     };
 
     return (
-        <section className="py-20 bg-muted">
+        <section className="py-20 bg-[#fafafa]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <motion.div
@@ -68,8 +68,8 @@ const OurValuesSection = () => {
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
                         What We Stand For
                     </h2>
-                    <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        At SnapDesk, our values guide every decision we make and every service we deliver. They reflect who we are, how we work, and the standard of support our clients can always expect.
+                    <p className="text-xl text-text-secondary">
+                        At SnapDesk, our values guide every decision we make and every service we deliver.<br/> They reflect who we are, how we work, and the standard of support our clients can always expect.
                     </p>
                 </motion.div>
 
@@ -92,7 +92,7 @@ const OurValuesSection = () => {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: 0 }}
                                         transition={{ duration: 0.6, delay: (ind + 1) * 0.3}}
-                                        className="bg-card rounded-xl overflow-hidden py-6 w-[calc(33.3%-53.3px)]"
+                                        className="bg-[#fafafa] rounded-xl overflow-hidden py-6 w-[calc(33.3%-53.3px)]"
                                         
                                     >
                                         {/* Project Metrics */}
