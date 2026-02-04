@@ -31,7 +31,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 5,
-      title: "Executive Personal Assistance",
+      title: "Personal Assistance",
       description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most."
     },
     {
@@ -145,6 +145,24 @@ const FeaturedProjects = () => {
                   <p className="text-text-secondary leading-relaxed">
                     {projects?.[activeProject]?.description}
                   </p>
+                  {projects?.[activeProject]?.title === 'Technology Solutions' && (
+                    <div className="mt-6">
+                      <Button
+                        asChild
+                        variant="default"
+                        size="sm"
+                        className="btn-magnetic"
+                      >
+                        <a
+                          href="https://d1lboxisk6b6d0.cloudfront.net/services"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Go to IT Services
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </div>
                 <div className="w-full md:w-[45%]">
                   <div className="h-48 md:h-full min-h-[180px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
