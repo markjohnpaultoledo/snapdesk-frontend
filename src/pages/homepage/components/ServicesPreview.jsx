@@ -116,13 +116,13 @@ const ServicesPreview = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 mb-16"
         >
           {services?.map((service) => (
             <motion.div
               key={service?.id}
               variants={cardVariants}
-              className="group relative bg-white border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated"
+              className="group relative bg-white border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-center"
             >
               {/* Icon */}
               {/* <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
