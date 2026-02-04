@@ -9,7 +9,7 @@ import BenefitsSection from './components/BenefitsSection';
 import ApplicationProcess from './components/ApplicationProcess';
 import Footer from 'components/ui/Footer';
 import HeroBanner from './components/banner';
-import JobListing from "./components/JobListing";
+import JobListing from "./components/JobListings";
 
 const CareersPage = () => {
   useEffect(() => {
