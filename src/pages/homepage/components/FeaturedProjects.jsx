@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Image from '../../../components/AppImage';
-
+import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const FeaturedProjects = () => {
@@ -31,7 +31,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 5,
-      title: "Personal Assistance",
+      title: "Executive Personal Assistance",
       description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most."
     },
     {
@@ -41,8 +41,8 @@ const FeaturedProjects = () => {
     },
     {
       id: 7,
-      title: "IT & Services",
-      description: "test paragraph here"
+      title: "Technology Solutions",
+      description: "Create seamless digital experiences — powered by strategy, AI, and modern digital solutions."
     }
   ];
 
@@ -97,7 +97,12 @@ const FeaturedProjects = () => {
 
           {/* Project Navigation */}
           <motion.div variants={itemVariants} className="space-y-3">
-            <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">Core Services</h3>
+            <h3 className="text-2xl font-semibold text-text-primary mb-4 text-center group-hover:text-primary transition-colors duration-300">
+              <span className="inline-flex items-center justify-center gap-2">
+                Core Services
+                <Icon name="Globe" size={20} className="text-primary motion-safe:animate-spin" aria-hidden="true" />
+              </span>
+            </h3>
             {projects?.map((project, index) =>
             <motion.div
               key={project?.id}
@@ -131,11 +136,21 @@ const FeaturedProjects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6 }}
-                className="">
-                <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">{projects?.[activeProject]?.title}</h3>
-                <p className="text-text-primary">
-                  {projects?.[activeProject]?.description}
-                </p>
+                className="bg-white border border-border rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-stretch min-h-[240px]"
+              >
+                <div className="flex-1">
+                  <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
+                    {projects?.[activeProject]?.title}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {projects?.[activeProject]?.description}
+                  </p>
+                </div>
+                <div className="w-full md:w-[45%]">
+                  <div className="h-48 md:h-full min-h-[180px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
+                    Image Placeholder
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
           </motion.div>
