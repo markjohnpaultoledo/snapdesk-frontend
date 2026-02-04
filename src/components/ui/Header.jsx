@@ -27,7 +27,12 @@ const Header = () => {
 
   const secondaryItems = [
     { name: 'Virtual Assistant', path: '/virtual-assistant', icon: 'BookOpen' },
-    { name: 'IT and Business Services', path: '/careers', icon: 'Users' }
+    {
+      name: 'IT and Business Solutions',
+      path: 'https://d1lboxisk6b6d0.cloudfront.net/',
+      icon: 'Users',
+      external: true
+    }
   ];
 
   const isActivePath = (path) => {
@@ -81,31 +86,59 @@ const Header = () => {
     </Link>
   );
 
-  const NavLink = ({ item, isMobile = false }) => (
-    <Link
-      to={item?.path}
-      className={`
-        group relative flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300
-        ${isMobile ? 'w-full justify-start' : ''}
-        ${isActivePath(item?.path) 
-          ? 'text-primary bg-primary/5' :'text-text-secondary hover:text-primary hover:bg-primary/5'
-        }
-      `}
-      onClick={() => isMobile && setIsMobileMenuOpen(false)}
-    >
-      <Icon 
-        name={item?.icon} 
-        size={16} 
-        className={`transition-colors duration-300 ${
-          isActivePath(item?.path) ? 'text-primary' : 'text-text-secondary group-hover:text-primary'
-        }`}
-      />
-      <span className="font-medium text-sm">{item?.name}</span>
-      {isActivePath(item?.path) && (
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
-      )}
-    </Link>
-  );
+  const NavLink = ({ item, isMobile = false }) => {
+    const baseClasses = `
+      group relative flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300
+      ${isMobile ? 'w-full justify-start' : ''}
+      ${isActivePath(item?.path)
+        ? 'text-primary bg-primary/5'
+        : 'text-text-secondary hover:text-primary hover:bg-primary/5'
+      }
+    `;
+
+    const content = (
+      <>
+        <Icon
+          name={item?.icon}
+          size={16}
+          className={`transition-colors duration-300 ${
+            isActivePath(item?.path)
+              ? 'text-primary'
+              : 'text-text-secondary group-hover:text-primary'
+          }`}
+        />
+        <span className="font-medium text-sm">{item?.name}</span>
+        {isActivePath(item?.path) && (
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
+        )}
+      </>
+    );
+
+    if (item?.external) {
+      return (
+        <a
+          href={item?.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={baseClasses}
+          onClick={() => isMobile && setIsMobileMenuOpen(false)}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        to={item?.path}
+        className={baseClasses}
+        onClick={() => isMobile && setIsMobileMenuOpen(false)}
+      >
+        {content}
+      </Link>
+    );
+  };
+
 
   const MoreDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -126,22 +159,40 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
             ></div>
             <div className="absolute right-0 top-full mt-2 w-48 bg-popover border border-border rounded-lg shadow-strong z-50 py-2">
-              {secondaryItems?.map((item) => (
-                <Link
-                  key={item?.path}
-                  to={item?.path}
-                  className={`
-                    flex items-center space-x-3 px-4 py-2 text-sm transition-colors duration-200
-                    ${isActivePath(item?.path) 
-                      ? 'text-primary bg-primary/5' :'text-text-secondary hover:text-primary hover:bg-primary/5'
-                    }
-                  `}
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Icon name={item?.icon} size={16} />
-                  <span>{item?.name}</span>
-                </Link>
-              ))}
+              {secondaryItems?.map((item) =>
+                item?.external ? (
+                  <a
+                    key={item?.path}
+                    href={item?.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      flex items-center space-x-3 px-4 py-2 text-sm transition-colors duration-200
+                      text-text-secondary hover:text-primary hover:bg-primary/5
+                    `}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Icon name={item?.icon} size={16} />
+                    <span>{item?.name}</span>
+                  </a>
+                ) : (
+                  <Link
+                    key={item?.path}
+                    to={item?.path}
+                    className={`
+                      flex items-center space-x-3 px-4 py-2 text-sm transition-colors duration-200
+                      ${isActivePath(item?.path)
+                        ? 'text-primary bg-primary/5'
+                        : 'text-text-secondary hover:text-primary hover:bg-primary/5'
+                      }
+                    `}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Icon name={item?.icon} size={16} />
+                    <span>{item?.name}</span>
+                  </Link>
+                )
+              )}
             </div>
           </>
         )}
@@ -174,15 +225,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              className="btn-magnetic"
-            >
-              <Icon name="Calendar" size={16} className="mr-2" />
-              Schedule Call
-            </Button>
-          </div>
+                  <Link to="/contact">
+                    <Button variant="outline" size="sm" className="btn-magnetic">
+                      <Icon name="Calendar" size={16} className="mr-2" />
+                      Schedule Call
+                    </Button>
+                  </Link>
+              </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -213,22 +262,13 @@ const Header = () => {
                   <NavLink key={item?.path} item={item} isMobile />
                 ))}
               </div>
-              <div className="border-t border-border pt-4 mt-4 space-y-3">
-                <Button
-                  variant="outline"
-                  fullWidth
-                  className="justify-center"
-                >
-                  <Icon name="Calendar" size={16} className="mr-2" />
-                  Schedule Call
-                </Button>
-                <Button
-                  variant="default"
-                  fullWidth
-                  className="justify-center animate-breathe"
-                >
-                  Start Project
-                </Button>
+              <div className="hidden md:flex items-center space-x-4">
+                  <Link to="/contact">
+                    <Button variant="outline" size="sm" className="btn-magnetic">
+                      <Icon name="Calendar" size={16} className="mr-2" />
+                      Schedule Call
+                    </Button>
+                  </Link>
               </div>
             </nav>
           </div>

@@ -95,7 +95,7 @@ const OurValuesSection = () => {
                                 <h3 className="font-semibold text-text-primary">Discover how <span className="text-primary">SnapDesk</span> can support your business and lifestyle — <span className="text-primary">start with a consultation.</span></h3>
                             </div>
                             <div className="snap_action">
-                                <Link to="/services">
+                                <Link to="/contact">
                                     <Button
                                         variant="default"
                                         size="lg"

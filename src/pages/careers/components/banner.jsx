@@ -64,7 +64,7 @@ const HeroBanner = () => {
       <div className="flex flex-wrap min-h-[450px] relative items-end py-[50px]">
           <div className="absolute top-0 bottom-0 left-0 right-0">
               <Image
-                  src={`/assets/images/home-hero-banner.png`}
+                  src={`/assets/images/careers-hero-banner.jpg`}
                   width={1200}
                   height={600}
                   alt="banner image"

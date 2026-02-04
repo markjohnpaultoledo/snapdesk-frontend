@@ -149,7 +149,7 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-16">
 
-          <Link to="/portfolio">
+          <Link to="/virtual-assistant">
             <Button
               variant="default"
               size="lg"

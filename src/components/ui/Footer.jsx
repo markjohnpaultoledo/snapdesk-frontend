@@ -22,14 +22,14 @@ const Footer = () => {
       { name: "About SnapDesk", href: "/about" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms & Conditions", href: "/terms-and-conditions" },
-      // { name: "Careers", href: "/contact" }
+      { name: "Careers", href: "/careers" }
     ]
   },
   {
     title: "Contact Us",
     links: [
-      { name: "Book a consultation", href: "/virtual-assistant" },
-      { name: "Looking for a job", href: "/virtual-assistant" }
+      { name: "Book a consultation", href: "/contact" },
+      // { name: "Looking for a job", href: "/virtual-assistant" }
     ]
   }
 ];
@@ -231,6 +231,7 @@ const Footer = () => {
 
                   Start Your Project
                 </Button> */}
+                <Link to="/contact">
                 <Button
                   variant="outline"
                   size="lg"
@@ -240,6 +241,7 @@ const Footer = () => {
 
                   Schedule Consultation
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

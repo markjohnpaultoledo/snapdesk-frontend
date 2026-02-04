@@ -128,7 +128,7 @@ const HowItWorks = () => {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="text-center mt-5"
                 >
-                    <Link to="/services">
+                    <Link to="/contact">
                         <Button
                             variant="default"
                             size="lg"

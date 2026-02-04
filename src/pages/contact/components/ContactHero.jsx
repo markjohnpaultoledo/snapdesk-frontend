@@ -60,9 +60,9 @@ const ContactHero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight"
           >
-            Your Technology Partner
+            Snap Into Growth with
             <br />
-            <span className="text-primary">for the Future</span>
+            <span className="text-primary">SnapDesk</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -84,7 +84,7 @@ const ContactHero = () => {
             className="flex flex-wrap justify-center items-center gap-8 pt-8"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">24h</div>
+              {/* <div className="text-2xl font-bold text-primary">24h</div>
               <div className="text-sm text-text-secondary">Response Time</div>
             </div>
             <div className="w-px h-8 bg-border hidden sm:block"></div>
@@ -95,7 +95,7 @@ const ContactHero = () => {
             <div className="w-px h-8 bg-border hidden sm:block"></div>
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">98%</div>
-              <div className="text-sm text-text-secondary">Client Satisfaction</div>
+              <div className="text-sm text-text-secondary">Client Satisfaction</div> */}
             </div>
           </motion.div>
         </motion.div>
