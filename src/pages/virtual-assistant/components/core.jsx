@@ -207,7 +207,7 @@ const CoreSection = () => {
                     className="text-center mb-16">
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-                        Featured <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+                        Core <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
                     </h2>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
                         Discover how we've transformed ideas into powerful digital solutions that drive real business results.
@@ -318,7 +318,7 @@ const CoreSection = () => {
                             iconName="ArrowRight"
                             iconPosition="right">
 
-                            Explore Full Portfolio
+                            Got Questions? Let's Connect!
                         </Button>
                     </Link>
                 </motion.div>

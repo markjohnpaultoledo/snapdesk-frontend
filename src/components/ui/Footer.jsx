@@ -11,8 +11,8 @@ const Footer = () => {
   {
     title: "Services",
     links: [
-      { name: "Virtual Assistance", href: "/services" },
-      { name: "Information Technology", href: "/services" }
+      { name: "Virtual Assistance", href: "/virtual-assistant" },
+      { name: "Technology Solutions", href: "/services" }
     ]
 
   },
@@ -22,14 +22,14 @@ const Footer = () => {
       { name: "About SnapDesk", href: "/about" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms & Conditions", href: "/terms-and-conditions" },
-      { name: "Careers", href: "/contact" }
+      // { name: "Careers", href: "/contact" }
     ]
   },
   {
     title: "Contact Us",
     links: [
-      { name: "Book a consultation", href: "/portfolio" },
-      { name: "Looking for a job", href: "/portfolio" }
+      { name: "Book a consultation", href: "/virtual-assistant" },
+      { name: "Looking for a job", href: "/virtual-assistant" }
     ]
   }
 ];

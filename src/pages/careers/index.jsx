@@ -19,14 +19,14 @@ const CareersPage = () => {
   return (
     <>
       <Helmet>
-        <title>Careers - Join Our Creative Technology Team | Snapdesk</title>
+        <title>Snap Into Growth with SnapDesk</title>
         <meta 
           name="description" 
-          content="Join Snapdesk's team of creative technologists. Explore career opportunities where technical excellence meets creative vision. Build Technology, Designed to Evolve." 
+          content="We make your workday simpler — with reliable Virtual Assistants and IT support tailored to your needs." 
         />
-        <meta name="keywords" content="careers, jobs, creative technologist, react developer, designer, remote work, tech startup" />
-        <meta property="og:title" content="Careers - Join Our Creative Technology Team | Snapdesk" />
-        <meta property="og:description" content="Join Snapdesk's team of creative technologists. Explore career opportunities where technical excellence meets creative vision." />
+        <meta name="keywords" content="virtual assistant, va, remote work, flexible schedule, customer service, support, tech support, virtual assistant jobs" />
+        <meta property="og:title" content="Snap Into Growth with SnapDesk" />
+        <meta property="og:description" content="We make your workday simpler — with reliable Virtual Assistants and IT support tailored to your needs." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/careers" />
       </Helmet>

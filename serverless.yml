@@ -1,4 +1,4 @@
-service: snapdesk-tech
+service: snapdesk-ui
 
 frameworkVersion: "3"
 
@@ -65,7 +65,7 @@ provider:
 
 functions:
   frontend:
-    image: ${env:AWS_ACCOUNT_ID}.dkr.ecr.${opt:region, self:provider.region}.amazonaws.com/snapdesk-tech:sls-latest
+    image: ${env:AWS_ACCOUNT_ID}.dkr.ecr.${opt:region, self:provider.region}.amazonaws.com/snapdesk:sls-latest
     events:
       - httpApi:
           path: /{proxy+}
