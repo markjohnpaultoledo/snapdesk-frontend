@@ -101,8 +101,8 @@ const ContactPage = () => {
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
-                  <h4 className="text-lg font-bold text-text-primary mb-4">
+                {/* <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8"> */}
+                  {/* <h4 className="text-lg font-bold text-text-primary mb-4">
                     Why Choose Snapdesk?
                   </h4>
                   <div className="space-y-3">
@@ -129,9 +129,9 @@ const ContactPage = () => {
                       <span className="text-text-secondary text-sm">
                         Enterprise-grade security & compliance
                       </span>
-                    </div>
-                  </div>
-                </div>
+                    </div> */}
+                  {/* </div> */}
+                {/* </div> */}
               </motion.div>
             </div>
           </div>

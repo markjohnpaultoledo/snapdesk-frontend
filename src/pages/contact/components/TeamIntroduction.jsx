@@ -127,7 +127,7 @@ const TeamIntroduction = () => {
         </div>
 
         {/* Team Stats */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -151,7 +151,7 @@ const TeamIntroduction = () => {
               <div className="text-text-secondary text-sm">Average Response Time</div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>);
 
