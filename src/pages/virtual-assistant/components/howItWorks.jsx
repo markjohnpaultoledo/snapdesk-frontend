@@ -77,13 +77,13 @@ const HowItWorks = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-4 gap-5"
+                    className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-5 md:overflow-visible md:pb-0"
                 >
                     {HowItWorksData?.map((card, ind) => (
                         <motion.div
                             key={ind}
                             variants={cardVariants}
-                            className="group text-center relative bg-[#fbfaf2] border-2 border-border border-[#7e7e7d] rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5"
+                            className="group text-center relative bg-[#fbfaf2] border-2 border-border border-[#7e7e7d] rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5 min-w-[80%] sm:min-w-[65%] md:min-w-0 snap-center"
                         >
                             <Image
                                 src={`/assets/images/${card.img}`}

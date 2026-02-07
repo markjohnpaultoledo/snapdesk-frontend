@@ -31,6 +31,7 @@ const Packages = () => {
       id: 2,
       title: "Growth Package",
       description: "Starts at $",
+      isPopular: true,
       features: [
         {
           title: "4hrs per day",
@@ -93,8 +94,8 @@ const Packages = () => {
 
   return (
     <section className="bg-background">
-        <div className="flex flex-wrap justify-start">
-            <div className="w-[40%]">
+        <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-[40%]">
                 <Image 
                     src={`/assets/images/select-package.png`}
                     width={1200}
@@ -103,7 +104,7 @@ const Packages = () => {
                     className="w-full h-full object-cover"
                 />
             </div>
-            <div className="p-10 w-[60%]">
+            <div className="p-6 sm:p-10 w-full lg:w-[60%]">
                 {/* Section Header */}
                 <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -127,14 +128,21 @@ const Packages = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-3 gap-5"
+                className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0"
                 >
                 {services?.map((service) => (
                     <motion.div
                     key={service?.id}
                     variants={cardVariants}
-                    className="group relative bg-white border border-border rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5"
+                    className={`group relative bg-white border rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5 min-w-[80%] sm:min-w-[65%] md:min-w-0 snap-center pt-7 ${service?.isPopular ? 'border-primary shadow-strong ring-1 ring-primary/20' : 'border-border'}`}
                     >
+                    {service?.isPopular && (
+                      <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2">
+                        <span className="inline-flex rounded-full bg-text-primary px-4 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
                     {/* Icon */}
                     {/* <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         <Icon name={service?.icon} size={28} className="text-white" />

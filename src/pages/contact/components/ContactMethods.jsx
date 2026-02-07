@@ -70,14 +70,14 @@ const ContactMethods = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 md:overflow-visible md:pb-0">
           {contactMethods?.map((method, index) => (
             <motion.div
               key={method?.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card rounded-xl p-6 text-center space-y-4 card-elevated group hover:shadow-strong transition-all duration-300"
+              className="bg-card rounded-xl p-6 text-center space-y-4 card-elevated group hover:shadow-strong transition-all duration-300 min-w-[80%] sm:min-w-[60%] md:min-w-0 snap-center"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors duration-300">
                 <Icon 

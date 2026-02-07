@@ -262,13 +262,13 @@ const Header = () => {
                   <NavLink key={item?.path} item={item} isMobile />
                 ))}
               </div>
-              <div className="hidden md:flex items-center space-x-4">
-                  <Link to="/contact">
-                    <Button variant="outline" size="sm" className="btn-magnetic">
-                      <Icon name="Calendar" size={16} className="mr-2" />
-                      Schedule Call
-                    </Button>
-                  </Link>
+              <div className="flex items-center">
+                <Link to="/contact" className="w-full">
+                  <Button variant="outline" size="sm" className="btn-magnetic w-full">
+                    <Icon name="Calendar" size={16} className="mr-2" />
+                    Schedule Call
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>

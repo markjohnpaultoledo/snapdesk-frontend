@@ -30,6 +30,7 @@ const ServicesPreview = () => {
       id: 2,
       title: "Growth Package",
       description: "Starts at $",
+      isPopular: true,
       features: [
         {
           title: "4hrs per day",
@@ -122,8 +123,15 @@ const ServicesPreview = () => {
             <motion.div
               key={service?.id}
               variants={cardVariants}
-              className="group relative bg-white border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-center"
-            >
+              className={`group relative bg-white border rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5 min-w-[80%] sm:min-w-[65%] md:min-w-0 snap-center ${service?.isPopular ? 'border-primary shadow-strong ring-1 ring-primary/20' : 'border-border'}`}
+                    >
+                    {service?.isPopular && (
+                      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                        <span className="rounded-full bg-text-primary px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
               {/* Icon */}
               {/* <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <Icon name={service?.icon} size={28} className="text-white" />

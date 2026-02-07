@@ -65,14 +65,14 @@ const TeamIntroduction = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible md:pb-0">
           {teamMembers?.map((member, index) =>
           <motion.div
             key={member?.id}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-card rounded-xl overflow-hidden card-elevated group">
+            className="bg-card rounded-xl overflow-hidden card-elevated group min-w-[75%] sm:min-w-[55%] md:min-w-0 snap-center">
 
               {/* Profile Image */}
               <div className="relative overflow-hidden">
