@@ -175,10 +175,10 @@ const FeaturedProjects = () => {
                     <Image
                       src={projects?.[activeProject]?.image}
                       alt={projects?.[activeProject]?.title}
-                      className="h-48 md:h-full min-h-[180px] w-full object-cover rounded-xl border border-border"
+                      className="h-56 md:h-72 w-full object-cover rounded-xl border border-border"
                     />
                   ) : (
-                    <div className="h-48 md:h-full min-h-[180px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
+                    <div className="h-56 md:h-72 bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
                       Image Placeholder
                     </div>
                   )}
