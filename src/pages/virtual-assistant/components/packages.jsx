@@ -10,61 +10,40 @@ const Packages = () => {
     {
       id: 1,
       title: "Starter Package",
-      description: "Starts at $",
+      description: "Full-time monthly package starts at $2,500",
+      details: "It is designed for clients who need general support on administrative and operational tasks.",
       features: [
-        {
-          title: "4hrs per day",
-          text: "Efficient support for essential admin such as inbox, scheduling, and routine organisation."
-        },
-        {
-          title: "6hrs per day",
-          text: "Enhanced support covering admin, research, coordination, and daily task management."
-        },
-        {
-          title: "8hrs per day",
-          text: "Reliable full-day assistance to keep your admin and workflow running smoothly."
-        },
+        "Email management",
+        "Calendar scheduling",
+        "Data entry",
+        "Internet research",
       ],
       color: "from-accent to-accent/80"
     },
     {
       id: 2,
       title: "Growth Package",
-      description: "Starts at $",
+      description: "Full-time monthly package starts at $3,500",
+      details: "It is designed for clients who need support on more complex tasks and coordination on small projects.",
       isPopular: true,
       features: [
-        {
-          title: "4hrs per day",
-          text: "Structured support for growing teams needing consistent daily organisation."
-        },
-        {
-          title: "6hrs per day",
-          text: "Balanced assistance across admin, documentation, research, and client engagement."
-        },
-        {
-          title: "8hrs per day",
-          text: "Robust coverage for busy teams requiring admin, operations help, and day-to-day oversight."
-        },
+        "Administrative support and advanced scheduling",
+        "CRM updates and client communications",
+        "Basic bookkeeping or invoicing",
+        "Small project coordination",
       ],
       color: "from-primary to-primary/80"
     },
     {
       id: 3,
       title: "Enterprise Package",
-      description: "Starts at $",
+      description: "Let's discuss to customize your package.",
+      details: "It is designed for clients who want high-touch, dedicated support that is capable of managing complex tasks, streamlining operations, and contributing to strategic business growth.",
       features: [
-        {
-          title: "4hrs per day",
-          text: "Ideal for high-level coordination and specialised admin requirements."
-        },
-        {
-          title: "6hrs per day",
-          text: "Strong operational support including client management, reporting, and process-driven tasks."
-        },
-        {
-          title: "8hrs per day",
-          text: "End-to-end support for complex workflows, executive admin, operations, and high-volume tasks."
-        },
+        "Strategic project management",
+        "Team coordination",
+        "Advanced reporting & analytics",
+        "Automation support",
       ],
       color: "from-trust to-trust/80"
     }
@@ -152,19 +131,22 @@ const Packages = () => {
                     <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                         {service?.title}
                     </h3>
-                    <p className="text-text-secondary mb-6 leading-relaxed">
+                    <p className="text-text-secondary mb-3 leading-relaxed font-medium text-base">
                         {service?.description}
+                    </p>
+                    <p className="text-text-secondary mb-5 leading-relaxed">
+                        {service?.details}
                     </p>
 
                     {/* Features */}
+                    <p className="text-text-primary font-semibold mb-3">
+                      Services May Include, But Are Not Limited To:
+                    </p>
                     <ul className="space-y-2 mb-6">
                         {service?.features?.map((feature, index) => (
                         <li key={index} className="flex items-start text-sm text-text-secondary">
                             <Icon name="Check" size={16} className="text-primary mr-3 flex-shrink-0 mt-1" />
-                            <div>
-                            <h4 className='text-lg font-semibold text-text-primary'>{feature?.title}</h4>
-                            <p className='text-sm'>{feature?.text}</p>
-                            </div>
+                            <p className='text-sm'>{feature}</p>
                         </li>
                         ))}
                     </ul>
