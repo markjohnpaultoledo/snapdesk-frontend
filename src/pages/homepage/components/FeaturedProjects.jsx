@@ -12,32 +12,38 @@ const FeaturedProjects = () => {
     {
       id: 1,
       title: "Time & Communication Management",
-      description: "Seamlessly manage schedules, inboxes, and client communications to keep your day running with clarity and precision."
+      description: "Seamlessly manage schedules, inboxes, and client communications to keep your day running with clarity and precision.",
+      image: "https://drive.google.com/thumbnail?id=1lPnieanu00Ye4cZHYL3leFf-qbTLk4SO&sz=w1600"
     },
     {
       id: 2,
       title: "Data Management & Research Support",
-      description: "Deliver structured data handling, documentation, and research that ensures accuracy, efficiency, and informed decision-making."
+      description: "Deliver structured data handling, documentation, and research that ensures accuracy, efficiency, and informed decision-making.",
+      image: "https://drive.google.com/thumbnail?id=1tP5AUkKzDnWaay2PljwI6PN1XOdlMejI&sz=w1600"
     },
     {
       id: 3,
       title: "Operations & Team Support",
-      description: "Strengthen business performance through streamlined processes, project coordination, and reliable operational support."
+      description: "Strengthen business performance through streamlined processes, project coordination, and reliable operational support.",
+      image: "https://drive.google.com/thumbnail?id=1ajLNCjJD4zHFtXwSo4l0PGmpFKvSOptm&sz=w1600"
     },
     {
       id: 4,
       title: "Bookkeeping & Financial Support",
-      description: "Maintain financial accuracy and compliance with reliable bookkeeping, payroll assistance, and clear financial reporting."
+      description: "Maintain financial accuracy and compliance with reliable bookkeeping, payroll assistance, and clear financial reporting.",
+      image: "https://drive.google.com/thumbnail?id=1r2aFpSz8ey6ofy8gdrGqnpzw8Dwmo0_e&sz=w1600"
     },
     {
       id: 5,
       title: "Personal Assistance",
-      description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most."
+      description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most.",
+      image: "https://drive.google.com/thumbnail?id=1i7GOYxH_u-Q5GFAjrKhD-WhsASX_GdSI&sz=w1600"
     },
     {
       id: 6,
       title: "Customer Service Support",
-      description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels."
+      description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels.",
+      image: "https://drive.google.com/thumbnail?id=16HEh9ZWssgtYKjfWSLsF-0F8kYizRKYl&sz=w1600"
     },
     {
       id: 7,
@@ -165,9 +171,17 @@ const FeaturedProjects = () => {
                   )}
                 </div>
                 <div className="w-full md:w-[45%]">
-                  <div className="h-48 md:h-full min-h-[180px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
-                    Image Placeholder
-                  </div>
+                  {projects?.[activeProject]?.image ? (
+                    <Image
+                      src={projects?.[activeProject]?.image}
+                      alt={projects?.[activeProject]?.title}
+                      className="h-48 md:h-full min-h-[180px] w-full object-cover rounded-xl border border-border"
+                    />
+                  ) : (
+                    <div className="h-48 md:h-full min-h-[180px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
+                      Image Placeholder
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
