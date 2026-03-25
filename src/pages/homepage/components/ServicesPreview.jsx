@@ -9,7 +9,8 @@ const ServicesPreview = () => {
     {
       id: 1,
       title: "Starter Package",
-      description: "Full-time monthly package starts at $2,500. It is designed for clients who need support but do not require highly specialized services or strategic input.",
+      priceText: "Full-time monthly package starts at $2,500",
+      description: "It is designed for clients who need support but do not require highly specialized services or strategic input.",
       features: [
         "Email management",
         "Calendar scheduling",
@@ -21,7 +22,8 @@ const ServicesPreview = () => {
     {
       id: 2,
       title: "Growth Package",
-      description: "Full-time monthly package starts at $3,500. It is designed for clients who need support that can handle more complex tasks and coordinate small projects, allowing business owners to delegate important but time-consuming work.",
+      priceText: "Full-time monthly package starts at $3,500",
+      description: "It is designed for clients who need support that can handle more complex tasks and coordinate small projects, allowing business owners to delegate important but time-consuming work.",
       isPopular: true,
       features: [
         "Administrative support and advanced scheduling",
@@ -34,7 +36,8 @@ const ServicesPreview = () => {
     {
       id: 3,
       title: "Enterprise Package",
-      description: "Let's discuss to customize your package. It is designed for clients who want high-touch, dedicated support that is capable of managing complex tasks, streamlining operations, and contributing to strategic business growth.",
+      priceText: "Let's discuss to customize your package.",
+      description: "It is designed for clients who want high-touch, dedicated support that is capable of managing complex tasks, streamlining operations, and contributing to strategic business growth.",
       features: [
         "Strategic project management",
         "Team coordination",
@@ -117,7 +120,10 @@ const ServicesPreview = () => {
               <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                 {service?.title}
               </h3>
-              <p className="text-text-secondary mb-6 leading-relaxed">
+              <p className="text-text-secondary mb-2 leading-relaxed">
+                {service?.priceText}
+              </p>
+              <p className="text-text-primary mb-6 leading-relaxed">
                 {service?.description}
               </p>
               <p className="text-sm font-semibold uppercase tracking-wide text-text-primary mb-3">
