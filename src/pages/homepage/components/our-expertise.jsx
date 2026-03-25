@@ -157,7 +157,7 @@ const ServicesPreview = () => {
                 <div>
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                         <Image
-                          src={`/assets/${data?.imageFile}`}
+                          src={`/assets/images/${data?.imageFile}`}
                           alt={data?.title}
                           className="w-10 h-10 object-contain"
                         />
