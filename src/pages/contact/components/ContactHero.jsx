@@ -72,8 +72,7 @@ const ContactHero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
           >
-            Ready to transform your vision into reality? Let's explore how we can craft 
-            digital experiences that matter for your business.
+            Ready to elevate your business with seamless support? Experience Virtual Assistance driven by Client Success.
           </motion.p>
 
           {/* Stats */}

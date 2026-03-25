@@ -61,8 +61,7 @@ const AboutTeam = () => {
                             Meet The People Who Make Snap Happen
                         </h2>
                         <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-                            Our leadership team combines technical excellence with creative vision.
-                            Get to know the people who will be dedicated to your project's success.
+                            Our leadership brings together diverse experience in business operations, technology, and client services to build a client-centric organization focused on long-term partnerships.
                         </p>
                     </AnimatePresence>
                 </motion.div>
