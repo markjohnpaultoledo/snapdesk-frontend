@@ -8,11 +8,11 @@ const CallToAction = () => {
   const boardData = [
     {
       title: "Our Purpose",
-      description: "To provide professional Virtual Administrative and Information Technology support that improves efficiency and enables clients to focus on what matters most. With reliability, discretion, and a commitment to excellence, we strive to be a trusted partner—driving productivity and supporting long-term business growth."
+      description: "To deliver reliable, scalable virtual assistant and digital solutions anchored in structure, accountability, and measurable impact empowering organizations to enhance operational efficiency, elevate digital performance, and build enduring, trust-based partnerships."
     },
     {
       title: "Where We’re Headed",
-      description: "To become the leading provider of premium virtual administrative and Information Technology services, known for integrity, innovation, and measurable impact—helping businesses worldwide work smarter, operate more efficiently, and thrive in a digital-first world."
+      description: "To become the most trusted and well-governed virtual support and digital solutions partner globally, redefining outsourcing through structured oversight, advanced technology integration, operational excellence, and long-term strategic partnerships that drive sustainable business growth."
     }
   ];
 
