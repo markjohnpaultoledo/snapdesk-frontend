@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
-import Image from 'components/AppImage';
+import Image from '../../../components/AppImage';
 
 const ServicesPreview = () => {
   const services = [
@@ -92,33 +91,38 @@ const ServicesPreview = () => {
   };
 
   const HomepageWhyChoose = {
-      title: "Why Choose SnapDesk?",
-      ctaText: "Get Started",
-      ctaButtonColor: "sp",
-      ctaLink: "/virtual-assistant",
-      imageData: [
-          {
-              iconPath: "Home_Flexible_Support.png",
-              title: "Flexible Support",
-              text: "Whether you need part-time or full-time help, our plans fit your schedule and goals."
-          },
-          {
-              iconPath: "Home_Trusted_&_Secure.png",
-              title: "Trusted & Secure",
-              text: "We handle your business with discretion and care, ensuring full confidentiality."
-          },
-          {
-              iconPath: "Home_Efficient_&_Reliable.png",
-              title: "Efficient & Reliable",
-              text: "Get consistent, high-quality support that helps you stay on top of things."
-          },
-          {
-              iconPath: "home-why.png",
-              title: "Boost Productivity",
-              text: "Focus on what matters while we handle the rest"
-          }
-      ]
-  }
+    title: "Why Choose SnapDesk?",
+    ctaText: "Get Started",
+    ctaButtonColor: "sp",
+    ctaLink: "/virtual-assistant",
+    imageData: [
+      {
+        imageFile: "Building2.png",
+        title: "Enterprise Governance Framework",
+        text: "Our governed delivery model embeds structured oversight, documented processes, and defined accountability into every engagement; ensuring consistency, auditability, and operational control."
+      },
+      {
+        imageFile: "ShieldCheck.png",
+        title: "Business Continuity & Operational Resilience",
+        text: "Redundancy planning, knowledge documentation, and transition protocols safeguard your operations against disruption and personnel risk."
+      },
+      {
+        imageFile: "AlertTriangle.png",
+        title: "Risk, Escalation & Incident Management Controls",
+        text: "Formal escalation pathways and issue-resolution governance protect service integrity and maintain performance standards."
+      },
+      {
+        imageFile: "LockKeyhole.png",
+        title: "Security & Compliance Alignment",
+        text: "Access controls, data protection standards, and compliance-aware workflows are built into our operating structure—reducing exposure and strengthening regulatory readiness."
+      },
+      {
+        imageFile: "Target.png",
+        title: "Outcome-Focused, Experienced Team",
+        text: "A skilled workforce selected for expertise and fit, with performance and processes governed to deliver client success reliably and consistently."
+      }
+    ]
+  };
 
   return (
     <section className="py-20 bg-[#fafafa]">
@@ -142,27 +146,25 @@ const ServicesPreview = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-4 gap-8 mb-16"
+          className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16"
         >
             { HomepageWhyChoose?.imageData?.map((data, ind) => (
                 <motion.div
                     key={ind}
                     variants={cardVariants}
-                    className=" relative "
+                    className="rounded-2xl bg-white border border-border p-6 shadow-sm"
                 >
-                <div className="">
-                    <div className="">
+                <div>
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                         <Image
-                            src={`/assets/images/${data?.iconPath}`}
-                            width={140}
-                            height={140}
-                            alt=""
-                            className="h-[140px] mx-auto mb-4"
+                          src={`/assets/${data?.imageFile}`}
+                          alt={data?.title}
+                          className="w-10 h-10 object-contain"
                         />
                     </div>
                     <div className="text-center">
                         <h3 className="text-lg font-semibold text-text-primary">{ data?.title }</h3>
-                        <p className="text-sm">{ data?.text }</p>
+                        <p className="text-sm text-text-secondary mt-2">{ data?.text }</p>
                     </div>
                 </div>
                 </motion.div>
