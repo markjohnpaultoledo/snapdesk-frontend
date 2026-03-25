@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import ServicesPreview from './components/ServicesPreview';
 import FeaturedProjects from './components/FeaturedProjects';
 import OurExpertise from './components/our-expertise';
+import WhatWeOffer from './components/what-we-offer';
 // import ClientLogos from './components/ClientLogos';
 import NewsletterSignup from './components/NewsletterSignup';
 import Footer from '../../components/ui/Footer';
@@ -49,8 +50,12 @@ const Homepage = () => {
       <Header />
       {/* Main Content */}
       <main className="relative pt-16">
+
         {/* Hero Section */}
         <HeroSection />
+
+        {/* WhatWeOffer */}
+        <WhatWeOffer />
 
         {/* Featured Projects */}
         <FeaturedProjects />
