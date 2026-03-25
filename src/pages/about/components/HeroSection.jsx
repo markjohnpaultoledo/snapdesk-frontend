@@ -93,6 +93,8 @@ const HeroSection = () => {
         {/* Main Heading */}
         <motion.div variants={itemVariants} className="mb-8">
           <h1 className="text-5xl sm:text-5xl lg:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-md">
+            <br/><br/>
+            <br/><br/>
             You're reliable support team, in a {' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -111,9 +113,9 @@ const HeroSection = () => {
         {/* Description */}
         <motion.div variants={itemVariants} className="mb-12">
           <p className="text-lg text-white/95 mx-auto leading-relaxed drop-shadow-sm">
-            <b>SnapDesk Virtual Solutions</b> helps professionals, entrepreneurs, and businesses of every size unlock growth with dedicated Virtual Assistant and IT services. We streamline day-to-day operations and technology needs with a strong focus on efficiency, confidentiality, and service quality.
+            <b>SnapDesk Virtual Solutions</b> is a dynamic provider of virtual support services designed to empower businesses through a governed model that delivers reliable, accountable, and strategically selected talents from the Philippines ensuring quality, transparency, continuity and measurable outcomes.
             <br/><br/>
-            Whether you're an executive, a startup founder, or leading a growing team, SnapDesk works as an extension of your business -- delivering reliable, professional support that scales with you, without the overhead of in-house staff.
+            {/* Whether you're an executive, a startup founder, or leading a growing team, SnapDesk works as an extension of your business -- delivering reliable, professional support that scales with you, without the overhead of in-house staff. */}
           </p>
           
         </motion.div>
