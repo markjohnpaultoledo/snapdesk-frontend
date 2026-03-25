@@ -11,24 +11,24 @@ const OurValuesSection = () => {
 
     const ValuesData = [
         {
-            title: "Professionalism",
-            description: "We deliver reliable, respectful, and high-quality support in every interaction."
+            title: "Accountability",
+            description: "We take ownership of outcomes, not just tasks. Through structured oversight and defined responsibilities, we ensure every engagement delivers measurable value and consistent performance."
         },
         {
-            title: "Confidentiality",
-            description: "Your trust matters -- we protect your information with the highest standards of discretion and data security."
+            title: "Structured Governance",
+            description: "We operate through systems, governance, and clearly defined processes replacing ad hoc outsourcing with disciplined execution and operational clarity."
         },
         {
-            title: "Efficiency",
-            description: "We help you work smarter by streamlining processes and saving you valuable time."
+            title: "Strategic Workforce",
+            description: "We believe quality begins at recruitment. Every professional is rigorously vetted and aligned not only to skill requirements, but to performance standards, cultural fit, and long-term partnership potential."
         },
         {
-            title: "Integrity",
-            description: "Built on honesty and accountability, we create partnerships that last."
+            title: "Transparency & Integrity",
+            description: "We build trust through open communication, clear reporting, and ethical practices; ensuring our clients always have visibility, control, and confidence in their offshore operations."
         },
         {
-            title: "Continuous Improvement",
-            description: "We adapt, innovate, and grow alongside our clients to meet changing needs."
+            title: "Sustainable Partnership",
+            description: "We prioritise continuity, stability, and long-term collaboration creating scalable support structures that grow with our clients’ businesses."
         }
     ];
 
