@@ -26,6 +26,7 @@ FROM builder AS runner
 COPY --from=lambda-adapter /lambda-adapter /opt/extensions/lambda-adapter
 
 # App files
+COPY --from=builder /app/public ./public
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/server.js ./server.js
 COPY --from=builder /app/node_modules ./node_modules
