@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import Image from '../../../components/AppImage';
 
 const ServicesPreview = () => {
   const services = [
@@ -97,27 +97,27 @@ const ServicesPreview = () => {
     ctaLink: "/virtual-assistant",
     imageData: [
       {
-        icon: "Building2",
+        imageFile: "Building2.png",
         title: "Enterprise Governance Framework",
         text: "Our governed delivery model embeds structured oversight, documented processes, and defined accountability into every engagement; ensuring consistency, auditability, and operational control."
       },
       {
-        icon: "ShieldCheck",
+        imageFile: "ShieldCheck.png",
         title: "Business Continuity & Operational Resilience",
         text: "Redundancy planning, knowledge documentation, and transition protocols safeguard your operations against disruption and personnel risk."
       },
       {
-        icon: "AlertTriangle",
+        imageFile: "AlertTriangle.png",
         title: "Risk, Escalation & Incident Management Controls",
         text: "Formal escalation pathways and issue-resolution governance protect service integrity and maintain performance standards."
       },
       {
-        icon: "LockKeyhole",
+        imageFile: "LockKeyhole.png",
         title: "Security & Compliance Alignment",
         text: "Access controls, data protection standards, and compliance-aware workflows are built into our operating structure—reducing exposure and strengthening regulatory readiness."
       },
       {
-        icon: "Target",
+        imageFile: "Target.png",
         title: "Outcome-Focused, Experienced Team",
         text: "A skilled workforce selected for expertise and fit, with performance and processes governed to deliver client success reliably and consistently."
       }
@@ -156,7 +156,11 @@ const ServicesPreview = () => {
                 >
                 <div>
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <Icon name={data?.icon} size={30} className="text-primary" />
+                        <Image
+                          src={`/assets/${data?.imageFile}`}
+                          alt={data?.title}
+                          className="w-10 h-10 object-contain"
+                        />
                     </div>
                     <div className="text-center">
                         <h3 className="text-lg font-semibold text-text-primary">{ data?.title }</h3>
