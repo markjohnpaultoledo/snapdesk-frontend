@@ -159,7 +159,7 @@ const ServicesPreview = () => {
                         <Image
                           src={`/assets/images/${data?.imageFile}`}
                           alt={data?.title}
-                          className="w-10 h-10 object-contain"
+                          className="w-40 h-40 object-contain"
                         />
                     </div>
                     <div className="text-center">

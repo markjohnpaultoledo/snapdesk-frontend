@@ -115,7 +115,7 @@ const Footer = () => {
           Snapdesk
         </h3>
         <p className="text-sm text-gray-300 font-medium tracking-wide group-hover:text-gray-200 transition-colors duration-300">
-          Technology, Designed to Evolve
+          Built for Continuity. Govered for Growth.
         </p>
       </div>
     </div>;
@@ -137,7 +137,7 @@ const Footer = () => {
             <motion.div variants={itemVariants} className="lg:col-span-5 bg-[rgba(255,255,255,0)]">
               <Logo />
               <p className="text-gray-200 mt-6 text-lg leading-relaxed max-w-md hover:text-white transition-colors duration-300">
-                We architect digital experiences that don't just function—they inspire, engage, and transform the way people interact with technology.
+                Governed virtual operations built for continuity, security, and stability.
               </p>
               
               {/* Contact Info */}
@@ -216,7 +216,7 @@ const Footer = () => {
 
             <div className="text-center">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform your Lifestyle? Snap into smarter work with <a className="underline">SnapDesk</a>
+                Ready to define your success? Snap into smarter work with <a className="underline">SnapDesk</a>
               </h3>
               {/* <p className="text-gray-200 mb-6 max-w-2xl mx-auto hover:text-white transition-colors duration-300">
                 Let's discuss how we can help you build technology solutions that drive real business results.

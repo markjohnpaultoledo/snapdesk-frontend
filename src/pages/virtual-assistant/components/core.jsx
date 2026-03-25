@@ -207,10 +207,10 @@ const CoreSection = () => {
                     className="text-center mb-16">
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-                        Core <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
+                        Talent <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
                     </h2>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        Discover how we've transformed ideas into powerful digital solutions that drive real business results.
+                        Discover how virtual support can be tailored to drive your success
                     </p>
                 </motion.div>
 
