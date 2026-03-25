@@ -60,7 +60,7 @@ const HeroSection = () => {
   return (
     <section
       className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/assets/images/hero-group-banner.png')" }}
+      style={{ backgroundImage: "url('https://d1c5khxbu1u21j.cloudfront.net/group-banner.png')" }}
     >
       <div className="absolute inset-0 bg-black/60" />
 
