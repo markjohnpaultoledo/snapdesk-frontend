@@ -179,15 +179,15 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
             <div className="flex items-center space-x-2">
               <Icon name="Mail" size={16} className="text-primary" />
-              <span className="text-text-primary">hello@snapdesk.com.au</span>
+              <span className="text-text-primary">contact@snapdesk.com.au</span>
             </div>
             <div className="flex items-center space-x-2">
               <Icon name="Phone" size={16} className="text-primary" />
-              <span className="text-text-primary">+1 (555) 123-4567</span>
+              <span className="text-text-primary">+61 402 331 126</span>
             </div>
             <div className="flex items-center space-x-2">
               <Icon name="MapPin" size={16} className="text-primary" />
-              <span className="text-text-primary">San Francisco, CA</span>
+              <span className="text-text-primary">Brisbane, QLD, Australia</span>
             </div>
           </div>
         </div>

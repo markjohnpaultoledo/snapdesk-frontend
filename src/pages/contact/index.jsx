@@ -80,7 +80,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <div className="font-semibold text-text-primary">Headquarters</div>
-                        <div className="text-text-secondary">Brisbane, QLD, Australia</div>
+                        <div className="text-text-secondary">Level 18, 324 Queen Street, Brisbane, QLD 4000 Australia</div>
                       </div>
                     </div>
 
@@ -167,7 +167,7 @@ const ContactPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <a
-                  href="mailto:hello@snapdesk.com.au"
+                  href="mailto:contact@snapdesk.com.au"
                   className="inline-flex items-center justify-center space-x-2 bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors font-medium btn-magnetic"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

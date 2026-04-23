@@ -24,18 +24,18 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - Snapdesk | Built for Continuity. Govered for Growth.</title>
+        <title>About Us - Snapdesk | Built for Continuity. Governed for Growth.</title>
         <meta 
           name="description" 
           content="Discover Snapdesk's journey from vision to revolution. Meet our leadership collective, explore our culture of human-centered innovation, and see the measurable impact we create for clients worldwide." 
         />
         <meta name="keywords" content="Snapdesk, about us, technology company, human-centered design, innovation, leadership team, company culture, tech startup" />
-        <meta property="og:title" content="About Us - Snapdesk | Built for Continuity. Govered for Growth." />
+        <meta property="og:title" content="About Us - Snapdesk | Built for Continuity. Governed for Growth." />
         <meta property="og:description" content="The perfect synthesis of technical excellence and human-centered design philosophy. Discover our story, team, and impact." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us - Snapdesk" />
-        <meta name="twitter:description" content="Built for Continuity. Govered for Growth. - Where cutting-edge innovation meets mindful design" />
+        <meta name="twitter:description" content="Built for Continuity. Governed for Growth. - Where cutting-edge innovation meets mindful design" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />

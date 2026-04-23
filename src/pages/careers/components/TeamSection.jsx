@@ -110,7 +110,7 @@ const TeamSection = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Creative technologists who believe in the power of human-centered innovation. 
-            Each bringing unique perspectives to our shared mission of building Built for Continuity. Govered for Growth..
+            Each bringing unique perspectives to our shared mission of building Built for Continuity. Governed for Growth..
           </p>
         </motion.div>
 

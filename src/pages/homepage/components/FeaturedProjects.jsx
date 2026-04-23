@@ -25,7 +25,7 @@ const FeaturedProjects = () => {
       id: 3,
       title: "Operations & Team Support",
       description: "Strengthen business performance through streamlined processes, project coordination, and reliable operational support.",
-      image: "https://drive.google.com/thumbnail?id=1ajLNCjJD4zHFtXwSo4l0PGmpFKvSOptm&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/opsteamsupport.jpg"
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ const FeaturedProjects = () => {
           <motion.div variants={itemVariants} className="space-y-3">
             <h3 className="text-2xl font-semibold text-text-primary mb-4 text-center group-hover:text-primary transition-colors duration-300">
               <span className="inline-flex items-center justify-center gap-2">
-                Core Services
+                Talent Services
                 <Icon name="Globe" size={20} className="text-primary motion-safe:animate-spin" aria-hidden="true" />
               </span>
             </h3>
@@ -160,7 +160,7 @@ const FeaturedProjects = () => {
                         className="btn-magnetic"
                       >
                         <a
-                          href="https://d1lboxisk6b6d0.cloudfront.net/services"
+                          href="https://snapdesk.com.au/contact"
                           target="_blank"
                           rel="noreferrer"
                         >

@@ -8,29 +8,39 @@ const ContactMethods = () => {
     {
       icon: 'Phone',
       title: 'Call Us Directly',
-      description: 'Speak with our team for immediate assistance',
-      value: '+1 (555) 123-4567',
+      description: 'Reach us directly for immediate support',
+      value: '+61 402 331 126',
       action: 'Call Now',
-      href: 'tel:+15551234567',
+      href: 'tel:+61402331126',
       available: '9 AM - 6 PM PST'
     },
     {
       icon: 'Mail',
       title: 'Email Us',
-      description: 'Send us a detailed message about your project',
-      value: 'hello@snapdesk.com.au',
+      description: 'Send us a detailed message about your needs',
+      value: 'contact@snapdesk.com.au',
       action: 'Send Email',
-      href: 'mailto:hello@snapdesk.com.au',
+      href: 'mailto:contact@snapdesk.com.au',
       available: '24/7 Response'
     },
     {
-      icon: 'Calendar',
-      title: 'Schedule a Call',
-      description: 'Book a consultation at your convenience',
-      value: '30-min Strategy Session',
-      action: 'Book Meeting',
-      href: '#',
-      available: 'Available Slots'
+      icon: 'Users',
+      title: 'Socials',
+      description: 'Join our online community to keep up with our latest insights',
+      socialLinks: [
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/snapdesk-virtual-solutions-3bb411381/'
+        },
+        {
+          label: 'Instagram',
+          href: 'https://www.instagram.com/snapdeskvirtualsolutions'
+        },
+        {
+          label: 'Facebook',
+          href: 'https://www.facebook.com/people/SnapDesk-Virtual-Solutions/61581918006119/'
+        }
+      ]
     },
     {
       icon: 'MessageSquare',
@@ -62,7 +72,7 @@ const ContactMethods = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
-            Multiple Ways to Connect
+            Multiple Ways to Contact Us
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
             Choose the communication method that works best for you. We're here to help 
@@ -97,49 +107,42 @@ const ContactMethods = () => {
                 <div className="text-primary font-medium text-sm mb-2">
                   {method?.value}
                 </div>
-                <div className="text-xs text-text-secondary mb-4">
-                  {method?.available}
-                </div>
+                {method?.available && (
+                  <div className="text-xs text-text-secondary mb-4">
+                    {method?.available}
+                  </div>
+                )}
+                {method?.socialLinks && (
+                  <div className="flex flex-col gap-2 mb-2">
+                    {method?.socialLinks?.map((social) => (
+                      <a
+                        key={social?.label}
+                        href={social?.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary font-semibold hover:underline"
+                      >
+                        {social?.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              <Button
-                variant="outline"
-                size="sm"
-                fullWidth
-                onClick={() => handleMethodClick(method)}
-                className="group-hover:border-primary group-hover:text-primary transition-colors duration-300"
-              >
-                {method?.action}
-              </Button>
+              {!method?.socialLinks && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  fullWidth
+                  onClick={() => handleMethodClick(method)}
+                  className="group-hover:border-primary group-hover:text-primary transition-colors duration-300"
+                >
+                  {method?.action}
+                </Button>
+              )}
             </motion.div>
           ))}
         </div>
-
-        {/* Emergency Contact */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-6 text-center"
-        >
-          <div className="flex items-center justify-center space-x-2 mb-3">
-            <Icon name="Zap" size={20} className="text-primary" />
-            <h3 className="text-lg font-semibold text-text-primary">
-              Urgent Project?
-            </h3>
-          </div>
-          <p className="text-text-secondary mb-4">
-            For time-sensitive projects or emergencies, reach out directly to our priority line.
-          </p>
-          <Button
-            variant="default"
-            iconName="Phone"
-            iconPosition="left"
-            onClick={() => window.open('tel:+15551234567', '_blank')}
-          >
-            Priority Line: +1 (555) 123-4567
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

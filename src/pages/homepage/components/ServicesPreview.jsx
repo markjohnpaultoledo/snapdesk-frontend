@@ -9,8 +9,8 @@ const ServicesPreview = () => {
     {
       id: 1,
       title: "Starter Package",
-      priceText: "Full-time monthly package starts at $2,500",
-      description: "It is designed for clients who need support but do not require highly specialized services or strategic input.",
+      priceText: "Starts at $1,400",
+      description: "Designed for businesses that need reliable day-to-day support without the need for highly specialized or strategic roles.",
       features: [
         "Email management",
         "Calendar scheduling",
@@ -22,8 +22,8 @@ const ServicesPreview = () => {
     {
       id: 2,
       title: "Growth Package",
-      priceText: "Full-time monthly package starts at $3,500",
-      description: "It is designed for clients who need support that can handle more complex tasks and coordinate small projects, allowing business owners to delegate important but time-consuming work.",
+      priceText: "Starts at $1,900",
+      description: "Designed for businesses that need more advanced support—handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
         "Administrative support and advanced scheduling",
@@ -36,8 +36,8 @@ const ServicesPreview = () => {
     {
       id: 3,
       title: "Enterprise Package",
-      priceText: "Let's discuss to customize your package.",
-      description: "It is designed for clients who want high-touch, dedicated support that is capable of managing complex tasks, streamlining operations, and contributing to strategic business growth.",
+      priceText: "Custom packages, tailored to your needs.",
+      description: "Designed for businesses that require high-touch, dedicated support—capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
         "Team coordination",

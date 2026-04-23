@@ -115,7 +115,7 @@ const Footer = () => {
           Snapdesk
         </h3>
         <p className="text-sm text-gray-300 font-medium tracking-wide group-hover:text-gray-200 transition-colors duration-300">
-          Built for Continuity. Govered for Growth.
+          Built for Continuity. Governed for Growth.
         </p>
       </div>
     </div>;
@@ -144,15 +144,15 @@ const Footer = () => {
               <div className="mt-8 space-y-4">
                 <div className="flex items-center space-x-3 group">
                   <Icon name="Mail" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
-                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">hello@snapdesk.com.au</span>
+                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">contact@snapdesk.com.au</span>
                 </div>
                 <div className="flex items-center space-x-3 group">
                   <Icon name="Phone" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
-                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">+1 (555) 123-4567</span>
+                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">+61 402 331 126</span>
                 </div>
                 <div className="flex items-center space-x-3 group">
                   <Icon name="MapPin" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
-                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">San Francisco, CA</span>
+                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">Brisbane, QLD, Australia</span>
                 </div>
               </div>
 

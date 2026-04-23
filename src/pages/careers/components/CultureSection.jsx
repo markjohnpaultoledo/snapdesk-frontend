@@ -8,7 +8,7 @@ const CultureSection = () => {
   {
     id: 1,
     icon: "Heart",
-    title: "Built for Continuity. Govered for Growth.",
+    title: "Built for Continuity. Governed for Growth.",
     description: "We believe technology should enhance human experiences, not replace them. Every line of code we write serves a purpose beyond functionality.",
     color: "text-primary"
   },

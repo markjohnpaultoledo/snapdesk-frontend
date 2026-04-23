@@ -7,8 +7,8 @@ const LocationMap = () => {
     {
       id: 1,
       city: "Brisbane",
-      address: "123 Innovation Drive, Suite 400\nBrisbane, QLD 4000",
-      phone: "+61 (7) 1234 5678",
+      address: "Level 18, 324 Queen Street, Brisbane, QLD 4000 Australia",
+      phone: "+61 402 331 126",
       email: "brisbane@snapdesk.com.au",
       hours: "Mon-Fri: 9 AM - 6 PM AEST",
       coordinates: "-27.4698,153.0251"
@@ -33,14 +33,14 @@ const LocationMap = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="flex justify-center">
           {offices?.map((office, index) => (
             <motion.div
               key={office?.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-card rounded-xl overflow-hidden card-elevated"
+              className="bg-card rounded-xl overflow-hidden card-elevated w-full max-w-3xl"
             >
               {/* Map */}
               <div className="h-64 bg-muted relative overflow-hidden">
@@ -59,13 +59,13 @@ const LocationMap = () => {
               </div>
 
               {/* Office Details */}
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 text-center">
                 <h3 className="text-xl font-bold text-text-primary">
                   {office?.city} Office
                 </h3>
 
                 <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start justify-center space-x-3">
                     <Icon name="MapPin" size={18} className="text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-text-primary font-medium">Address</div>
@@ -75,7 +75,7 @@ const LocationMap = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <Icon name="Phone" size={18} className="text-primary flex-shrink-0" />
                     <div>
                       <div className="text-text-primary font-medium">Phone</div>
@@ -88,7 +88,7 @@ const LocationMap = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <Icon name="Mail" size={18} className="text-primary flex-shrink-0" />
                     <div>
                       <div className="text-text-primary font-medium">Email</div>
@@ -101,7 +101,7 @@ const LocationMap = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <Icon name="Clock" size={18} className="text-primary flex-shrink-0" />
                     <div>
                       <div className="text-text-primary font-medium">Hours</div>

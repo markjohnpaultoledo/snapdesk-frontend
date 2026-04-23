@@ -16,7 +16,7 @@ const InsightsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Insights & Knowledge Center | Snapdesk - Built for Continuity. Govered for Growth.</title>
+        <title>Insights & Knowledge Center | Snapdesk - Built for Continuity. Governed for Growth.</title>
         <meta 
           name="description" 
           content="Explore Snapdesk's thought leadership on technology with purpose, digital craft innovation, sustainable practices, and human-centered design. Access whitepapers, frameworks, and industry insights." 
@@ -56,7 +56,7 @@ const InsightsPage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">Snapdesk</h3>
-                    <p className="text-sm text-gray-200">Built for Continuity. Govered for Growth.</p>
+                    <p className="text-sm text-gray-200">Built for Continuity. Governed for Growth.</p>
                   </div>
                 </div>
                 <p className="text-gray-200 leading-relaxed mb-6 max-w-md">

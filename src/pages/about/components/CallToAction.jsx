@@ -155,13 +155,13 @@ const CallToAction = () => {
               {
                 icon: "Phone",
                 title: "Call Us",
-                value: "+1 (555) 123-4567",
+                value: "+61 402 331 126",
                 description: "Monday to Friday, 9 AM - 6 PM PST"
               },
               {
                 icon: "MapPin",
                 title: "Visit Us",
-                value: "San Francisco, CA",
+                value: "Brisbane, QLD, Australia",
                 description: "Schedule a visit to our studio"
               }
             ]?.map((contact, index) => (

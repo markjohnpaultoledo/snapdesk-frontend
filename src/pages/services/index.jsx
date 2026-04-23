@@ -17,13 +17,13 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services - Snapdesk | Built for Continuity. Govered for Growth.</title>
+        <title>Services - Snapdesk | Built for Continuity. Governed for Growth.</title>
         <meta 
           name="description" 
           content="Discover Snapdesk's comprehensive digital solutions. From React 18+ development to enterprise-grade applications, we craft technology experiences that matter. Get your custom quote today." 
         />
         <meta name="keywords" content="web development, React development, digital solutions, technology consulting, UI/UX design, performance optimization" />
-        <meta property="og:title" content="Services - Snapdesk | Built for Continuity. Govered for Growth." />
+        <meta property="og:title" content="Services - Snapdesk | Built for Continuity. Governed for Growth." />
         <meta property="og:description" content="We don't just build technology; we architect digital experiences that matter. Explore our comprehensive service offerings." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/services" />
@@ -68,7 +68,7 @@ const Services = () => {
                   <h3 className="text-xl font-semibold">Snapdesk</h3>
                 </div>
                 <p className="text-gray-200 mb-4 leading-relaxed">
-                  Built for Continuity. Govered for Growth.. We architect digital experiences that transcend traditional development, 
+                  Built for Continuity. Governed for Growth.. We architect digital experiences that transcend traditional development, 
                   creating immersive journeys that feel like stepping into the future.
                 </p>
                 <div className="flex space-x-4">
@@ -108,9 +108,9 @@ const Services = () => {
               <div>
                 <h4 className="font-semibold mb-4">Contact</h4>
                 <ul className="space-y-2 text-gray-200">
-                  <li>hello@snapdesk.com.au</li>
-                  <li>+1 (555) 123-4567</li>
-                  <li>San Francisco, CA</li>
+                  <li>contact@snapdesk.com.au</li>
+                  <li>+61 402 331 126</li>
+                  <li>Brisbane, QLD, Australia</li>
                 </ul>
               </div>
             </div>

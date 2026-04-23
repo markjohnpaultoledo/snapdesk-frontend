@@ -131,7 +131,7 @@ const FAQ = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:hello@snapdesk.com.au"
+              href="mailto:contact@snapdesk.com.au"
               className="inline-flex items-center justify-center space-x-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors font-medium"
             >
               <Icon name="Mail" size={18} />

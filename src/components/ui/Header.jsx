@@ -80,7 +80,7 @@ const Header = () => {
           Snapdesk
         </h1>
         <p className="text-xs text-text-secondary font-medium tracking-wide">
-          {/* Built for Continuity. Govered for Growth. */}
+          {/* Built for Continuity. Governed for Growth. */}
         </p>
       </div>
     </Link>

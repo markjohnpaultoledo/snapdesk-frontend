@@ -12,7 +12,8 @@ const HowWeSnapIn = () => {
     const boards = [
         {
             title: 'Virtual Assistant Support',
-            image: '',
+            image: 'https://d1c5khxbu1u21j.cloudfront.net/team-va.jpg',
+            imageClassName: 'object-cover',
             description: '',
             list: [
                 {
@@ -43,7 +44,8 @@ const HowWeSnapIn = () => {
         },
         {
             title: 'IT & Business Services',
-            image: '',
+            image: 'https://d1c5khxbu1u21j.cloudfront.net/team-tech.jpg',
+            imageClassName: 'object-contain bg-muted',
             description: '',
             list: [
                 {
@@ -139,9 +141,9 @@ const HowWeSnapIn = () => {
                                     {/* Project Image */}
                                     <div className="relative h-[300px] overflow-hidden">
                                         <Image
-                                            src={''}
-                                            alt={''}
-                                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                                            src={board?.image}
+                                            alt={board?.title}
+                                            className={`w-full h-full transition-transform duration-700 hover:scale-105 ${board?.imageClassName || 'object-cover'}`} />
 
                                     </div>
 

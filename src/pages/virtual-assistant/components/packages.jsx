@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
@@ -6,12 +6,20 @@ import Button from '../../../components/ui/Button';
 import Image from 'components/AppImage';
 
 const Packages = () => {
+  const enableAutoplay = true;
+  const autoplayIntervalMs = 4500;
+
+  const railRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   const services = [
     {
       id: 1,
       title: "Starter Package",
-      description: "Full-time monthly package starts at $2,500",
-      details: "It is designed for clients who need general support on administrative and operational tasks.",
+      description: "Starts at $1,400",
+      details: "Designed for businesses that need reliable day-to-day support without the need for highly specialized or strategic roles.",
       features: [
         "Email management",
         "Calendar scheduling",
@@ -23,12 +31,12 @@ const Packages = () => {
     {
       id: 2,
       title: "Growth Package",
-      description: "Full-time monthly package starts at $3,500",
-      details: "It is designed for clients who need support on more complex tasks and coordination on small projects.",
+      description: "Starts at $1,900",
+      details: "Designed for businesses that need more advanced support-handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
         "Administrative support and advanced scheduling",
-        "CRM updates and client communications",
+        "CRM management and client communications",
         "Basic bookkeeping or invoicing",
         "Small project coordination",
       ],
@@ -37,13 +45,13 @@ const Packages = () => {
     {
       id: 3,
       title: "Enterprise Package",
-      description: "Let's discuss to customize your package.",
-      details: "It is designed for clients who want high-touch, dedicated support that is capable of managing complex tasks, streamlining operations, and contributing to strategic business growth.",
+      description: "Custom packages, tailored to your needs.",
+      details: "Designed for businesses that require high-touch, dedicated support-capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
-        "Team coordination",
+        "Team coordination and oversight",
         "Advanced reporting & analytics",
-        "Automation support",
+        "Automation and process optimization",
       ],
       color: "from-trust to-trust/80"
     }
@@ -70,6 +78,55 @@ const Packages = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setCurrentSlide(0);
+      return;
+    }
+
+    const maxSlide = Math.max(services.length - 1, 0);
+    setCurrentSlide((prev) => Math.min(prev, maxSlide));
+  }, [isMobile, services.length]);
+
+  useEffect(() => {
+    if (!enableAutoplay || !isMobile || isHovered || services.length <= 1) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % services.length);
+    }, autoplayIntervalMs);
+
+    return () => window.clearInterval(timer);
+  }, [enableAutoplay, isMobile, isHovered, services.length]);
+
+  useEffect(() => {
+    if (!isMobile || !railRef.current) {
+      return;
+    }
+
+    const cardNodes = railRef.current.children;
+    const activeCard = cardNodes?.[currentSlide];
+
+    if (activeCard) {
+      railRef.current.scrollTo({
+        left: activeCard.offsetLeft - 16,
+        behavior: 'smooth'
+      });
+    }
+  }, [currentSlide, isMobile]);
 
   return (
     <section className="bg-background">
@@ -103,11 +160,14 @@ const Packages = () => {
 
                 {/* Services Grid */}
                 <motion.div
+                ref={railRef}
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="flex gap-5 overflow-x-auto overflow-y-visible snap-x snap-mandatory pb-4 pt-4 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0 md:pt-0"
                 >
                 {services?.map((service) => (
                     <motion.div

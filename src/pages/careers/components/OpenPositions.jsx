@@ -304,7 +304,7 @@ const OpenPositions = () => {
           </h3>
           <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
             We're always looking for exceptional talent. Send us your portfolio and let us know 
-            how you'd like to contribute to our mission of building Built for Continuity. Govered for Growth..
+            how you'd like to contribute to our mission of building Built for Continuity. Governed for Growth..
           </p>
           <Button
             variant="outline"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import { Checkbox } from '../../../components/ui/Checkbox';
@@ -11,9 +12,8 @@ const ContactForm = () => {
     email: '',
     company: '',
     phone: '',
-    projectType: '',
-    budget: '',
-    timeline: '',
+    talentServices: [],
+    supportLevel: '',
     message: '',
     newsletter: false,
     privacy: false
@@ -22,31 +22,18 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const projectTypes = [
-    { value: 'web-development', label: 'Web Development' },
-    { value: 'mobile-app', label: 'Mobile Application' },
-    { value: 'ui-ux-design', label: 'UI/UX Design' },
-    { value: 'digital-transformation', label: 'Digital Transformation' },
-    { value: 'consulting', label: 'Strategic Consulting' },
-    { value: 'partnership', label: 'Partnership Opportunity' },
-    { value: 'other', label: 'Other' }
+  const talentServiceOptions = [
+    { value: 'time-communication-management', label: 'Time & Communication Management' },
+    { value: 'data-management-research-support', label: 'Data Management & Research Support' },
+    { value: 'operations-team-support', label: 'Operations & Team Support' },
+    { value: 'bookkeeping-financial-support', label: 'Bookkeeping & Financial Support' },
+    { value: 'personal-assistance', label: 'Personal Assistance' },
+    { value: 'customer-service-support', label: 'Customer Service Support' }
   ];
 
-  const budgetRanges = [
-    { value: '10k-25k', label: '$10k - $25k' },
-    { value: '25k-50k', label: '$25k - $50k' },
-    { value: '50k-100k', label: '$50k - $100k' },
-    { value: '100k-250k', label: '$100k - $250k' },
-    { value: '250k+', label: '$250k+' },
-    { value: 'discuss', label: 'Let\'s Discuss' }
-  ];
-
-  const timelineOptions = [
-    { value: 'asap', label: 'ASAP' },
-    { value: '1-3-months', label: '1-3 Months' },
-    { value: '3-6-months', label: '3-6 Months' },
-    { value: '6-12-months', label: '6-12 Months' },
-    { value: 'flexible', label: 'Flexible Timeline' }
+  const supportLevels = [
+    { value: 'part-time', label: 'Part-time' },
+    { value: 'full-time', label: 'Full-time' }
   ];
 
   const handleInputChange = (e) => {
@@ -57,28 +44,88 @@ const ContactForm = () => {
     }));
   };
 
+  const handleTalentServiceChange = (e) => {
+    const { value, checked } = e?.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      talentServices: checked
+        ? [...prev.talentServices, value]
+        : prev.talentServices.filter((item) => item !== value)
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e?.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    const selectedServices = formData?.talentServices?.length
+      ? formData?.talentServices
+          ?.map((serviceValue) => {
+            const matched = talentServiceOptions?.find((option) => option?.value === serviceValue);
+            return matched?.label || serviceValue;
+          })
+          ?.join(', ')
+      : 'Not specified';
+
+    const selectedSupportLevel = supportLevels?.find((level) => level?.value === formData?.supportLevel)?.label || 'Not specified';
+
+    const subject = `New Contact Form Inquiry - ${formData?.name || 'Website Visitor'}`;
+    const body = (
+      `Full Name: ${formData?.name || ''}\n` +
+      `Email Address: ${formData?.email || ''}\n` +
+      `Company: ${formData?.company || ''}\n` +
+      `Phone Number: ${formData?.phone || ''}\n` +
+      `Talent Service(s): ${selectedServices}\n` +
+      `Level of Support: ${selectedSupportLevel}\n` +
+      `Additional Details: ${formData?.message || 'None'}\n` +
+      `Newsletter Subscription: ${formData?.newsletter ? 'Yes' : 'No'}\n` +
+      `Privacy Consent: ${formData?.privacy ? 'Yes' : 'No'}`
+    );
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/mark.toledo@triarchsystem.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: subject,
+          name: formData?.name || '',
+          email: formData?.email || '',
+          company: formData?.company || '',
+          phone: formData?.phone || '',
+          talentServices: selectedServices,
+          supportLevel: selectedSupportLevel,
+          message: body,
+          newsletter: formData?.newsletter ? 'Yes' : 'No',
+          privacyConsent: formData?.privacy ? 'Yes' : 'No'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitting(false);
       setSubmitStatus('success');
-      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
         company: '',
         phone: '',
-        projectType: '',
-        budget: '',
-        timeline: '',
+        talentServices: [],
+        supportLevel: '',
         message: '',
         newsletter: false,
         privacy: false
       });
-    }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      setSubmitStatus(null);
+      window.alert('We could not send your message automatically. Please try again in a moment.');
+    }
   };
 
   if (submitStatus === 'success') {
@@ -117,9 +164,9 @@ const ContactForm = () => {
       className="bg-card rounded-2xl p-6 sm:p-8 space-y-6 card-elevated"
     >
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-text-primary mb-2">Start Your Project</h3>
+        <h3 className="text-2xl font-bold text-text-primary mb-2">Start Your Snap Journey</h3>
         <p className="text-text-secondary">
-          Tell us about your vision and we'll craft a solution that exceeds expectations.
+          Take the first step to reliable & governed Virtual Assistance.
         </p>
       </div>
       {/* Personal Information */}
@@ -158,67 +205,46 @@ const ContactForm = () => {
           name="phone"
           value={formData?.phone}
           onChange={handleInputChange}
-          placeholder="+1 (555) 123-4567"
+          placeholder="+61 402 331 126"
         />
       </div>
       {/* Project Details */}
       <div className="space-y-4">
-        <h4 className="text-lg font-semibold text-text-primary">Project Details</h4>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-text-primary mb-2">
-              Project Type *
-            </label>
-            <select
-              name="projectType"
-              value={formData?.projectType}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-border rounded-lg bg-input text-text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            >
-              <option value="">Select Type</option>
-              {projectTypes?.map(type => (
-                <option key={type?.value} value={type?.value}>
-                  {type?.label}
-                </option>
-              ))}
-            </select>
-          </div>
+        <h4 className="text-lg font-semibold text-text-primary">What support are you interested in?</h4>
 
-          <div>
-            <label className="block text-sm font-medium text-text-primary mb-2">
-              Budget Range
-            </label>
-            <select
-              name="budget"
-              value={formData?.budget}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-border rounded-lg bg-input text-text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            >
-              <option value="">Select Budget</option>
-              {budgetRanges?.map(budget => (
-                <option key={budget?.value} value={budget?.value}>
-                  {budget?.label}
-                </option>
-              ))}
-            </select>
+        <div>
+          <label className="block text-sm font-medium text-text-primary mb-3">
+            Talent Service
+          </label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {talentServiceOptions?.map((option) => (
+              <Checkbox
+                key={option?.value}
+                label={option?.label}
+                name="talentServices"
+                value={option?.value}
+                checked={formData?.talentServices?.includes(option?.value)}
+                onChange={handleTalentServiceChange}
+              />
+            ))}
           </div>
+        </div>
 
+        <div className="grid grid-cols-1 gap-4 sm:max-w-sm">
           <div>
             <label className="block text-sm font-medium text-text-primary mb-2">
-              Timeline
+              Level of Support
             </label>
             <select
-              name="timeline"
-              value={formData?.timeline}
+              name="supportLevel"
+              value={formData?.supportLevel}
               onChange={handleInputChange}
               className="w-full px-3 py-2 border border-border rounded-lg bg-input text-text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
             >
-              <option value="">Select Timeline</option>
-              {timelineOptions?.map(timeline => (
-                <option key={timeline?.value} value={timeline?.value}>
-                  {timeline?.label}
+              <option value="">Select Level</option>
+              {supportLevels?.map((level) => (
+                <option key={level?.value} value={level?.value}>
+                  {level?.label}
                 </option>
               ))}
             </select>
@@ -228,7 +254,7 @@ const ContactForm = () => {
       {/* Message */}
       <div>
         <label className="block text-sm font-medium text-text-primary mb-2">
-          Project Description *
+          Additional Details
         </label>
         <textarea
           name="message"
@@ -236,7 +262,6 @@ const ContactForm = () => {
           onChange={handleInputChange}
           rows={5}
           placeholder="Tell us about your project goals, challenges, and vision..."
-          required
           className="w-full px-3 py-2 border border-border rounded-lg bg-input text-text-primary focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
         />
       </div>
@@ -249,7 +274,18 @@ const ContactForm = () => {
           name="newsletter"
         />
         <Checkbox
-          label="I agree to the privacy policy and terms of service"
+          label={(
+            <>
+              I agree to the{' '}
+              <Link to="/privacy-policy" className="text-primary hover:underline">
+                privacy policy
+              </Link>{' '}
+              and{' '}
+              <Link to="/terms-and-conditions" className="text-primary hover:underline">
+                terms of service
+              </Link>
+            </>
+          )}
           checked={formData?.privacy}
           onChange={handleInputChange}
           name="privacy"

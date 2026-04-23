@@ -1,98 +1,115 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
+import AppImage from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 
 const WhatWeOffer = () => {
+  const enableAutoplay = true;
+  const autoplayIntervalMs = 4500;
+
+  const [cardsPerView, setCardsPerView] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
   const services = [
     {
       id: 1,
       icon: "Palette",
+      iconImage: "https://d1c5khxbu1u21j.cloudfront.net/client-success-governance.png",
       title: "Client Success Governance",
-      description: (
-        <>
-          <p>
-            At the start of every engagement, we align on success metrics, risk thresholds, and intervention boundaries; creating clarity for both your team and ours.
-          </p>
-
-          <p>
-            <strong>What we do</strong><br />
-            We formally define what success looks like, what risks matter, and when intervention is required.
-          </p>
-
-          <p>
-            <strong>Why it matters</strong><br />
-            We govern success at the service level by defining outcomes, risks, and intervention points; so delivery stays stable, accountable, and free from single-person dependency. There are no assumptions, surprises, or blurred expectations.
-          </p>
-        </>
-      ),
+      description: "Aligned from day one—defining success, managing risk, and setting clear boundaries for intervention.",
+      features: ["Clear success metrics and expected outcomes", "Defined risk thresholds and escalation points", "Structured intervention guidelines", "Consistent, accountable, and predictable delivery"],
       color: "from-accent to-accent/80"
     },
     {
       id: 2,
       icon: "Code",
-      title: "Product Development",
-      description: "Tailored solutions built with cutting-edge technologies that scale with your business growth and evolving needs.",
-      features: ["Product vision, strategy, and roadmap", "Planning and feature prioritization", "Cloud Architecture", "Product growth and optimization"],
+      iconImage: "https://d1c5khxbu1u21j.cloudfront.net/continuity-assurance.png",
+      title: "Continuity Assurance",
+      description: "Continuity built in—ensuring seamless transitions, resilient teams, and uninterrupted operations.",
+      features: ["Clearly documented roles and responsibilities", "Structured transition and handover processes", "Backup talent ready when needed", "Operations that continue without disruption"],
       color: "from-primary to-primary/80"
     },
     {
       id: 3,
       icon: "Sparkles",
-      title: "AI",
-      description: "Create connected, seamless experiences — powered by strategy, AI, and modern digital solutions.",
-      features: ["AI Assessment", "AI Strategy", "Agent Design and Development", "Applied AI Engineering"],
+      iconImage: "https://d1c5khxbu1u21j.cloudfront.net/workplace-enablement.png",
+      title: "Workforce Enablement",
+      description: "Talent, structured and scalable—built for security, continuity, and outcome-driven delivery.",
+      features: ["Role-based hiring aligned to defined outcomes", "Secure onboarding with clear documentation", "Built-in continuity and replaceability", "Teams designed to adapt without disruption"],
       color: "from-trust to-trust/80"
     },
     {
       id: 4,
       icon: "Cloud",
-      title: "Cloud, Digital & Data Transformation",
-      description: "Our comprehensive data and cloud modernization services will help you accelerate momentum so you can turn investment into measurable value.",
-      features: ["Modernize your technology platforms", "Design, plan and execute digital experiences", "Optimize technology costs", "Identify and build new business value"],
+      iconImage: "https://d1c5khxbu1u21j.cloudfront.net/risk.png",
+      title: "Risk, Escalation, & Incident Governance",
+      description: "Governed operations—clear ownership, structured escalation, and predictable performance.",
+      features: ["Defined roles, responsibilities, and ownership", "Clear escalation paths and decision flows", "Structured review and reporting cadence", "Issues identified early and resolved efficiently"],
       color: "from-trust to-trust/80"
     },
     {
       id: 5,
       icon: "Users",
-      title: "Managed Service Program",
-      description: "Our global managed service program support team understands talent. We’ve been matching the right people with the right opportunities.",
-      features: ["Service desk", "AI monitoring and alerts", "Development support and break-fix", "Ongoing enhancements"],
-      color: "from-trust to-trust/80"
-    },
-    {
-      id: 6,
-      icon: "GitBranch",
-      title: "DevOps & Agile",
-      description: "Accelerate your release frequency spanning architecture, testing and cloud services—all while testing insights quickly to capitalize opportunities.",
-      features: ["Internal Developer Tools", "AI & MCP Servers", "Improve your speed to market for new, superior products while lowering costs", "Accelerate predictable and secure software delivery on demand"],
+      iconImage: "https://d1c5khxbu1u21j.cloudfront.net/security.png",
+      title: "Security & Compliance Governance",
+      description: "Practical security, built in—protecting your data without slowing operations.",
+      features: ["Enforced NDAs and confidentiality standards", "Controlled access across tools and systems", "Clear data handling and usage guidelines", "Security that supports speed and efficiency"],
       color: "from-trust to-trust/80"
     }
     
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsPerView(3);
+        return;
       }
-    }
+
+      if (window.innerWidth >= 640) {
+        setCardsPerView(2);
+        return;
+      }
+
+      setCardsPerView(1);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = useMemo(() => {
+    return Math.ceil(services.length / cardsPerView);
+  }, [services.length, cardsPerView]);
+
+  useEffect(() => {
+    setCurrentPage((prev) => Math.min(prev, totalPages - 1));
+  }, [totalPages]);
+
+  const handleNext = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
   };
 
-  const cardVariants = {
-    hidden: { y: 60, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
+  const handlePrev = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
+
+  useEffect(() => {
+    if (!enableAutoplay || isHovered || totalPages <= 1) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, autoplayIntervalMs);
+
+    return () => window.clearInterval(timer);
+  }, [enableAutoplay, isHovered, totalPages]);
 
   return (
     <section className="py-20 bg-background">
@@ -106,54 +123,119 @@ const WhatWeOffer = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-            Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Expertise</span>
+            What We <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Offer</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            We combine technical mastery with creative vision to deliver solutions that don't just meet requirements—they exceed expectations.
-          </p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Carousel */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          {services?.map((service) => (
-            <motion.div
-              key={service?.id}
-              variants={cardVariants}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated"
-            >
-              {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon name={service?.icon} size={28} className="text-white" />
-              </div>
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex"
+                animate={{ x: `-${currentPage * 100}%` }}
+                transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x < -70) handleNext();
+                  if (info.offset.x > 70) handlePrev();
+                }}
+              >
+                {services?.map((service) => (
+                  <div
+                    key={service?.id}
+                    className="flex-shrink-0 px-2 sm:px-3"
+                    style={{ width: `${100 / cardsPerView}%` }}
+                  >
+                    <motion.div
+                      initial={{ y: 30, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="group relative bg-card border border-border rounded-2xl p-8 hover:shadow-strong transition-all duration-500 card-elevated h-full"
+                    >
+                      {/* Icon */}
+                      <div className={`w-16 h-16 bg-gradient-to-br ${service?.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        {service?.iconImage ? (
+                          <AppImage
+                            src={service?.iconImage}
+                            alt={`${service?.title} icon`}
+                            className="w-9 h-9 object-contain"
+                          />
+                        ) : (
+                          <Icon name={service?.icon} size={28} className="text-white" />
+                        )}
+                      </div>
 
-              {/* Content */}
-              <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                {service?.title}
-              </h3>
-              <p className="text-text-secondary mb-6 leading-relaxed">
-                {service?.description}
-              </p>
+                      {/* Content */}
+                      <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
+                        {service?.title}
+                      </h3>
+                      <p className="text-text-secondary mb-6 leading-relaxed">
+                        {service?.description}
+                      </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service?.features?.map((feature, index) => (
-                  <li key={index} className="flex items-center text-sm text-text-secondary">
-                    <Icon name="Check" size={16} className="text-primary mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>
+                      {/* Features */}
+                      <ul className="space-y-2 mb-6">
+                        {service?.features?.map((feature, index) => (
+                          <li key={index} className="flex items-center text-sm text-text-secondary">
+                            <Icon name="Check" size={16} className="text-primary mr-3 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Hover Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    </motion.div>
+                  </div>
                 ))}
-              </ul>
+              </motion.div>
+            </div>
 
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </motion.div>
-          ))}
+            <button
+              type="button"
+              aria-label="Previous services"
+              onClick={handlePrev}
+              className="hidden sm:flex absolute -left-2 lg:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-card border border-border text-text-primary hover:bg-primary hover:text-white transition-colors duration-300 shadow-soft"
+            >
+              <Icon name="ChevronLeft" size={18} />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next services"
+              onClick={handleNext}
+              className="hidden sm:flex absolute -right-2 lg:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-card border border-border text-text-primary hover:bg-primary hover:text-white transition-colors duration-300 shadow-soft"
+            >
+              <Icon name="ChevronRight" size={18} />
+            </button>
+          </div>
+
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {Array.from({ length: totalPages })?.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => setCurrentPage(index)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  currentPage === index ? 'w-7 bg-primary' : 'w-2.5 bg-border hover:bg-primary/60'
+                }`}
+              />
+            ))}
+          </div>
         </motion.div>
 
         {/* CTA Section */}
