@@ -273,7 +273,7 @@ const BenefitsSection = () => {
         >
           <Icon name="Quote" size={48} className="text-primary mx-auto mb-6" />
           <blockquote className="text-xl md:text-2xl font-medium text-text-primary mb-6 leading-relaxed">
-            "Snapdesk doesn't just offer great benefits—they create an environment where you can truly thrive both professionally and personally. It's the best decision I've made for my career."
+            "SnapDesk doesn't just offer great benefits—they create an environment where you can truly thrive both professionally and personally. It's the best decision I've made for my career."
           </blockquote>
           <cite className="text-lg text-text-secondary font-medium">
             — Sarah Chen, Lead Creative Technologist

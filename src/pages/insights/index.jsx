@@ -16,13 +16,13 @@ const InsightsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Insights & Knowledge Center | Snapdesk - Built for Continuity. Governed for Growth.</title>
+        <title>Insights & Knowledge Center | SnapDesk - Built for Continuity. Governed for Growth.</title>
         <meta 
           name="description" 
-          content="Explore Snapdesk's thought leadership on technology with purpose, digital craft innovation, sustainable practices, and human-centered design. Access whitepapers, frameworks, and industry insights." 
+          content="Explore SnapDesk's thought leadership on technology with purpose, digital craft innovation, sustainable practices, and human-centered design. Access whitepapers, frameworks, and industry insights." 
         />
         <meta name="keywords" content="technology insights, digital innovation, UX research, AI ethics, sustainable technology, design systems, thought leadership" />
-        <meta property="og:title" content="Insights & Knowledge Center | Snapdesk" />
+        <meta property="og:title" content="Insights & Knowledge Center | SnapDesk" />
         <meta property="og:description" content="Discover cutting-edge insights on technology, design, and innovation. Join 25,000+ innovators accessing our research and frameworks." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/insights" />
@@ -55,7 +55,7 @@ const InsightsPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">Snapdesk</h3>
+                    <h3 className="text-xl font-semibold">SnapDesk</h3>
                     <p className="text-sm text-gray-200">Built for Continuity. Governed for Growth.</p>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ const InsightsPage = () => {
             {/* Bottom Bar */}
             <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-200 text-sm">
-                © {new Date()?.getFullYear()} Snapdesk. All rights reserved.
+                © {new Date()?.getFullYear()} SnapDesk. All rights reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" className="text-gray-200 hover:text-white text-sm transition-colors duration-200">

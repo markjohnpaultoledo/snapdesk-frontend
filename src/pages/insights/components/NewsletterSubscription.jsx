@@ -68,7 +68,7 @@ const NewsletterSubscription = () => {
               <Icon name="CheckCircle" size={32} className="text-primary" />
             </div>
             <h2 className="text-3xl font-bold text-text-primary mb-4">
-              Welcome to the snapdesk Community!
+              Welcome to the SnapDesk Community!
             </h2>
             <p className="text-lg text-text-secondary mb-8">
               Thank you for subscribing. You'll receive your first insights newsletter within the next 24 hours.
@@ -233,7 +233,7 @@ const NewsletterSubscription = () => {
               {/* Additional Info */}
               <div className="text-center">
                 <p className="text-xs text-text-secondary">
-                  By subscribing, you agree to receive marketing emails from Snapdesk.
+                  By subscribing, you agree to receive marketing emails from SnapDesk.
                 </p>
               </div>
             </form>

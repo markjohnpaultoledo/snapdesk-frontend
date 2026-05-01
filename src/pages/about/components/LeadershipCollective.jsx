@@ -12,12 +12,12 @@ const LeadershipCollective = () => {
     name: "Sarah Chen",
     role: "Co-Founder & CEO",
     expertise: "Visionary Leadership",
-    bio: `Sarah combines 12 years of Silicon Valley experience with a philosophy degree from Stanford. \nShe believes technology should amplify human creativity, not replace it. \nUnder her leadership, snapdesk has grown from 2 to 25+ team members while maintaining our core values.`,
+    bio: `Sarah combines 12 years of Silicon Valley experience with a philosophy degree from Stanford. \nShe believes technology should amplify human creativity, not replace it. \nUnder her leadership, SnapDesk has grown from 2 to 25+ team members while maintaining our core values.`,
     image: "https://images.unsplash.com/photo-1684262855358-88f296a2cfc2",
     imageAlt: "Professional headshot of Asian woman with shoulder-length black hair in navy blazer smiling confidently",
     credentials: ["Stanford MBA", "Forbes 30 Under 30", "TEDx Speaker"],
     socialLinks: {
-      linkedin: "sarah-chen-snapdesk",
+      linkedin: "sarah-chen-SnapDesk",
       twitter: "sarahc_tech"
     },
     achievements: [
@@ -41,7 +41,7 @@ const LeadershipCollective = () => {
     },
     achievements: [
     "Architected systems serving 10M+ users",
-    "Created snapdesk\'s core AI framework",
+    "Created SnapDesk\'s core AI framework",
     "Mentored 50+ junior developers"]
 
   },
@@ -196,7 +196,7 @@ const LeadershipCollective = () => {
                 </div>
               )}
             </div>
-            <span className="text-sm font-medium text-text-secondary">snapdesk Leadership Team</span>
+            <span className="text-sm font-medium text-text-secondary">SnapDesk Leadership Team</span>
           </div>
         </motion.div>
       </div>

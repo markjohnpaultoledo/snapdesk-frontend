@@ -17,13 +17,13 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services - Snapdesk | Built for Continuity. Governed for Growth.</title>
+        <title>Services - SnapDesk | Built for Continuity. Governed for Growth.</title>
         <meta 
           name="description" 
-          content="Discover Snapdesk's comprehensive digital solutions. From React 18+ development to enterprise-grade applications, we craft technology experiences that matter. Get your custom quote today." 
+          content="Discover SnapDesk's comprehensive digital solutions. From React 18+ development to enterprise-grade applications, we craft technology experiences that matter. Get your custom quote today." 
         />
         <meta name="keywords" content="web development, React development, digital solutions, technology consulting, UI/UX design, performance optimization" />
-        <meta property="og:title" content="Services - Snapdesk | Built for Continuity. Governed for Growth." />
+        <meta property="og:title" content="Services - SnapDesk | Built for Continuity. Governed for Growth." />
         <meta property="og:description" content="We don't just build technology; we architect digital experiences that matter. Explore our comprehensive service offerings." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/services" />
@@ -65,7 +65,7 @@ const Services = () => {
                       <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold">Snapdesk</h3>
+                  <h3 className="text-xl font-semibold">SnapDesk</h3>
                 </div>
                 <p className="text-gray-200 mb-4 leading-relaxed">
                   Built for Continuity. Governed for Growth.. We architect digital experiences that transcend traditional development, 
@@ -116,7 +116,7 @@ const Services = () => {
             </div>
 
             <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-200">
-              <p>&copy; {new Date()?.getFullYear()} Snapdesk. All rights reserved.</p>
+              <p>&copy; {new Date()?.getFullYear()} SnapDesk. All rights reserved.</p>
             </div>
           </div>
         </footer>

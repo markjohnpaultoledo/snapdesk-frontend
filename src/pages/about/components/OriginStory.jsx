@@ -32,7 +32,7 @@ const OriginStory = () => {
   {
     year: "2022",
     title: "Ecosystem Expansion",
-    description: `Launched snapdesk Labs — our open-source initiative. \nContributed 15+ tools to the developer community, impacting over 100,000 developers worldwide.`,
+    description: `Launched SnapDesk Labs — our open-source initiative. \nContributed 15+ tools to the developer community, impacting over 100,000 developers worldwide.`,
     icon: "Globe",
     image: "https://images.unsplash.com/photo-1585069034379-8e4362790d60",
     imageAlt: "Global network visualization with connected nodes and data streams across world map"

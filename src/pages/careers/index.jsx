@@ -22,11 +22,11 @@ const CareersPage = () => {
         <title>Snap Into Growth with SnapDesk</title>
         <meta 
           name="description" 
-          content="We make your workday simpler — with reliable Virtual Assistants and IT support tailored to your needs." 
+          content="We make your workday simpler with reliable Virtual Assistants and IT support tailored to your needs." 
         />
         <meta name="keywords" content="virtual assistant, va, remote work, flexible schedule, customer service, support, tech support, virtual assistant jobs" />
         <meta property="og:title" content="Snap Into Growth with SnapDesk" />
-        <meta property="og:description" content="We make your workday simpler — with reliable Virtual Assistants and IT support tailored to your needs." />
+        <meta property="og:description" content="We make your workday simpler with reliable Virtual Assistants and IT support tailored to your needs." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/careers" />
       </Helmet>

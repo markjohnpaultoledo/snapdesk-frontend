@@ -73,7 +73,7 @@ const HeroSection = () => {
           </div>
           <div className="relative z-10 px-10 py-5 rounded-[50px] bg-[rgba(255,255,255,0.5)] max-w-[590px]">
               <h1 className='text-5xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300'>Snap Into Growth with <br/>SnapDesk</h1>
-              <p className='text-text-primary text-xl'>We make your workday simpler — with reliable Virtual Assistants and IT support tailored to your needs.</p>
+              <p className='text-text-primary text-xl'>We make your workday simpler with reliable Virtual Assistants and IT support tailored to your needs.</p>
           </div>
           
       </div>

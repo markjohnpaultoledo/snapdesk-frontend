@@ -20,7 +20,7 @@ const ImpactMetrics = () => {
     { label: "Client Retention Rate", value: "96%", suffix: "" }],
 
     testimonial: {
-      quote: "snapdesk didn\'t just build our platform — they transformed our entire approach to customer experience. Our user engagement increased by 85% within 6 months.",
+      quote: "SnapDesk didn\'t just build our platform — they transformed our entire approach to customer experience. Our user engagement increased by 85% within 6 months.",
       author: "Jennifer Walsh",
       role: "CEO, TechFlow Solutions",
       image: "https://images.unsplash.com/photo-1684262855358-88f296a2cfc2",
@@ -39,7 +39,7 @@ const ImpactMetrics = () => {
     { label: "Documentation Views", value: "500K", suffix: "/month" }],
 
     testimonial: {
-      quote: "snapdesk's open-source tools have become essential in our development workflow. Their documentation and community support are exceptional.",
+      quote: "SnapDesk's open-source tools have become essential in our development workflow. Their documentation and community support are exceptional.",
       author: "Alex Chen",
       role: "Senior Developer, Spotify",
       image: "https://images.unsplash.com/photo-1698072556534-40ec6e337311",
@@ -58,7 +58,7 @@ const ImpactMetrics = () => {
     { label: "Accessibility Compliance", value: "100%", suffix: "" }],
 
     testimonial: {
-      quote: "Working with snapdesk on our accessibility platform was transformative. They helped us reach 10,000+ users with disabilities in our first year.",
+      quote: "Working with SnapDesk on our accessibility platform was transformative. They helped us reach 10,000+ users with disabilities in our first year.",
       author: "Maria Rodriguez",
       role: "Director, AccessibilityFirst",
       image: "https://images.unsplash.com/photo-1672867209978-1183d00d4714",
@@ -77,7 +77,7 @@ const ImpactMetrics = () => {
     { label: "Industry Awards", value: "15", suffix: "" }],
 
     testimonial: {
-      quote: "snapdesk\'s research in human-AI interaction has influenced our entire product strategy. They\'re true thought leaders in the space.",
+      quote: "SnapDesk\'s research in human-AI interaction has influenced our entire product strategy. They\'re true thought leaders in the space.",
       author: "Dr. Sarah Kim",
       role: "Head of AI Research, Microsoft",
       image: "https://images.unsplash.com/photo-1704455304918-9096fc53e795",

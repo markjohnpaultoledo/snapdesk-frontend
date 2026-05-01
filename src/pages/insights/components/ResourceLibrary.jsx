@@ -61,7 +61,7 @@ const ResourceLibrary = () => {
     frameworks: [
     {
       id: 4,
-      title: "snapdesk Design System Framework",
+      title: "SnapDesk Design System Framework",
       description: `Our complete design system framework that has powered over 100 successful product launches.\n\nIncludes component libraries, design tokens, and implementation guidelines for React, Vue, and Angular.`,
       downloadCount: 4521,
       pages: 28,

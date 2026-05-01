@@ -82,7 +82,7 @@ const NewsletterSignup = () => {
               <Icon name="Check" size={32} className="text-white" />
             </div>
             <h3 className="text-3xl font-bold text-text-primary mb-4">
-              Welcome to the snapdesk Family!
+              Welcome to the SnapDesk Family!
             </h3>
             <p className="text-xl text-text-secondary mb-8">
               Thank you for subscribing. You'll receive our latest insights and updates directly in your inbox.

@@ -11,7 +11,7 @@ const ApplicationProcess = () => {
       id: 1,
       title: "Application Submission",
       duration: "5 minutes",
-      description: "Submit your application with portfolio, resume, and a brief cover letter explaining why you're excited about Snapdesk.",
+      description: "Submit your application with portfolio, resume, and a brief cover letter explaining why you're excited about SnapDesk.",
       details: [
         "Complete online application form",
         "Upload your resume and portfolio",

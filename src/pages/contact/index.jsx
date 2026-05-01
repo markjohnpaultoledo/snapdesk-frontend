@@ -15,13 +15,13 @@ const ContactPage = () => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = 'Contact Us - Snapdesk | Snap Into Growth ';
+    document.title = 'Contact Us - SnapDesk | Snap Into Growth ';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription?.setAttribute('content', 
-        'Ready to transform your vision into reality? Contact Snapdesk for project consultations, partnerships, and strategic technology advisory. Your technology partner for the future you\'re building.'
+        'Ready to transform your vision into reality? Contact SnapDesk for project consultations, partnerships, and strategic technology advisory. Your technology partner for the future you\'re building.'
       );
     }
   }, []);
@@ -103,7 +103,7 @@ const ContactPage = () => {
                 {/* Trust Indicators */}
                 {/* <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8"> */}
                   {/* <h4 className="text-lg font-bold text-text-primary mb-4">
-                    Why Choose Snapdesk?
+                    Why Choose SnapDesk?
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">

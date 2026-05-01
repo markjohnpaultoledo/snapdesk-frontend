@@ -43,11 +43,11 @@ const Header = () => {
     <Link to="/homepage" className="flex items-center gap-3 group">
       <img
         src="https://d1c5khxbu1u21j.cloudfront.net/logo-snapdesk.png"
-        alt="Snapdesk Logo"
+        alt="SnapDesk Logo"
         className="h-10 w-auto object-contain"
       />
       <span className="hidden sm:block text-xl font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
-        Snapdesk
+        SnapDesk
       </span>
     </Link>
   );

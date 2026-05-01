@@ -70,7 +70,7 @@ const ContentPillars = () => {
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
             Four foundational themes that guide our thought leadership and establish 
-            Snapdesk as visionaries in the intersection of technology and human experience.
+            SnapDesk as visionaries in the intersection of technology and human experience.
           </p>
         </div>
 

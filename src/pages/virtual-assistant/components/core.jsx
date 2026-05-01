@@ -149,7 +149,7 @@ const CoreSection = () => {
         {
             id: 5,
             title: "Customer Service Support",
-            description: "Great service builds loyal customers — and we help you keep it that way. Our Virtual Assistants provide friendly, reliable support for your clients, handling inquiries, follow-ups, and after-sales care so every interaction feels personal and professional.",
+            description: "Great service builds loyal customers and we help you keep it that way. Our Virtual Assistants provide friendly, reliable support for your clients, handling inquiries, follow-ups, and after-sales care so every interaction feels personal and professional.",
             lists: [
                 {
                     title: "Customer Communication",

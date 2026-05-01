@@ -106,7 +106,7 @@ const ServicesPreview = () => {
                     >
                     {service?.isPopular && (
                       <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-                        <span className="rounded-full bg-text-primary px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                        <span className="rounded-full bg-text-primary px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white whitespace-nowrap">
                           Most Popular
                         </span>
                       </div>

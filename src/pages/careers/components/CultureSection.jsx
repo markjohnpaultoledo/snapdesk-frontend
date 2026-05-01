@@ -75,7 +75,7 @@ const CultureSection = () => {
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Where emotional intelligence meets artificial intelligence. 
-            Discover what makes Snapdesk a place where technology and humanity thrive together.
+            Discover what makes SnapDesk a place where technology and humanity thrive together.
           </p>
         </motion.div>
 
@@ -162,7 +162,7 @@ const CultureSection = () => {
             Every team member is both an artist and an engineer."
           </blockquote>
           <cite className="text-lg text-text-secondary font-medium">
-            — Snapdesk Tech
+            — SnapDesk Tech
           </cite>
         </motion.div>
       </div>

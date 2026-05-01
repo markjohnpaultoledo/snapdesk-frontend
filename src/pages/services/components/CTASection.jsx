@@ -120,7 +120,7 @@ const CTASection = () => {
         <div className="bg-background rounded-2xl p-8 shadow-medium">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-text-primary mb-2">
-              Why Choose Snapdesk?
+              Why Choose SnapDesk?
             </h3>
             <p className="text-text-secondary">
               Numbers that speak to our commitment to excellence
@@ -150,7 +150,7 @@ const CTASection = () => {
             Ready to Transform Your Digital Presence?
           </h3>
           <p className="text-text-secondary mb-8 max-w-2xl mx-auto">
-            Join the growing list of companies who have chosen Snapdesk to bring their digital visions to life. 
+            Join the growing list of companies who have chosen SnapDesk to bring their digital visions to life. 
             Let's create something amazing together.
           </p>
           

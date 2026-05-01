@@ -146,7 +146,7 @@ export default function VABoards() {
         {
             title: 'Customer Service Support',
             body: `
-                <p>Great service builds loyal customers — and we help you keep it that way. Our Virtual Assistants provide friendly, reliable support for your clients, handling inquiries, follow-ups, and after-sales care so every interaction feels personal and professional.</p>
+                <p>Great service builds loyal customers and we help you keep it that way. Our Virtual Assistants provide friendly, reliable support for your clients, handling inquiries, follow-ups, and after-sales care so every interaction feels personal and professional.</p>
                 <ul>
                     <li>
                         <h4>Customer Communication</h4>
