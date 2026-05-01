@@ -23,10 +23,10 @@ const Routes = () => {
         {/* Define your route here */}
         <Route path="/" element={<Homepage />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/careers/:jobId" element={<JobDetailsPage />} />
+        <Route path="/careers" element={<NotFound />} />
+        <Route path="/careers/:jobId" element={<NotFound />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/insights" element={<NotFound />} />
         <Route path="/about" element={<About />} />
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
