@@ -104,8 +104,11 @@ const ContactForm = () => {
         })
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+      const result = await response?.json();
+      const formSubmitSucceeded = `${result?.success}`?.toLowerCase() === 'true';
+
+      if (!response.ok || !formSubmitSucceeded) {
+        throw new Error(result?.message || 'Failed to send message');
       }
 
       setIsSubmitting(false);
@@ -124,7 +127,7 @@ const ContactForm = () => {
     } catch (error) {
       setIsSubmitting(false);
       setSubmitStatus(null);
-      window.alert('We could not send your message automatically. Please try again in a moment.');
+      window.alert(error?.message || 'We could not send your message automatically. Please try again in a moment.');
     }
   };
 
