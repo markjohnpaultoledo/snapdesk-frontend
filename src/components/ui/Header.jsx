@@ -29,7 +29,7 @@ const Header = () => {
     { name: 'Virtual Assistant', path: '/virtual-assistant', icon: 'BookOpen' },
     {
       name: 'IT and Business Solutions',
-      path: 'https://d1lboxisk6b6d0.cloudfront.net/',
+      path: 'https://tech.snapdesk.com.au/',
       icon: 'Users',
       external: true
     }
