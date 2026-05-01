@@ -23,7 +23,7 @@ const ServicesPreview = () => {
       id: 2,
       title: "Growth Package",
       priceText: "Starts at $1,900",
-      description: "Designed for businesses that need more advanced support—handling complex tasks and coordinating day-to-day operations with ease.",
+      description: "Designed for businesses that need more advanced support handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
         "Administrative support and advanced scheduling",
@@ -37,7 +37,7 @@ const ServicesPreview = () => {
       id: 3,
       title: "Enterprise Package",
       priceText: "Custom packages, tailored to your needs.",
-      description: "Designed for businesses that require high-touch, dedicated support—capable of managing complex operations and driving strategic growth.",
+      description: "Designed for businesses that require high-touch, dedicated support capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
         "Team coordination",
