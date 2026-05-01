@@ -48,6 +48,7 @@ const FeaturedProjects = () => {
     {
       id: 7,
       title: "Technology Solutions",
+      image: "https://images.unsplash.com/photo-1513258496099-48168024aec0",
       description: "Create seamless digital experiences — powered by strategy, AI, and modern digital solutions."
     }
   ];
