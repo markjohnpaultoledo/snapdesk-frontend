@@ -22,7 +22,7 @@ const Footer = () => {
       { name: "About SnapDesk", href: "/about" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms & Conditions", href: "/terms-and-conditions" },
-      { name: "Careers", href: "/careers" }
+      // { name: "Careers", href: "/careers" }
     ]
   },
   {
