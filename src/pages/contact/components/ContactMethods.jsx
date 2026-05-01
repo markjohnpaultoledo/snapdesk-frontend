@@ -31,7 +31,7 @@ const ContactMethods = () => {
       socialLinks: [
         {
           label: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/snapdesk-virtual-solutions-3bb411381/'
+          href: 'https://www.linkedin.com/company/snapdesk-virtual-solutions/'
         },
         {
           label: 'Instagram',

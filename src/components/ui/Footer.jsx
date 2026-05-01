@@ -45,7 +45,7 @@ const Footer = () => {
 //   }
 
   const socialLinks = [
-    { name: "LinkedIn", icon: "Linkedin", href: "https://www.linkedin.com/in/snapdesk-virtual-solutions-3bb411381/" },
+    { name: "LinkedIn", icon: "Linkedin", href: "https://www.linkedin.com/company/snapdesk-virtual-solutions/" },
     { name: "Facebook", icon: "Facebook", href: "https://www.facebook.com/profile.php?id=61589151928186" },
     { name: "Instagram", icon: "Instagram", href: "https://www.instagram.com/snapdeskvirtualsolutions" },
     // { name: "Tiktok", icon: "Tiktok", href: "#" }
