@@ -39,7 +39,7 @@ const ContactMethods = () => {
         },
         {
           label: 'Facebook',
-          href: 'https://www.facebook.com/people/SnapDesk-Virtual-Solutions/61581918006119/'
+          href: 'https://www.facebook.com/profile.php?id=61589151928186'
         }
       ]
     },
