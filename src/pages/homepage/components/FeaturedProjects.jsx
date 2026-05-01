@@ -160,7 +160,7 @@ const FeaturedProjects = () => {
                         className="btn-magnetic"
                       >
                         <a
-                          href="https://snapdesk.com.au/contact"
+                          href="https://tech.snapdesk.com.au/services"
                           target="_blank"
                           rel="noreferrer"
                         >
