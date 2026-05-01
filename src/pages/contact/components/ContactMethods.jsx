@@ -55,10 +55,11 @@ const ContactMethods = () => {
   ];
 
   const handleMethodClick = (method) => {
-    if (method?.href === '#') {
-      // Handle special cases like calendar booking or chat
-      console.log(`Opening ${method?.title}`);
-    } else {
+    if (method?.action === 'Start Chat') {
+      if (window.LiveChatWidget) {
+        window.LiveChatWidget.call('maximize');
+      }
+    } else if (method?.href && method?.href !== '#') {
       window.open(method?.href, '_blank');
     }
   };
