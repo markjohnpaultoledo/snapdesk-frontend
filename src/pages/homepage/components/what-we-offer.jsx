@@ -19,7 +19,7 @@ const WhatWeOffer = () => {
       icon: "Palette",
       iconImage: "https://d1c5khxbu1u21j.cloudfront.net/client-success-governance.png",
       title: "Client Success Governance",
-      description: "Aligned from day one—defining success, managing risk, and setting clear boundaries for intervention.",
+      description: "Aligned from day one defining success, managing risk, and setting clear boundaries for intervention.",
       features: ["Clear success metrics and expected outcomes", "Defined risk thresholds and escalation points", "Structured intervention guidelines", "Consistent, accountable, and predictable delivery"],
       color: "from-accent to-accent/80"
     },
@@ -28,7 +28,7 @@ const WhatWeOffer = () => {
       icon: "Code",
       iconImage: "https://d1c5khxbu1u21j.cloudfront.net/continuity-assurance.png",
       title: "Continuity Assurance",
-      description: "Continuity built in—ensuring seamless transitions, resilient teams, and uninterrupted operations.",
+      description: "Continuity built in ensuring seamless transitions, resilient teams, and uninterrupted operations.",
       features: ["Clearly documented roles and responsibilities", "Structured transition and handover processes", "Backup talent ready when needed", "Operations that continue without disruption"],
       color: "from-primary to-primary/80"
     },
@@ -37,7 +37,7 @@ const WhatWeOffer = () => {
       icon: "Sparkles",
       iconImage: "https://d1c5khxbu1u21j.cloudfront.net/workplace-enablement.png",
       title: "Workforce Enablement",
-      description: "Talent, structured and scalable—built for security, continuity, and outcome-driven delivery.",
+      description: "Talent, structured and scalable built for security, continuity, and outcome-driven delivery.",
       features: ["Role-based hiring aligned to defined outcomes", "Secure onboarding with clear documentation", "Built-in continuity and replaceability", "Teams designed to adapt without disruption"],
       color: "from-trust to-trust/80"
     },
@@ -46,7 +46,7 @@ const WhatWeOffer = () => {
       icon: "Cloud",
       iconImage: "https://d1c5khxbu1u21j.cloudfront.net/risk.png",
       title: "Risk, Escalation, & Incident Governance",
-      description: "Governed operations—clear ownership, structured escalation, and predictable performance.",
+      description: "Governed operations clear ownership, structured escalation, and predictable performance.",
       features: ["Defined roles, responsibilities, and ownership", "Clear escalation paths and decision flows", "Structured review and reporting cadence", "Issues identified early and resolved efficiently"],
       color: "from-trust to-trust/80"
     },
@@ -55,7 +55,7 @@ const WhatWeOffer = () => {
       icon: "Users",
       iconImage: "https://d1c5khxbu1u21j.cloudfront.net/security.png",
       title: "Security & Compliance Governance",
-      description: "Practical security, built in—protecting your data without slowing operations.",
+      description: "Practical security, built in protecting your data without slowing operations.",
       features: ["Enforced NDAs and confidentiality standards", "Controlled access across tools and systems", "Clear data handling and usage guidelines", "Security that supports speed and efficiency"],
       color: "from-trust to-trust/80"
     }
@@ -246,7 +246,7 @@ const WhatWeOffer = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center"
         >
-          <Link to="/services">
+          <Link to="/virtual-assistant">
             <Button
               variant="outline"
               size="lg"

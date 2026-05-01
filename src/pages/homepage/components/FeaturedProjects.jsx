@@ -13,13 +13,13 @@ const FeaturedProjects = () => {
       id: 1,
       title: "Time & Communication Management",
       description: "Seamlessly manage schedules, inboxes, and client communications to keep your day running with clarity and precision.",
-      image: "https://drive.google.com/thumbnail?id=1lPnieanu00Ye4cZHYL3leFf-qbTLk4SO&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/time-mgmt.jpg"
     },
     {
       id: 2,
       title: "Data Management & Research Support",
       description: "Deliver structured data handling, documentation, and research that ensures accuracy, efficiency, and informed decision-making.",
-      image: "https://drive.google.com/thumbnail?id=1tP5AUkKzDnWaay2PljwI6PN1XOdlMejI&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/data-mgmt.jpg"
     },
     {
       id: 3,
@@ -31,19 +31,19 @@ const FeaturedProjects = () => {
       id: 4,
       title: "Bookkeeping & Financial Support",
       description: "Maintain financial accuracy and compliance with reliable bookkeeping, payroll assistance, and clear financial reporting.",
-      image: "https://drive.google.com/thumbnail?id=1r2aFpSz8ey6ofy8gdrGqnpzw8Dwmo0_e&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/bookkeeping.jpg"
     },
     {
       id: 5,
       title: "Personal Assistance",
       description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most.",
-      image: "https://drive.google.com/thumbnail?id=1i7GOYxH_u-Q5GFAjrKhD-WhsASX_GdSI&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/pa.jpg"
     },
     {
       id: 6,
       title: "Customer Service Support",
       description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels.",
-      image: "https://drive.google.com/thumbnail?id=16HEh9ZWssgtYKjfWSLsF-0F8kYizRKYl&sz=w1600"
+      image: "https://d1c5khxbu1u21j.cloudfront.net/cs.jpg"
     },
     {
       id: 7,
@@ -90,7 +90,7 @@ const FeaturedProjects = () => {
             Snap Into <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Effortless Support</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            From business admin to personal tasks, our Virtual Assistants help you stay organised, efficient, and stress-free -- every day.
+            From business admin to personal tasks, our Virtual Assistants help you stay organised, efficient, and stress-free every day.
           </p>
         </motion.div>
 
@@ -144,7 +144,7 @@ const FeaturedProjects = () => {
                 transition={{ duration: 0.6 }}
                 className="bg-white border border-border rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-stretch min-h-[240px]"
               >
-                <div className="flex-1">
+                <div className="flex-1 flex flex-col justify-center">
                   <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                     {projects?.[activeProject]?.title}
                   </h3>

@@ -8,8 +8,11 @@ const LocationMap = () => {
       id: 1,
       city: "Brisbane",
       address: "Level 18, 324 Queen Street, Brisbane, QLD 4000 Australia",
-      phone: "+61 402 331 126",
-      email: "brisbane@snapdesk.com.au",
+      phones: [
+        { label: "Virtual Assistant Support", number: "+61 402 331 26", tel: "6140233126" },
+        { label: "IT & Business Solutions", number: "+61 402 331 771", tel: "61402331771" }
+      ],
+      email: "contact@snapdesk.com.au",
       hours: "Mon-Fri: 9 AM - 6 PM AEST",
       coordinates: "-27.4698,153.0251"
     },
@@ -65,49 +68,54 @@ const LocationMap = () => {
                 </h3>
 
                 <div className="space-y-3">
-                  <div className="flex items-start justify-center space-x-3">
-                    <Icon name="MapPin" size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div className="text-text-primary font-medium">Address</div>
-                      <div className="text-text-secondary text-sm whitespace-pre-line">
-                        {office?.address}
+                  <div>
+                    <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                      <Icon name="MapPin" size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-text-primary font-medium">Address</span>
+                    </div>
+                    <div className="text-text-secondary text-sm whitespace-pre-line">
+                      {office?.address}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                      <Icon name="Phone" size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-text-primary font-medium">Phone</span>
+                    </div>
+                    {office?.phones?.map((p) => (
+                      <div key={p.tel} className="text-sm mb-1">
+                        <a
+                          href={`tel:${p.tel}`}
+                          className="text-text-secondary hover:text-primary transition-colors"
+                        >
+                          {p.number}
+                        </a>
+                        <span className="text-text-secondary/60 ml-1">— {p.label}</span>
                       </div>
-                    </div>
+                    ))}
                   </div>
 
-                  <div className="flex items-center justify-center space-x-3">
-                    <Icon name="Phone" size={18} className="text-primary flex-shrink-0" />
-                    <div>
-                      <div className="text-text-primary font-medium">Phone</div>
-                      <a 
-                        href={`tel:${office?.phone?.replace(/\D/g, '')}`}
-                        className="text-text-secondary text-sm hover:text-primary transition-colors"
-                      >
-                        {office?.phone}
-                      </a>
+                  <div>
+                    <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                      <Icon name="Mail" size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-text-primary font-medium">Email</span>
                     </div>
+                    <a
+                      href={`mailto:${office?.email}`}
+                      className="text-text-secondary text-sm hover:text-primary transition-colors"
+                    >
+                      {office?.email}
+                    </a>
                   </div>
 
-                  <div className="flex items-center justify-center space-x-3">
-                    <Icon name="Mail" size={18} className="text-primary flex-shrink-0" />
-                    <div>
-                      <div className="text-text-primary font-medium">Email</div>
-                      <a 
-                        href={`mailto:${office?.email}`}
-                        className="text-text-secondary text-sm hover:text-primary transition-colors"
-                      >
-                        {office?.email}
-                      </a>
+                  <div>
+                    <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                      <Icon name="Clock" size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-text-primary font-medium">Hours</span>
                     </div>
-                  </div>
-
-                  <div className="flex items-center justify-center space-x-3">
-                    <Icon name="Clock" size={18} className="text-primary flex-shrink-0" />
-                    <div>
-                      <div className="text-text-primary font-medium">Hours</div>
-                      <div className="text-text-secondary text-sm">
-                        {office?.hours}
-                      </div>
+                    <div className="text-text-secondary text-sm">
+                      {office?.hours}
                     </div>
                   </div>
                 </div>
@@ -123,7 +131,7 @@ const LocationMap = () => {
                     Get Directions
                   </a>
                   <a
-                    href={`tel:${office?.phone?.replace(/\D/g, '')}`}
+                    href="tel:6140233126"
                     className="flex-1 bg-accent/10 text-accent px-4 py-2 rounded-lg text-center text-sm font-medium hover:bg-accent/20 transition-colors"
                   >
                     Call Office
@@ -152,10 +160,6 @@ const LocationMap = () => {
             Our remote collaboration tools ensure seamless communication regardless of location.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-text-secondary">
-            <span className="flex items-center space-x-1">
-              <Icon name="Clock" size={14} />
-              <span>24/7 Support</span>
-            </span>
             <span className="flex items-center space-x-1">
               <Icon name="Video" size={14} />
               <span>Video Conferencing</span>

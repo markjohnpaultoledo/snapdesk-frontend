@@ -72,7 +72,7 @@ const ContactHero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
           >
-            Ready to elevate your business with seamless support? Experience Virtual Assistance driven by Client Success.
+            Ready to elevate your business with seamless support? <br></br>Experience Virtual Assistance driven by Client Success.
           </motion.p>
 
           {/* Stats */}

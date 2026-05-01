@@ -66,7 +66,7 @@ const OurValuesSection = () => {
                     className="text-center mb-16">
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
-                        What We Stand For
+                        What We <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Stand For</span>
                     </h2>
                     <p className="text-xl text-text-secondary">
                         At SnapDesk, our values guide every decision we make and every service we deliver.<br/> They reflect who we are, how we work, and the standard of support our clients can always expect.

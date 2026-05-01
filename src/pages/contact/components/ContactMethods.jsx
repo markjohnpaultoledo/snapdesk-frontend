@@ -9,9 +9,10 @@ const ContactMethods = () => {
       icon: 'Phone',
       title: 'Call Us Directly',
       description: 'Reach us directly for immediate support',
-      value: '+61 402 331 126',
-      action: 'Call Now',
-      href: 'tel:+61402331126',
+      phones: [
+        { label: 'Virtual Assistant Support', number: '+61 402 331 26', href: 'tel:6140233126' },
+        { label: 'IT & Business Solutions', number: '+61 402 331 771', href: 'tel:61402331771' }
+      ],
       available: '9 AM - 6 PM PST'
     },
     {
@@ -107,6 +108,18 @@ const ContactMethods = () => {
                 <div className="text-primary font-medium text-sm mb-2">
                   {method?.value}
                 </div>
+                {method?.phones && (
+                  <div className="flex flex-col gap-1 mb-2">
+                    {method.phones.map((p) => (
+                      <div key={p.href} className="text-sm">
+                        <a href={p.href} className="text-primary font-semibold hover:underline">
+                          {p.number}
+                        </a>
+                        <span className="text-text-secondary/70 ml-1 text-xs">— {p.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {method?.available && (
                   <div className="text-xs text-text-secondary mb-4">
                     {method?.available}
@@ -129,7 +142,7 @@ const ContactMethods = () => {
                 )}
               </div>
 
-              {!method?.socialLinks && (
+              {!method?.socialLinks && !method?.phones && (
                 <Button
                   variant="outline"
                   size="sm"

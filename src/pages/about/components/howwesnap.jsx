@@ -15,6 +15,8 @@ const HowWeSnapIn = () => {
             image: 'https://d1c5khxbu1u21j.cloudfront.net/team-va.jpg',
             imageClassName: 'object-cover',
             description: '',
+            link: '/virtual-assistant',
+            external: false,
             list: [
                 {
                     title: "Time & Communication Management",
@@ -47,30 +49,23 @@ const HowWeSnapIn = () => {
             image: 'https://d1c5khxbu1u21j.cloudfront.net/team-tech.jpg',
             imageClassName: 'object-contain bg-muted',
             description: '',
-            list: [
+            link: 'https://tech.snapdesk.com.au',
+            external: true,
+            groups: [
                 {
-                    title: "Time & Communication Management",
-                    description: "Seamlessly manage schedules, inboxes, and client communications to keep your day running with clarity and precision."
+                    heading: "Maximize Technology",
+                    description: "Build and scale modern digital infrastructure with expert-led cloud, development, and transformation services.",
+                    items: ["Cloud Services", "Product Development", "Application Innovation", "DevOps & Agile Transformation"]
                 },
                 {
-                    title: "Data Management & Research Support",
-                    description: "Deliver structured data handling, documentation, and research that ensures accuracy, efficiency, and informed decision-making."
+                    heading: "Mobilize Talent",
+                    description: "Access structured workforce solutions that connect you with the right technical professionals when and where you need them.",
+                    items: ["Managed Service Program (MSP) Support", "Talent Solutions"]
                 },
                 {
-                    title: "Operations & Team Support",
-                    description: "Strengthen business performance through streamlined processes, project coordination, and reliable operational support."
-                },
-                {
-                    title: "Bookkeeping & Financial Support",
-                    description: "Maintain financial accuracy and compliance with reliable bookkeeping, payroll assistance, and clear financial reporting."
-                },
-                {
-                    title: "Personal Assistance",
-                    description: "Provide proactive executive and lifestyle support to help you stay organised, balanced, and focused on what matters most."
-                },
-                {
-                    title: "Customer Service Support",
-                    description: "Enhance customer satisfaction through professional, timely communication and end-to-end support across multiple service channels."
+                    heading: "AI",
+                    description: "Harness the power of artificial intelligence to automate, innovate, and accelerate your business outcomes.",
+                    items: ["Applied AI Engineering", "Agent Design and Development"]
                 }
             ]
         }
@@ -153,6 +148,26 @@ const HowWeSnapIn = () => {
                                             <h4 className="text-primary text-xl font-semibold mb-2">
                                                 { board?.title }
                                             </h4>
+                                            {board?.groups ? (
+                                                <div className="space-y-4 mb-6">
+                                                    {board.groups.map((group, gi) => (
+                                                        <div key={gi}>
+                                                            <h5 className="text-base font-semibold text-text-primary mb-1">{group.heading}</h5>
+                                                            {group.description && (
+                                                                <p className="text-sm text-text-secondary mb-2">{group.description}</p>
+                                                            )}
+                                                            <ul className="space-y-1">
+                                                                {group.items.map((item, ii) => (
+                                                                    <li key={ii} className="flex items-center text-sm text-text-secondary">
+                                                                        <Icon name="Check" size={14} className="text-primary mr-2 flex-shrink-0" />
+                                                                        {item}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
                                             <ul className="space-y-2 mb-6">
                                                 {board?.list?.map((list, index) => (
                                                 <li key={index} className="flex items-start text-sm text-text-secondary">
@@ -164,13 +179,17 @@ const HowWeSnapIn = () => {
                                                 </li>
                                                 ))}
                                             </ul>
+                                            )}
                                         </div>
-                                        <Button
-                                            className="btn btn-black"
-                                        >
-
-                                            Learn more
-                                        </Button>
+                                        {board?.external ? (
+                                            <a href={board?.link} target="_blank" rel="noreferrer">
+                                                <Button className="btn btn-black">Learn more</Button>
+                                            </a>
+                                        ) : (
+                                            <Link to={board?.link}>
+                                                <Button className="btn btn-black">Learn more</Button>
+                                            </Link>
+                                        )}
                                     </div>
                                 </motion.div>
                                 ))}

@@ -37,7 +37,7 @@ const HowItWorks = () => {
         {
             img: 'VA_page_Proposal_Agreement.png',
             title: 'Proposal & Agreement',
-            text: 'Get a customised proposal, sign the contract, and secure it with a deposit'
+            text: 'Get a customised proposal, sign the contract, and secure with a deposit'
         },
         {
             img: 'VA_Page_ Sourcing_your_VA.png',
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                         How It Works with <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SnapDesk</span>
                     </h2>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals -- so you can focus on what matters most.
+                        Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals so you can focus on what matters most.
                     </p>
                 </motion.div>
 
@@ -116,7 +116,7 @@ const HowItWorks = () => {
                     className="text-center mt-10"
                 >
                     <p className="text-xl text-text-primary max-w-3xl mx-auto">
-                        Ready to find the perfect Virtual Assistant to match your business and lifestyle? <br/> Book your consultation today!
+                        Ready to find the perfect Virtual Assistant to match your business and lifestyle? <br/>
                     </p>
                 </motion.div>
 

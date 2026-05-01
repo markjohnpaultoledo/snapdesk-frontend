@@ -211,7 +211,7 @@ const ServicesPreview = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center"
         >
-          <Link to="/services">
+          <Link to="/contact">
             <Button
               variant="default"
               size="lg"

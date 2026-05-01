@@ -149,7 +149,7 @@ const CallToAction = () => {
               {
                 icon: "Mail",
                 title: "Email Us",
-                value: "hello@snapdesk.studio",
+                value: "contact@snapdesk.com.au",
                 description: "For project inquiries and partnerships"
               },
               {

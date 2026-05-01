@@ -40,49 +40,15 @@ const Header = () => {
   };
 
   const Logo = () => (
-    <Link to="/homepage" className="flex items-center space-x-3 group">
-      <div className="relative">
-        {/* <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center organic-shape transition-all duration-500 group-hover:shadow-glow"> */}
-          {/* <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-white"
-          >
-            <path
-              d="M12 2L2 7L12 12L22 7L12 2Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M2 17L12 22L22 17"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M2 12L12 17L22 12"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg> */}
-        {/* </div> */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div> */}
-      </div>
-      <div className="hidden sm:block">
-        <h1 className="text-xl font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
-          Snapdesk
-        </h1>
-        <p className="text-xs text-text-secondary font-medium tracking-wide">
-          {/* Built for Continuity. Governed for Growth. */}
-        </p>
-      </div>
+    <Link to="/homepage" className="flex items-center gap-3 group">
+      <img
+        src="https://d1c5khxbu1u21j.cloudfront.net/logo-snapdesk.png"
+        alt="Snapdesk Logo"
+        className="h-10 w-auto object-contain"
+      />
+      <span className="hidden sm:block text-xl font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
+        Snapdesk
+      </span>
     </Link>
   );
 

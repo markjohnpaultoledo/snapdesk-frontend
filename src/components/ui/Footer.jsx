@@ -46,8 +46,8 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "LinkedIn", icon: "Linkedin", href: "https://www.linkedin.com/in/snapdesk-virtual-solutions-3bb411381/" },
-    { name: "Facebook", icon: "Facebook", href: "https://www.instagram.com/snapdeskvirtualsolutions" },
-    { name: "Instagram", icon: "Instagram", href: "https://www.facebook.com/people/SnapDesk-Virtual-Solutions/" },
+    { name: "Facebook", icon: "Facebook", href: "https://www.facebook.com/people/SnapDesk-Virtual-Solutions/61581918006119/" },
+    { name: "Instagram", icon: "Instagram", href: "https://www.instagram.com/snapdeskvirtualsolutions" },
     // { name: "Tiktok", icon: "Tiktok", href: "#" }
   ];
 
@@ -75,49 +75,15 @@ const Footer = () => {
   };
 
   const Logo = () =>
-  <div className="flex items-center space-x-3 group">
-      <div className="relative">
-        <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center organic-shape transition-all duration-500 group-hover:shadow-glow">
-          <svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="text-white">
-
-            <path
-            d="M12 2L2 7L12 12L22 7L12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round" />
-
-            <path
-            d="M2 17L12 22L22 17"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round" />
-
-            <path
-            d="M2 12L12 17L22 12"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round" />
-
-          </svg>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-      </div>
-      <div>
-        <h3 className="text-2xl font-semibold text-white group-hover:text-primary transition-colors duration-300">
-          Snapdesk
-        </h3>
-        <p className="text-sm text-gray-300 font-medium tracking-wide group-hover:text-gray-200 transition-colors duration-300">
-          Built for Continuity. Governed for Growth.
-        </p>
-      </div>
+  <div className="flex items-center gap-3 group">
+      <img
+        src="https://d1c5khxbu1u21j.cloudfront.net/logo-snapdesk.png"
+        alt="Snapdesk Logo"
+        className="h-12 w-auto object-contain"
+      />
+      <span className="text-2xl font-semibold text-white group-hover:text-primary transition-colors duration-300">
+        Snapdesk
+      </span>
     </div>;
 
 
@@ -137,7 +103,7 @@ const Footer = () => {
             <motion.div variants={itemVariants} className="lg:col-span-5 bg-[rgba(255,255,255,0)]">
               <Logo />
               <p className="text-gray-200 mt-6 text-lg leading-relaxed max-w-md hover:text-white transition-colors duration-300">
-                Governed virtual operations built for continuity, security, and stability.
+                Built for Continuity. Governed for Growth.
               </p>
               
               {/* Contact Info */}
@@ -146,9 +112,18 @@ const Footer = () => {
                   <Icon name="Mail" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
                   <span className="text-gray-200 group-hover:text-white transition-colors duration-300">contact@snapdesk.com.au</span>
                 </div>
-                <div className="flex items-center space-x-3 group">
-                  <Icon name="Phone" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
-                  <span className="text-gray-200 group-hover:text-white transition-colors duration-300">+61 402 331 126</span>
+                <div className="flex items-start space-x-3 group">
+                  <Icon name="Phone" size={18} className="text-accent group-hover:text-white transition-colors duration-300 mt-0.5 flex-shrink-0" />
+                  <div className="space-y-1">
+                    <div>
+                      <a href="tel:6140233126" className="text-gray-200 hover:text-white transition-colors duration-300">+61 402 331 26</a>
+                      <span className="text-gray-400 text-xs ml-1">— Virtual Assistant Support</span>
+                    </div>
+                    <div>
+                      <a href="tel:61402331771" className="text-gray-200 hover:text-white transition-colors duration-300">+61 402 331 771</a>
+                      <span className="text-gray-400 text-xs ml-1">— IT & Business Solutions</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-3 group">
                   <Icon name="MapPin" size={18} className="text-accent group-hover:text-white transition-colors duration-300" />
@@ -265,9 +240,6 @@ const Footer = () => {
               </a>
               <a href="/terms-and-conditions" className="text-gray-200 hover:text-white transition-colors duration-300">
                 Terms and Conditions
-              </a>
-              <a href="#" className="text-gray-200 hover:text-white transition-colors duration-300">
-                Cookie Policy
               </a>
             </div>
           </div>

@@ -13,7 +13,7 @@ const AboutTeam = () => {
         {
             id: 1,
             name: "Rotsen Magtaas",
-            role: "CEO",
+            role: "Chief Executive Officer",
             image: "https://d1c5khxbu1u21j.cloudfront.net/rotsen.jpg",
             alt: "Portrait of Rotsen Magtaas",
             bio: "Builds disciplined systems that bring clarity and confidence to operations. Delivers structured solutions that drive consistent success and sustainable growth.",
@@ -23,7 +23,7 @@ const AboutTeam = () => {
         {
             id: 2,
             name: "Christina Kawase",
-            role: "COO",
+            role: "Chief Operating Officer",
             image: "https://d1c5khxbu1u21j.cloudfront.net/christina.jpg",
             alt: "Portrait of Christina Kawase",
             bio: "Oversees service delivery, operations, and client relationships to ensure alignment with business goals. Builds resilient operations that support long-term client partnerships.",
@@ -44,8 +44,8 @@ const AboutTeam = () => {
             id: 4,
             name: "Elizabeth Caoile",
             role: "Chief Recruitment Officer",
-            image: "/assets/images/no_image.png",
-            alt: "Placeholder portrait for Elizabeth Caoile",
+            image: "https://d1c5khxbu1u21j.cloudfront.net/beth.png",
+            alt: "Portrait of Elizabeth Caoile",
             bio: "Leads recruitment strategy and talent acquisition operations to ensure SnapDesk consistently attracts, evaluates, and hires aligned talent. Translates organizational needs into structured hiring systems and measurable staffing outcomes.",
             expertise: ["Recruitment Strategy", "Talent Acquisition", "Workforce Planning"],
             contact: "contact@snapdesk.com.au"
@@ -53,7 +53,7 @@ const AboutTeam = () => {
         {
             id: 5,
             name: "Mark Toledo",
-            role: "CEO, IT",
+            role: "Chief Executive Officer, IT",
             image: "https://d1c5khxbu1u21j.cloudfront.net/leds.jpg",
             alt: "Portrait of Mark Toledo",
             bio: "Leads SnapDesk's IT direction by aligning technical strategy with business outcomes. Focuses on secure, scalable solutions that improve delivery speed and long-term reliability.",
@@ -63,7 +63,7 @@ const AboutTeam = () => {
         {
             id: 6,
             name: "Kainoa Magtaas",
-            role: "COO, IT",
+            role: "Chief Operating Officer, IT",
             image: "https://d1c5khxbu1u21j.cloudfront.net/kainoa.jpg",
             alt: "Portrait of Kainoa Magtaas",
             bio: "Oversees IT operations and execution across delivery teams to keep services dependable and efficient. Builds structured workflows that maintain quality, continuity, and operational performance.",
@@ -122,16 +122,14 @@ const AboutTeam = () => {
                 </p>
 
                 {/* Expertise Tags */}
-                <div className="flex flex-wrap gap-2">
+                <ul className="list-none space-y-1">
                     {member?.expertise?.map((skill, skillIndex) => (
-                        <span
-                            key={skillIndex}
-                            className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                        >
-                            {skill}
-                        </span>
+                        <li key={skillIndex} className="flex items-center gap-2 text-primary text-xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                            <span className="px-2 py-1 bg-primary/10 rounded-full">{skill}</span>
+                        </li>
                     ))}
-                </div>
+                </ul>
 
                 {/* Contact */}
                 <div className="pt-2 border-t border-border">

@@ -32,7 +32,7 @@ const Packages = () => {
       id: 2,
       title: "Growth Package",
       description: "Starts at $1,900",
-      details: "Designed for businesses that need more advanced support-handling complex tasks and coordinating day-to-day operations with ease.",
+      details: "Designed for businesses that need more advanced support handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
         "Administrative support and advanced scheduling",
@@ -46,7 +46,7 @@ const Packages = () => {
       id: 3,
       title: "Enterprise Package",
       description: "Custom packages, tailored to your needs.",
-      details: "Designed for businesses that require high-touch, dedicated support-capable of managing complex operations and driving strategic growth.",
+      details: "Designed for businesses that require high-touch, dedicated support capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
         "Team coordination and oversight",
@@ -154,7 +154,7 @@ const Packages = () => {
                         Flexible Packages for Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Business</span>
                     </h2>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals -- so you can focus on what matters most.
+                        Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals so you can focus on what matters most.
                     </p>
                 </motion.div>
 
@@ -225,7 +225,7 @@ const Packages = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-center mt-5"
                 >
-                <Link to="/services">
+                <Link to="/contact">
                     <Button
                         variant="default"
                         size="lg"

@@ -42,7 +42,7 @@ const PrivacyPage = () => {
                     <li>Name, contact details, and business information</li>
                     <li>Payment and billing details</li>
                     <li>Communications and feedback</li>
-                    <li>Website and usage data (via cookies and analytics)</li>
+                    <li>Website and usage data (via analytics)</li>
                     <li>We collect this information directly from you when you visit our website, fill out forms, or engage our services.</li>
                 </ul>
                 <h3>2. How We Use It</h3>
@@ -71,24 +71,22 @@ const PrivacyPage = () => {
                     <li>Regulators, if required by law</li>
                     <li>We never sell or rent your personal data.</li>
                 </ul>
-                <h3>5. Cookies & Analytics</h3>
-                <p>Our website uses cookies to enhance functionality and track performance (e.g., via Google Analytics). You can adjust cookie settings in your browser at any time.</p>
-                <h3>6. Access & Correction</h3>
+                <h3>5. Access & Correction</h3>
                 <p>You can request access to or correction of your personal information by emailing us at:</p>
-                <p>📧 <a href="" className='underline'>privacy@snapdesk.au</a> We’ll respond within a reasonable time (usually within 30 days).</p>
+                <p>📧 <a href="mailto:contact@snapdesk.com.au" className='underline'>contact@snapdesk.com.au</a> We'll respond within a reasonable time (usually within 30 days).</p>
 
-                <h3>7. Retention & Deletion</h3>
+                <h3>6. Retention & Deletion</h3>
                 <p>We retain data only for as long as necessary for business or legal purposes, after which it’s securely deleted or anonymized.</p>
 
-                <h3>8. Complaints & Contact</h3>
-                <p>If you have any privacy concerns, contact us at: [Insert Email Address] SnapDesk Virtual Solutions [Insert Address]</p>
+                <h3>7. Complaints & Contact</h3>
+                <p>If you have any privacy concerns, contact us at: contact@snapdesk.com.au, SnapDesk Virtual Solutions, Level 18, 324 Queen Street, Brisbane, QLD 4000 Australia</p>
                 <p>If you’re not satisfied with our response, you can contact the Office of the Australian Information Commissioner (OAIC) via www.oaic.gov.au.</p>
 
-                <h3>9. Policy Updates</h3>
+                <h3>8. Policy Updates</h3>
                 <p>We may update this Privacy Policy to reflect changes in law or our operations. The most recent version will always be available on our website.</p>
 
                 <h3>In Short</h3>
-                <p>Your trust means everything to us. SnapDesk protects your information with care, integrity, and professionalism — just as we manage your business.</p>
+                <p>Your trust means everything to us. SnapDesk protects your information with care, integrity, and professionalism just as we manage your business.</p>
               </motion.div>
             </div>
           </div>
