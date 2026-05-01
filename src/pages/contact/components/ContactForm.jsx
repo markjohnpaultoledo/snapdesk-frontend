@@ -84,7 +84,7 @@ const ContactForm = () => {
     );
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/mark.toledo@triarchsystem.com', {
+      const response = await fetch('https://formsubmit.co/ajax/contact@snapdesk.com.au', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
