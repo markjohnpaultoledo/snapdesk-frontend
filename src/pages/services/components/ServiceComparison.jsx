@@ -153,7 +153,7 @@ const ServiceComparison = () => {
               {plan?.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <div className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap">
-                    Most Popular
+                    RECOMMENDED
                   </div>
                 </div>
               )}

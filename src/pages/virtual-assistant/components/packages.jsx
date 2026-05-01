@@ -178,7 +178,7 @@ const Packages = () => {
                     {service?.isPopular && (
                       <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2">
                         <span className="inline-flex rounded-full bg-text-primary px-4 py-1 text-[11px] font-semibold uppercase tracking-wide text-white whitespace-nowrap">
-                          Most Popular
+                          RECOMMENDED
                         </span>
                       </div>
                     )}
