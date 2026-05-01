@@ -4,7 +4,7 @@ import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 
 const AboutTeam = () => {
-    const enableAutoplay = true;
+    const enableAutoplay = false;
     const autoplayIntervalMs = 4500;
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isHovered, setIsHovered] = useState(false);

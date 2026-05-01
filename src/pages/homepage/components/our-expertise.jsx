@@ -6,7 +6,7 @@ import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
 
 const ServicesPreview = () => {
-  const enableAutoplay = true;
+  const enableAutoplay = false;
   const autoplayIntervalMs = 4500;
 
   const [cardsPerView, setCardsPerView] = useState(1);
