@@ -310,7 +310,7 @@ const CoreSection = () => {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="text-center mt-16">
 
-                    <Link to="/portfolio">
+                    <Link to="/contact">
                         <Button
                             variant="default"
                             size="lg"
