@@ -10,3 +10,22 @@ body {
   font-family: inherit;
   margin: unset;
 }
+
+/* Global spacing compression across pages */
+.py-20 {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+.py-16 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.mb-16 {
+  margin-bottom: 2.5rem !important;
+}
+
+.mt-16 {
+  margin-top: 2.5rem !important;
+}

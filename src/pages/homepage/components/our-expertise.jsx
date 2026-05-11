@@ -1,100 +1,130 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
 
 const ServicesPreview = () => {
-  const enableAutoplay = false;
-  const autoplayIntervalMs = 4500;
+  const [isPaused, setIsPaused] = useState(false);
+  const trackRef = useRef(null);
+  const frameRef = useRef(null);
+  const lastTimestampRef = useRef(0);
+  const singleTrackWidthRef = useRef(0);
+  const stepSizeRef = useRef(360);
+  const marqueeX = useMotionValue(0);
 
-  const [cardsPerView, setCardsPerView] = useState(1);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const whyChooseItems = [
+    {
+      imageFile: "Building2.png",
+      title: "Enterprise Governance Framework",
+      text: "Our governed delivery model embeds structured oversight, documented processes, and defined accountability into every engagement; ensuring consistency, auditability, and operational control."
+    },
+    {
+      imageFile: "ShieldCheck.png",
+      title: "Business Continuity & Operational Resilience",
+      text: "Redundancy planning, knowledge documentation, and transition protocols safeguard your operations against disruption and personnel risk."
+    },
+    {
+      imageFile: "AlertTriangle.png",
+      title: "Risk, Escalation & Incident Management Controls",
+      text: "Formal escalation pathways and issue-resolution governance protect service integrity and maintain performance standards."
+    },
+    {
+      imageFile: "LockKeyhole.png",
+      title: "Security & Compliance Alignment",
+      text: "Access controls, data protection standards, and compliance-aware workflows are built into our operating structure, reducing exposure and strengthening regulatory readiness."
+    },
+    {
+      imageFile: "Target.png",
+      title: "Outcome-Focused, Experienced Team",
+      text: "A skilled workforce selected for expertise and fit, with performance and processes governed to deliver client success reliably and consistently."
+    }
+  ];
 
-  const HomepageWhyChoose = {
-    title: "Why Choose SnapDesk?",
-    ctaText: "Get Started",
-    ctaButtonColor: "sp",
-    ctaLink: "/virtual-assistant",
-    imageData: [
-      {
-        imageFile: "Building2.png",
-        title: "Enterprise Governance Framework",
-        text: "Our governed delivery model embeds structured oversight, documented processes, and defined accountability into every engagement; ensuring consistency, auditability, and operational control."
-      },
-      {
-        imageFile: "ShieldCheck.png",
-        title: "Business Continuity & Operational Resilience",
-        text: "Redundancy planning, knowledge documentation, and transition protocols safeguard your operations against disruption and personnel risk."
-      },
-      {
-        imageFile: "AlertTriangle.png",
-        title: "Risk, Escalation & Incident Management Controls",
-        text: "Formal escalation pathways and issue-resolution governance protect service integrity and maintain performance standards."
-      },
-      {
-        imageFile: "LockKeyhole.png",
-        title: "Security & Compliance Alignment",
-        text: "Access controls, data protection standards, and compliance-aware workflows are built into our operating structure—reducing exposure and strengthening regulatory readiness."
-      },
-      {
-        imageFile: "Target.png",
-        title: "Outcome-Focused, Experienced Team",
-        text: "A skilled workforce selected for expertise and fit, with performance and processes governed to deliver client success reliably and consistently"
-      }
-    ]
-  };
+  const marqueeItems = [...whyChooseItems, ...whyChooseItems];
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setCardsPerView(3);
-        return;
-      }
+  const normalizeOffset = (value) => {
+    const trackWidth = singleTrackWidthRef.current;
 
-      if (window.innerWidth >= 640) {
-        setCardsPerView(2);
-        return;
-      }
-
-      setCardsPerView(1);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const totalPages = useMemo(() => {
-    return Math.ceil(HomepageWhyChoose.imageData.length / cardsPerView);
-  }, [HomepageWhyChoose.imageData.length, cardsPerView]);
-
-  useEffect(() => {
-    setCurrentPage((prev) => Math.min(prev, totalPages - 1));
-  }, [totalPages]);
-
-  const handleNext = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  };
-
-  const handlePrev = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  useEffect(() => {
-    if (!enableAutoplay || isHovered || totalPages <= 1) {
-      return undefined;
+    if (!trackWidth) {
+      return value;
     }
 
-    const timer = window.setInterval(() => {
-      setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, autoplayIntervalMs);
+    let nextValue = value;
 
-    return () => window.clearInterval(timer);
-  }, [enableAutoplay, autoplayIntervalMs, isHovered, totalPages]);
+    while (nextValue <= -trackWidth) {
+      nextValue += trackWidth;
+    }
+
+    while (nextValue > 0) {
+      nextValue -= trackWidth;
+    }
+
+    return nextValue;
+  };
+
+  useEffect(() => {
+    const measureTrack = () => {
+      if (!trackRef.current) {
+        return;
+      }
+
+      singleTrackWidthRef.current = trackRef.current.scrollWidth / 2;
+
+      const firstCard = trackRef.current.querySelector('[data-marquee-card="true"]');
+      if (firstCard) {
+        stepSizeRef.current = firstCard.getBoundingClientRect().width + 16;
+      }
+
+      marqueeX.set(normalizeOffset(marqueeX.get()));
+    };
+
+    measureTrack();
+    window.addEventListener('resize', measureTrack);
+
+    return () => {
+      window.removeEventListener('resize', measureTrack);
+    };
+  }, [marqueeX]);
+
+  useEffect(() => {
+    const speedPxPerSecond = 36;
+
+    const tick = (timestamp) => {
+      if (!lastTimestampRef.current) {
+        lastTimestampRef.current = timestamp;
+      }
+
+      const deltaSeconds = (timestamp - lastTimestampRef.current) / 1000;
+      lastTimestampRef.current = timestamp;
+
+      if (!isPaused && singleTrackWidthRef.current > 0) {
+        const currentX = marqueeX.get();
+        marqueeX.set(normalizeOffset(currentX - speedPxPerSecond * deltaSeconds));
+      }
+
+      frameRef.current = window.requestAnimationFrame(tick);
+    };
+
+    frameRef.current = window.requestAnimationFrame(tick);
+
+    return () => {
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+      lastTimestampRef.current = 0;
+    };
+  }, [isPaused, marqueeX]);
+
+  const shiftCards = (direction) => {
+    const step = stepSizeRef.current;
+    const currentX = marqueeX.get();
+    const delta = direction === 'prev' ? step : -step;
+
+    marqueeX.set(normalizeOffset(currentX + delta));
+    setIsPaused(true);
+  };
 
   return (
     <section className="py-20 bg-[#fafafa]">
@@ -120,86 +150,69 @@ const ServicesPreview = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <div
-            className="relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div className="overflow-hidden">
-              <motion.div
-                className="flex"
-                animate={{ x: `-${currentPage * 100}%` }}
-                transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -70) handleNext();
-                  if (info.offset.x > 70) handlePrev();
-                }}
-              >
-                {HomepageWhyChoose?.imageData?.map((data, ind) => (
-                  <div
-                    key={ind}
-                    className="flex-shrink-0 px-2 sm:px-3"
-                    style={{ width: `${100 / cardsPerView}%` }}
+          <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <motion.div
+              ref={trackRef}
+              className="flex w-max gap-4 py-2"
+              style={{ x: marqueeX }}
+            >
+              {marqueeItems.map((data, index) => (
+                <div
+                  key={`${data.title}-${index}`}
+                  data-marquee-card="true"
+                  className="w-[320px] flex-shrink-0 px-2 sm:w-[360px] lg:w-[390px]"
+                >
+                  <motion.div
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="group rounded-2xl bg-white border border-border p-8 shadow-sm h-full"
                   >
-                    <motion.div
-                      initial={{ y: 30, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5 }}
-                      className="rounded-2xl bg-white border border-border p-6 shadow-sm h-full"
-                    >
-                      <div>
-                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                          <Image
-                            src={`/assets/images/${data?.imageFile}`}
-                            alt={data?.title}
-                            className="w-40 h-40 object-contain"
-                          />
-                        </div>
-                        <div className="text-center">
-                          <h3 className="text-lg font-semibold text-text-primary">{data?.title}</h3>
-                          <p className="text-sm text-text-secondary mt-2">{data?.text}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
+                    <div className="w-20 h-20 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 transition-transform duration-300 group-hover:scale-110">
+                      <Image
+                        src={`/assets/images/${data.imageFile}`}
+                        alt={data.title}
+                        className="w-11 h-11 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-2xl font-semibold leading-tight text-text-primary">{data.title}</h3>
+                      <p className="text-base text-text-secondary mt-4 leading-relaxed">{data.text}</p>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
+          <div className="mt-8 flex items-center justify-center gap-3">
             <button
               type="button"
-              aria-label="Previous slide"
-              onClick={handlePrev}
-              className="hidden sm:flex absolute -left-2 lg:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-white border border-border text-text-primary hover:bg-primary hover:text-white transition-colors duration-300 shadow-soft"
+              aria-label="Show previous card"
+              onClick={() => shiftCards('prev')}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
             >
               <Icon name="ChevronLeft" size={18} />
             </button>
 
             <button
               type="button"
-              aria-label="Next slide"
-              onClick={handleNext}
-              className="hidden sm:flex absolute -right-2 lg:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-white border border-border text-text-primary hover:bg-primary hover:text-white transition-colors duration-300 shadow-soft"
+              aria-label={isPaused ? 'Resume auto scroll' : 'Pause auto scroll'}
+              onClick={() => setIsPaused((prev) => !prev)}
+              className="inline-flex min-w-[108px] items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
+            >
+              {isPaused ? 'Play' : 'Pause'}
+            </button>
+
+            <button
+              type="button"
+              aria-label="Show next card"
+              onClick={() => shiftCards('next')}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
             >
               <Icon name="ChevronRight" size={18} />
             </button>
-          </div>
-
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {Array.from({ length: totalPages })?.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Go to slide ${index + 1}`}
-                onClick={() => setCurrentPage(index)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentPage === index ? 'w-7 bg-primary' : 'w-2.5 bg-border hover:bg-primary/60'
-                }`}
-              />
-            ))}
           </div>
         </motion.div>
 
