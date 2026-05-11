@@ -162,11 +162,6 @@ const FeaturedProjects = () => {
                 className="bg-white border border-border rounded-2xl p-8 shadow-xl shadow-slate-900/5 flex flex-col md:flex-row gap-8 items-stretch min-h-[340px]"
               >
                 <div className="flex-1 flex flex-col justify-center">
-                  <div className="mb-4 inline-flex items-center gap-2">
-                    <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
-                      Service Lane {activeProject + 1} of {projects.length}
-                    </span>
-                  </div>
                   <h3 className="text-3xl font-semibold text-text-primary mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
                     {projects?.[activeProject]?.title}
                   </h3>

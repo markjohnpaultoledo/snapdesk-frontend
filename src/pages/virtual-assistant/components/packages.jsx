@@ -18,7 +18,7 @@ const Packages = () => {
     {
       id: 1,
       title: "Starter Package",
-      description: "Starts at $1,400",
+      packageFit: "Best for foundational support",
       details: "Designed for businesses that need reliable day-to-day support without the need for highly specialized or strategic roles.",
       features: [
         "Email management",
@@ -31,7 +31,7 @@ const Packages = () => {
     {
       id: 2,
       title: "Growth Package",
-      description: "Starts at $1,900",
+      packageFit: "Best for scaling operations",
       details: "Designed for businesses that need more advanced support handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
@@ -45,7 +45,7 @@ const Packages = () => {
     {
       id: 3,
       title: "Enterprise Package",
-      description: "Custom packages, tailored to your needs.",
+      packageFit: "Best for high-touch delivery",
       details: "Designed for businesses that require high-touch, dedicated support capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
@@ -149,6 +149,9 @@ const Packages = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16"
                 >
+                  <p className="mb-4 inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                    Offshore VA Packages
+                  </p>
                     <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
                         {/* Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Expertise</span> */}
                         Flexible Packages for Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Business</span>
@@ -191,8 +194,8 @@ const Packages = () => {
                     <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                         {service?.title}
                     </h3>
-                    <p className="text-text-secondary mb-3 leading-relaxed font-medium text-base">
-                        {service?.description}
+                    <p className="text-primary mb-3 leading-relaxed font-semibold text-sm uppercase tracking-[0.12em]">
+                      {service?.packageFit}
                     </p>
                     <p className="text-text-secondary mb-5 leading-relaxed">
                         {service?.details}
@@ -210,6 +213,12 @@ const Packages = () => {
                         </li>
                         ))}
                     </ul>
+
+                    <Link to="/contact" className="relative z-10 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white">
+                      <Icon name="PhoneCall" size={15} />
+                      Book a Discovery Call
+                      <Icon name="ArrowRight" size={15} />
+                    </Link>
 
                     {/* Hover Effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -230,10 +239,10 @@ const Packages = () => {
                         variant="default"
                         size="lg"
                         className="btn-magnetic animate-breathe"
-                        iconName="ArrowRight"
-                        iconPosition="right"
+                    iconName="PhoneCall"
+                    iconPosition="left"
                     >
-                        Request for Pricing
+                    Book a Discovery Call
                     </Button>
                 </Link>
                 </motion.div>

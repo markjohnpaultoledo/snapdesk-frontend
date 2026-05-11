@@ -58,7 +58,7 @@ const HeroSection = () => {
               size="lg"
               className="rounded-full border-white/50 bg-transparent px-7 text-white hover:bg-white/15 hover:text-white"
             >
-              <Link to="/services">Explore Offshore Services</Link>
+              <Link to="/virtual-assistant">Explore Offshore Services</Link>
             </Button>
           </div>
 
