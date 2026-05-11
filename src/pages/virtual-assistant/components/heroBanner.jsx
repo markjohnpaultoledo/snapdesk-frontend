@@ -1,81 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
-import { Link } from "react-router-dom";
-import Image from 'components/AppImage';
+ 
+const HERO_VIDEO_URL = 'https://www.pexels.com/download/video/7706819/';
+const HERO_POSTER_URL = '/assets/images/va-hero-banner.jpg';
 
 
 const HeroSection = () => {
-  const [currentPhrase, setCurrentPhrase] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-
-  const phrases = [
-    "Where Innovation Meets Intelligent Design",
-    "From Strategy to Experience, We Build the Future",
-    "Your Global Partner in Intelligent Digital Experiences"
-  ];
-
-  useEffect(() => {
-    setIsVisible(true);
-    const interval = setInterval(() => {
-      setCurrentPhrase((prev) => (prev + 1) % phrases?.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1.2,
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 60, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [0, 2, -2, 0],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section className='heroBanner'>
-      <div className="flex flex-wrap min-h-screen relative items-center py-[50px]">
-          <div className="absolute top-0 bottom-0 left-0 right-0">
-              <Image
-                  src={`/assets/images/va-hero-banner.jpg`}
-                  width={1200}
-                  height={600}
-                  alt="banner image"
-                  className="w-full h-full object-cover"
-              />
-          </div>
-          <div className="relative z-10 px-10 py-5 rounded-[50px]  max-w-[700px] bg-[rgba(255,255,255,0.5)]">
-              <h1 className='text-5xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300'>Snap Into <br/>Virtual Assistant Support <br/>with SnapDesk</h1>
-              <p className='text-text-primary text-xl'>Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals so you can focus on what matters most.</p>
-          </div>
-          
+    <section className="heroBanner relative overflow-hidden">
+      <div className="relative flex min-h-[700px] items-end px-6 py-12 sm:px-10 md:min-h-[760px] md:py-16">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={HERO_POSTER_URL}
+          aria-label="Virtual assistant at work"
+        >
+          <source src={HERO_VIDEO_URL} type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(34,197,94,0.25),transparent_48%),linear-gradient(120deg,rgba(4,24,38,0.88)_0%,rgba(9,42,61,0.7)_50%,rgba(7,20,30,0.85)_100%)]" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10 w-full max-w-3xl rounded-3xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-md sm:p-8 md:p-10"
+        >
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
+            <Icon name="Sparkles" size={14} color="#FFFFFF" />
+            Virtual Assistant Solutions
+          </p>
+
+          <h1 className="mb-4 text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
+            Snap Into
+            <br />
+            Virtual Assistant Support
+            <br />
+            with SnapDesk
+          </h1>
+
+          <p className="max-w-2xl text-base text-white/90 sm:text-lg md:text-xl">
+            Get matched with a skilled Virtual Assistant who fits your workload, lifestyle, and goals so you can focus on what matters most.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
