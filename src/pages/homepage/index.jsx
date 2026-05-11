@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
+import WhyPhilippinesStrip from './components/WhyPhilippinesStrip';
 import ServicesPreview from './components/ServicesPreview';
 import FeaturedProjects from './components/FeaturedProjects';
 import OurExpertise from './components/our-expertise';
@@ -53,6 +54,9 @@ const Homepage = () => {
 
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Why Philippines */}
+        <WhyPhilippinesStrip />
 
         {/* WhatWeOffer */}
         <WhatWeOffer />

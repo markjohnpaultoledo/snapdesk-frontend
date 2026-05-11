@@ -231,8 +231,12 @@ const Footer = () => {
           className="py-8 border-t border-white/20">
 
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-200 text-sm hover:text-white transition-colors duration-300">
-              © {currentYear} SnapDesk. All rights reserved.
+            <div className="text-gray-200 text-sm transition-colors duration-300">
+              <p className="group text-gray-200 transition-colors duration-300 hover:text-white">
+                © {currentYear} SnapDesk. All rights reserved.
+                <span className="mx-2 text-gray-300 group-hover:text-white">|</span>
+                <span className="font-medium text-gray-200 group-hover:text-white">ABN: 34106633199</span>
+              </p>
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="/privacy-policy" className="text-gray-200 hover:text-white transition-colors duration-300">

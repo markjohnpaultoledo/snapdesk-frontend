@@ -9,7 +9,6 @@ const ServicesPreview = () => {
     {
       id: 1,
       title: "Starter Package",
-      priceText: "Starts at $1,400",
       description: "Designed for businesses that need reliable day-to-day support without the need for highly specialized or strategic roles.",
       features: [
         "Email management",
@@ -22,7 +21,6 @@ const ServicesPreview = () => {
     {
       id: 2,
       title: "Growth Package",
-      priceText: "Starts at $1,900",
       description: "Designed for businesses that need more advanced support handling complex tasks and coordinating day-to-day operations with ease.",
       isPopular: true,
       features: [
@@ -36,7 +34,6 @@ const ServicesPreview = () => {
     {
       id: 3,
       title: "Enterprise Package",
-      priceText: "Custom packages, tailored to your needs.",
       description: "Designed for businesses that require high-touch, dedicated support capable of managing complex operations and driving strategic growth.",
       features: [
         "Strategic project management",
@@ -102,10 +99,12 @@ const ServicesPreview = () => {
             <motion.div
               key={service?.id}
               variants={cardVariants}
-              className={`group relative bg-white border rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5 min-w-[80%] sm:min-w-[65%] md:min-w-0 snap-center ${service?.isPopular ? 'border-primary shadow-strong ring-1 ring-primary/20' : 'border-border'}`}
+              whileHover={{ y: -10, scale: 1.01 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className={`group relative bg-white border rounded-2xl p-5 hover:shadow-strong transition-all duration-500 card-elevated mb-5 min-w-[80%] sm:min-w-[65%] md:min-w-0 snap-center ${service?.isPopular ? 'border-primary shadow-strong ring-1 ring-primary/20 pt-10' : 'border-border'}`}
                     >
                     {service?.isPopular && (
-                      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                      <div className="absolute left-1/2 top-4 z-20 -translate-x-1/2 motion-safe:animate-pulse">
                         <span className="rounded-full bg-text-primary px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white whitespace-nowrap">
                           RECOMMENDED
                         </span>
@@ -120,9 +119,6 @@ const ServicesPreview = () => {
               <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                 {service?.title}
               </h3>
-              <p className="text-text-secondary mb-2 leading-relaxed">
-                {service?.priceText}
-              </p>
               <p className="text-text-primary mb-6 leading-relaxed">
                 {service?.description}
               </p>
@@ -133,12 +129,18 @@ const ServicesPreview = () => {
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service?.features?.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-text-secondary">
+                  <li key={index} className="flex items-start text-sm text-text-secondary transition-transform duration-300 group-hover:translate-x-1">
                     <Icon name="Check" size={16} className="text-primary mr-3 flex-shrink-0 mt-1" />
                     <p className="text-base text-text-primary">{feature}</p>
                   </li>
                 ))}
               </ul>
+
+              <Link to="/contact" className="relative z-10 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white">
+                <Icon name="PhoneCall" size={15} />
+                Book a Discovery Call
+                <Icon name="ArrowRight" size={15} />
+              </Link>
 
               {/* Hover Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -159,10 +161,10 @@ const ServicesPreview = () => {
               variant="default"
               size="lg"
               className="btn-magnetic"
-              iconName="ArrowRight"
-              iconPosition="right"
+              iconName="PhoneCall"
+              iconPosition="left"
             >
-              Contact Us
+              Book a Discovery Call
             </Button>
           </Link>
         </motion.div>
