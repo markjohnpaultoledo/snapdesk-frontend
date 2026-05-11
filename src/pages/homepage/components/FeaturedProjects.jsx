@@ -77,7 +77,8 @@ const FeaturedProjects = () => {
   };
 
   return (
-    <section className="py-20 bg-[#fafafa]">
+    <section className="relative py-20 bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_55%,#ffffff_100%)] overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(1,214,57,0.12),transparent_36%),radial-gradient(circle_at_88%_80%,rgba(17,94,89,0.1),transparent_30%)]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -85,14 +86,24 @@ const FeaturedProjects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16">
+          className="relative z-10 text-center mb-16">
 
-          <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
+          <p className="mb-5 inline-flex rounded-full border border-primary/20 bg-primary/10 px-5 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            Offshore Executive Assistance
+          </p>
+
+          <h2 className="text-5xl sm:text-6xl font-bold text-text-primary mb-7">
             Snap Into <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Effortless Support</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            From business admin to personal tasks, our Virtual Assistants help you stay organised, efficient, and stress-free every day.
+          <p className="text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            From business admin to personal tasks, our Philippines-based Virtual Assistants help you stay organised, efficient, and focused on growth every day.
           </p>
+
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+            <span className="rounded-full border border-border bg-white px-5 py-2 text-base font-medium text-text-primary">7 support lanes</span>
+            <span className="rounded-full border border-border bg-white px-5 py-2 text-base font-medium text-text-primary">Fast onboarding</span>
+            <span className="rounded-full border border-border bg-white px-5 py-2 text-base font-medium text-text-primary">Governed delivery model</span>
+          </div>
         </motion.div>
 
         <motion.div
@@ -100,30 +111,35 @@ const FeaturedProjects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-[30%_70%] gap-12">
+          className="grid lg:grid-cols-[32%_68%] gap-14">
 
           {/* Project Navigation */}
-          <motion.div variants={itemVariants} className="space-y-3">
-            <h3 className="text-2xl font-semibold text-text-primary mb-4 text-center group-hover:text-primary transition-colors duration-300">
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-3xl font-semibold text-text-primary mb-5 text-center group-hover:text-primary transition-colors duration-300">
               <span className="inline-flex items-center justify-center gap-2">
                 Talent Services
-                <Icon name="Globe" size={20} className="text-primary motion-safe:animate-spin" aria-hidden="true" />
+                <Icon name="Globe" size={24} className="text-primary motion-safe:animate-spin" aria-hidden="true" />
               </span>
             </h3>
             {projects?.map((project, index) =>
             <motion.div
               key={project?.id}
               onClick={() => setActiveProject(index)}
-              className={`p-3 cursor-pointer transition-all duration-300 ${
+              className={`rounded-xl border p-4 cursor-pointer transition-all duration-300 ${
               activeProject === index ?
-              'border-l-4 border-[#01d639]' :
-              ''}`
+              'border-primary bg-primary/5 shadow-sm' :
+              'border-border bg-white hover:border-primary/40'}`
               }
               whileHover={{ x: 5 }}>
 
                 <div className="flex items-start space-x-4">
+                  <span className={`inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold ${
+                    activeProject === index ? 'bg-primary text-white' : 'bg-muted text-text-secondary'
+                  }`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <div className="flex-1">
-                    <h3 className={`text-med font-semibold transition-colors duration-300 ${
+                    <h3 className={`text-lg font-semibold leading-snug transition-colors duration-300 ${
                   activeProject === index ? 'text-text-primary' : 'text-primary'}`
                   }>
                       {project?.title}
@@ -143,22 +159,35 @@ const FeaturedProjects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white border border-border rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-stretch min-h-[240px]"
+                className="bg-white border border-border rounded-2xl p-8 shadow-xl shadow-slate-900/5 flex flex-col md:flex-row gap-8 items-stretch min-h-[340px]"
               >
                 <div className="flex-1 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold text-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
+                  <div className="mb-4 inline-flex items-center gap-2">
+                    <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
+                      Service Lane {activeProject + 1} of {projects.length}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl font-semibold text-text-primary mb-5 group-hover:text-primary transition-colors duration-300 leading-tight">
                     {projects?.[activeProject]?.title}
                   </h3>
-                  <p className="text-text-secondary leading-relaxed">
+                  <p className="text-lg text-text-secondary leading-relaxed">
                     {projects?.[activeProject]?.description}
                   </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <Button asChild size="lg" className="rounded-full px-6" iconName="PhoneCall" iconPosition="left">
+                      <Link to="/contact">Book a Discovery Call</Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg" className="rounded-full px-6" iconName="ArrowRight" iconPosition="right">
+                      <Link to="/virtual-assistant">Explore VA Services</Link>
+                    </Button>
+                  </div>
                   {projects?.[activeProject]?.title === 'Technology Solutions' && (
                     <div className="mt-6">
                       <Button
                         asChild
-                        variant="default"
-                        size="sm"
-                        className="btn-magnetic"
+                        variant="outline"
+                        size="lg"
+                        className="btn-magnetic rounded-full px-6"
                       >
                         <a
                           href="https://tech.snapdesk.com.au/services"
@@ -171,15 +200,15 @@ const FeaturedProjects = () => {
                     </div>
                   )}
                 </div>
-                <div className="w-full md:w-[45%]">
+                <div className="w-full md:w-[48%]">
                   {projects?.[activeProject]?.image ? (
                     <Image
                       src={projects?.[activeProject]?.image}
                       alt={projects?.[activeProject]?.title}
-                      className="h-56 md:h-72 w-full object-cover rounded-xl border border-border"
+                      className="h-72 md:h-[420px] w-full object-cover rounded-xl border border-border"
                     />
                   ) : (
-                    <div className="h-56 md:h-72 bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
+                    <div className="h-72 md:h-[420px] bg-muted border border-dashed border-border rounded-xl flex items-center justify-center text-sm text-text-secondary/80">
                       Image Placeholder
                     </div>
                   )}
