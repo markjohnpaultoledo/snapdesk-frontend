@@ -102,7 +102,7 @@ const InsightsPage = () => {
                   <input 
                     type="email" 
                     placeholder="Your email" 
-                    className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded text-white text-sm placeholder-gray-400"
+                    className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded text-white text-sm placeholder-white/50"
                   />
                   <button className="px-4 py-2 bg-accent hover:bg-accent/80 rounded text-sm font-medium transition-colors">
                     Subscribe

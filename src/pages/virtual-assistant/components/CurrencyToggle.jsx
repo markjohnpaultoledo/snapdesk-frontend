@@ -46,18 +46,18 @@ const CurrencyToggle = () => {
       whileInView="visible"
       viewport={{ once: true, margin: '-100px' }}
       variants={containerVariants}
-      className="py-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-gray-50 to-white"
+      className="py-20 px-4 md:px-8 lg:px-12 bg-background"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Build Your Team <span className="text-teal-600">Globally</span>, Scale Your Impact Locally
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
+            Build Your Team <span className="text-primary">Globally</span>, Scale Your Impact Locally
           </h2>
-          <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+          <p className="text-lg text-text-secondary mb-6 max-w-3xl mx-auto">
             Companies investing in distributed teams unlock access to world-class talent while significantly reducing overhead costs. This strategic approach empowers you to allocate resources toward growth and innovation.
           </p>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
             Combine onshore expertise with offshore efficiency to create a balanced, cost-effective workforce that adapts to your business needs without compromising quality or accountability.
           </p>
         </motion.div>
@@ -65,12 +65,12 @@ const CurrencyToggle = () => {
         {/* Currency Toggle */}
         <motion.div variants={itemVariants} className="flex justify-center mb-12">
           <div className="flex items-center gap-6">
-            <span className={`text-lg font-medium ${currency === 'USD' ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span className={`text-lg font-medium ${currency === 'USD' ? 'text-text-primary' : 'text-text-secondary'}`}>
               USD
             </span>
             <button
               onClick={toggleCurrency}
-              className="relative inline-flex items-center h-10 w-20 rounded-full transition-colors bg-amber-400 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300"
+              className="relative inline-flex items-center h-10 w-20 rounded-full transition-colors bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent/50"
               aria-label="Toggle currency"
             >
               <motion.div
@@ -79,12 +79,12 @@ const CurrencyToggle = () => {
                 animate={{ x: currency === 'USD' ? 2 : 38 }}
                 transition={{ type: 'spring', stiffness: 500, damping: 30 }}
               >
-                <span className="text-sm font-bold text-amber-600">
+                <span className="text-sm font-bold text-accent">
                   {currency === 'USD' ? '$' : 'A$'}
                 </span>
               </motion.div>
             </button>
-            <span className={`text-lg font-medium ${currency === 'AUD' ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span className={`text-lg font-medium ${currency === 'AUD' ? 'text-text-primary' : 'text-text-secondary'}`}>
               AUD
             </span>
           </div>
@@ -94,7 +94,7 @@ const CurrencyToggle = () => {
         <motion.div variants={itemVariants} className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
-              <tr className="bg-teal-600 text-white">
+              <tr className="bg-primary text-white">
                 <th className="px-6 py-4 font-semibold text-base">Example Roles</th>
                 <th className="px-6 py-4 font-semibold text-base">Annual Cost of Local Team Member</th>
                 <th className="px-6 py-4 font-semibold text-base">Annual Cost of Offshore Team Member</th>
@@ -104,15 +104,15 @@ const CurrencyToggle = () => {
               {roleData.map((item, index) => (
                 <tr
                   key={index}
-                  className={`border-b transition-colors ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100`}
+                  className={`border-b transition-colors ${index % 2 === 0 ? 'bg-muted' : 'bg-white'} hover:bg-background`}
                 >
-                  <td className="px-6 py-5 font-semibold text-teal-600">{item.role}</td>
-                  <td className="px-6 py-5 text-gray-900 font-medium">
+                  <td className="px-6 py-5 font-semibold text-primary">{item.role}</td>
+                  <td className="px-6 py-5 text-text-primary font-medium">
                     {item.local[currency]}
                   </td>
-                  <td className="px-6 py-5 text-gray-900 font-medium">
+                  <td className="px-6 py-5 text-text-primary font-medium">
                     {item.offshore[currency]}{' '}
-                    <span className="text-teal-600 text-sm font-semibold ml-2">
+                    <span className="text-primary text-sm font-semibold ml-2">
                       (save {item.offshore.savings[currency]}/yr)
                     </span>
                   </td>
@@ -123,7 +123,7 @@ const CurrencyToggle = () => {
         </motion.div>
 
         {/* Footer Note */}
-        <motion.p variants={itemVariants} className="mt-6 text-center text-sm text-gray-600">
+        <motion.p variants={itemVariants} className="mt-6 text-center text-sm text-text-secondary">
           *Pricing reflects regional market rates and may vary based on specific skill requirements or availability
         </motion.p>
       </div>

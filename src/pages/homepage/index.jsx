@@ -7,6 +7,7 @@ import ServicesPreview from './components/ServicesPreview';
 import FeaturedProjects from './components/FeaturedProjects';
 import OurExpertise from './components/our-expertise';
 import WhatWeOffer from './components/what-we-offer';
+import FAQ from './components/FAQ';
 // import ClientLogos from './components/ClientLogos';
 import NewsletterSignup from './components/NewsletterSignup';
 import Footer from '../../components/ui/Footer';
@@ -69,8 +70,10 @@ const Homepage = () => {
 
         {/* Our Expertise */}
         <OurExpertise />
-        
-        
+
+        {/* FAQ */}
+        <FAQ />
+
         {/* Newsletter Signup */}
         {/* <NewsletterSignup /> */}
       </main>
